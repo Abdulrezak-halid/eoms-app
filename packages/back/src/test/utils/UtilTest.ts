@@ -87,42 +87,6 @@ export namespace UtilTest {
     return createClient(headers);
   }
 
-  export async function createClientWithAccessToken(options?: {
-    permMetricResourceValueMetricIds?: string[];
-    canListMeters?: boolean;
-    canListMetrics?: boolean;
-    canListSeus?: boolean;
-  }): Promise<{
-    client: Client<paths>;
-    token: string;
-  }> {
-    const { client: clientToCreateAccessToken } = await createClientLoggedIn();
-
-    const resCreateToken = await clientToCreateAccessToken.POST(
-      "/u/base/access-token/item",
-      {
-        body: {
-          name: "Test Token",
-          permissions: {
-            metricResourceValueMetricIds:
-              options?.permMetricResourceValueMetricIds ?? [],
-            canListMeters: options?.canListMeters ?? false,
-            canListMetrics: options?.canListMetrics ?? false,
-            canListSeus: options?.canListSeus ?? false,
-          },
-        },
-      },
-    );
-    expect(resCreateToken).toBeApiOk();
-
-    const token = resCreateToken.data!.token;
-
-    const headers = new Headers();
-    headers.set("X-Token", token);
-    const client = createClient(headers);
-    return { client, token };
-  }
-
   export async function createClientLoggedIn(options?: {
     username?: string;
     password?: string;

@@ -1,6 +1,3 @@
-import { CAccessTokenAddForm } from "@m/base/pages/CAccessTokenAddForm";
-import { CAccessTokenEditForm } from "@m/base/pages/CAccessTokenEditForm";
-import { CAccessTokenList } from "@m/base/pages/CAccessTokenList";
 import { CChangelog } from "@m/base/pages/CChangelog";
 import { CDepartmentAddForm } from "@m/base/pages/CDepartmentAddForm";
 import { CDepartmentEditForm } from "@m/base/pages/CDepartmentEditForm";
@@ -89,25 +86,6 @@ export const routes = [
     component: COrganizationPartnerList,
     permission: "/BASE/ORGANIZATION_PARTNER",
     orgPlanFeature: "ORGANIZATION_PARTNER",
-  },
-
-  {
-    path: "/configuration/access-token",
-    component: CAccessTokenList,
-    permission: "/BASE/ACCESS_TOKEN",
-    orgPlanFeature: "ACCESS_TOKEN",
-  },
-  {
-    path: "/configuration/access-token/item-add",
-    component: CAccessTokenAddForm,
-    permission: "/BASE/ACCESS_TOKEN",
-    orgPlanFeature: "ACCESS_TOKEN",
-  },
-  {
-    path: `/configuration/access-token/item/${":id" as string}`,
-    component: CAccessTokenEditForm,
-    permission: "/BASE/ACCESS_TOKEN",
-    orgPlanFeature: "ACCESS_TOKEN",
   },
 
   {

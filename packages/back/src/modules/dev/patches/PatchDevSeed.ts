@@ -9,11 +9,11 @@ import { MqConsumerDriverSuggestions } from "@m/analysis/mq-consumers/MqConsumer
 import { ServiceAdvancedRegression } from "@m/analysis/services/ServiceAdvancedRegression";
 import { ServiceEnpi } from "@m/analysis/services/ServiceEnpi";
 import { TbUser } from "@m/base/orm/TbUser";
-import { ServiceAccessToken } from "@m/base/services/ServiceAccessToken";
 import { ServiceDepartment } from "@m/base/services/ServiceDepartment";
 import { ServiceOrganizationBanner } from "@m/base/services/ServiceOrganizationBanner";
 import { ServiceOrganizationPartner } from "@m/base/services/ServiceOrganizationPartner";
 import { ServiceOrganizationPartnerToken } from "@m/base/services/ServiceOrganizationPartnerToken";
+import { ServiceUserToken } from "@m/base/services/ServiceUserToken";
 import { ServiceUser } from "@m/base/services/ServiceUser";
 import { ServiceComplianceObligation } from "@m/commitment/services/ServiceComplianceObligation";
 import { ServiceComplianceObligationArticle } from "@m/commitment/services/ServiceComplianceObligationArticle";
@@ -984,14 +984,8 @@ and transmits data to the centralized analytics system for optimization purposes
       );
 
       // Access Token
-      await ServiceAccessToken.create(c, {
+      await ServiceUserToken.create(c, {
         name: "Example Access Token",
-        permissions: {
-          canListMeters: true,
-          canListMetrics: true,
-          canListSeus: true,
-          metricResourceValueMetricIds: [metricId1, metricId2],
-        },
       });
 
       // Module Internal Audit ----------------------------------------------------------

@@ -52,12 +52,6 @@ export function useNavData() {
             orgPlanFeature: "ORGANIZATION_PARTNER",
           },
           {
-            label: t("accessTokens"),
-            path: "/configuration/access-token",
-            permission: "/BASE/ACCESS_TOKEN",
-            orgPlanFeature: "ACCESS_TOKEN",
-          },
-          {
             label: t("personalTokens"),
             path: "/my-profile/personal-tokens",
             permission: "/BASE/ACCESS_TOKEN",

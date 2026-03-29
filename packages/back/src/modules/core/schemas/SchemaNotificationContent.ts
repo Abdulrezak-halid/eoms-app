@@ -1,10 +1,10 @@
 import { z } from "@hono/zod-openapi";
 
-import { SchemaEOutboundIntegrationType } from "@m/measurement/schemas/SchemaEOutboundIntegrationType";
-import { SchemaPlainOrTranslatableText } from "@m/report/schemas/SchemaTranslatableKeys";
-
 import { SchemaString } from "./SchemaString";
 import { SchemaUuid } from "./SchemaUuid";
+
+const SchemaEOutboundIntegrationType = z.string();
+const SchemaPlainOrTranslatableText = z.string();
 
 export const SchemaNotificationContent = z
   .discriminatedUnion("type", [

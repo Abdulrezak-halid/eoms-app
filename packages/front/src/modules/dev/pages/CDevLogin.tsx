@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
 import { CircleUser } from "lucide-react";
+import { useCallback, useState } from "react";
 
 import { CBody } from "@m/base/components/CBody";
 import { CButton } from "@m/core/components/CButton";
@@ -29,7 +29,7 @@ export function CDevLogin() {
     <CBody title="Dev - Login">
       <div className="h-full flex justify-center items-center">
         <CForm onSubmit={handleSubmit}>
-          <CCard className="w-[24rem] p-4 space-y-4">
+          <CCard className="w-96 p-4 space-y-4">
             <div className="text-2xl px-4 pt-2">Login</div>
             <CInputString
               icon={CircleUser}

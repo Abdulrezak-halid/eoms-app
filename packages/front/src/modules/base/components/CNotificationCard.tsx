@@ -1,11 +1,8 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
-import { renderNotificationMessage } from "@m/base/utils/renderNotificationMessage";
 import { CBadgeContainer } from "@m/core/components/CBadgeContainer";
 import { CButton } from "@m/core/components/CButton";
 import { CCard } from "@m/core/components/CCard";
-import { CLink } from "@m/core/components/CLink";
-import { useTranslation } from "@m/core/hooks/useTranslation";
 import { classNames } from "@m/core/utils/classNames";
 
 import { IDtoNotificationListItem } from "../interfaces/IDtoNotificationListItem";
@@ -18,10 +15,6 @@ export function CNotificationCard({
   notification: IDtoNotificationListItem;
   onRead: (id: string) => Promise<void>;
 }) {
-  const { t } = useTranslation();
-
-  const { message, path } = renderNotificationMessage(notification.content, t);
-
   return (
     <CCard
       className={classNames(
@@ -31,7 +24,7 @@ export function CNotificationCard({
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex-1 break-words">
-          {message}
+          {/* {message} */}
           <CBadgeContainer className="ml-2">
             <CDisplayDateAgo value={notification.createdAt} />
           </CBadgeContainer>
@@ -45,7 +38,7 @@ export function CNotificationCard({
               tertiary
             />
           )}
-          <CLink icon={ArrowRight} path={path} tertiary />
+          {/* <CLink icon={ArrowRight} path={path} tertiary /> */}
         </div>
       </div>
     </CCard>

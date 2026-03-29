@@ -6,7 +6,6 @@ import { CBadgeEnergyResource } from "@m/base/components/CBadgeEnergyResource";
 import { CBadgePhone } from "@m/base/components/CBadgePhone";
 import { CBody } from "@m/base/components/CBody";
 import { CDisplayImage } from "@m/base/components/CDisplayImage";
-import { CDisplayIntegrationGrid } from "@m/base/components/CDisplayIntegrationGrid";
 import { ContextSession } from "@m/base/contexts/ContextSession";
 import { CAsyncLoader } from "@m/core/components/CAsyncLoader";
 import { CBadge } from "@m/core/components/CBadge";
@@ -142,12 +141,6 @@ export function CMyOrganization() {
                 ) : (
                   <CMutedText value={t("noFeature")} />
                 )}
-              </CCard>
-            </CFormLine>
-
-            <CFormLine label={t("integrations")}>
-              <CCard className="p-3">
-                <CDisplayIntegrationGrid />
               </CCard>
             </CFormLine>
           </CFormPanel>

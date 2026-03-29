@@ -39,11 +39,6 @@ export function usePermissionMap() {
         description: t("basePermissionDescriptionMsg"),
         // No orgPlanFeature
       },
-      ["/BASE/ACCESS_TOKEN"]: {
-        title: t("accessTokens"),
-        description: t("basePermissionDescriptionMsg"),
-        orgPlanFeature: "ACCESS_TOKEN",
-      },
       ["/BASE/USER_TOKEN"]: {
         title: t("userTokens"),
         description: t("basePermissionDescriptionMsg"),

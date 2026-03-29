@@ -127,7 +127,7 @@ export function CBody({
 
             <div
               className={classNames(
-                "w-full sm:w-[28rem] max-w-full overflow-auto sm:border-l border-gray-200 dark:border-gray-950 p-4 absolute right-0 top-0 bottom-0 bg-gray-50 dark:bg-gray-900 2xl:flex-none 2xl:static",
+                "w-full sm:w-112 max-w-full overflow-auto sm:border-l border-gray-200 dark:border-gray-950 p-4 absolute right-0 top-0 bottom-0 bg-gray-50 dark:bg-gray-900 2xl:flex-none 2xl:static",
                 !isMarkdownPanelVisible && "hidden 2xl:block",
               )}
             >

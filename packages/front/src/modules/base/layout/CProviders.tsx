@@ -48,7 +48,6 @@ import { useTranslation } from "@m/core/hooks/useTranslation";
 import { IRoutePath } from "@m/core/interfaces/IRoutePath";
 
 import { CProviderNotificationList } from "../components/CProviderNotificationList";
-import { CProviderWs } from "../components/CProviderWs";
 import { ContextGlobalFilter } from "../contexts/ContextGlobalFilter";
 import { ContextRouteData } from "../contexts/ContextRouteData";
 import {
@@ -455,91 +454,89 @@ export function CProviders() {
             <ContextSession.Provider value={contextSessionValue}>
               <ContextGlobalFilter.Provider value={contextGlobalFilterValue}>
                 <ContextServerMaintenance.Provider value={enableMaintenance}>
-                  <CProviderWs>
-                    <CAreYouSure />
-                    <CToastPanel />
+                  <CAreYouSure />
+                  <CToastPanel />
 
-                    {error && !isTranslationLoading ? (
-                      <div className="h-full flex flex-col justify-center items-center space-y-6 bg-gray-200 dark:bg-gray-800">
-                        {error === EApiFailCode.MAINTENANCE ? (
-                          <CMaintenance />
-                        ) : error === EApiFailCode.NOT_FOUND ? (
-                          <CMessageText
-                            icon={ShieldBan}
-                            value={t("msgOrganizationIsNotFound")}
-                            type="warning"
-                          />
-                        ) : error === EApiFailCode.TIMEOUT ? (
-                          <CTimeout />
-                        ) : (
-                          <CMessageText
-                            icon={OctagonAlert}
-                            type="error"
-                            value={t("cannotConnectServer")}
-                          />
+                  {error && !isTranslationLoading ? (
+                    <div className="h-full flex flex-col justify-center items-center space-y-6 bg-gray-200 dark:bg-gray-800">
+                      {error === EApiFailCode.MAINTENANCE ? (
+                        <CMaintenance />
+                      ) : error === EApiFailCode.NOT_FOUND ? (
+                        <CMessageText
+                          icon={ShieldBan}
+                          value={t("msgOrganizationIsNotFound")}
+                          type="warning"
+                        />
+                      ) : error === EApiFailCode.TIMEOUT ? (
+                        <CTimeout />
+                      ) : (
+                        <CMessageText
+                          icon={OctagonAlert}
+                          type="error"
+                          value={t("cannotConnectServer")}
+                        />
+                      )}
+                      {error !== EApiFailCode.MAINTENANCE &&
+                        error !== EApiFailCode.NOT_FOUND && (
+                          <CButton label={t("retry")} onClick={retry} />
                         )}
-                        {error !== EApiFailCode.MAINTENANCE &&
-                          error !== EApiFailCode.NOT_FOUND && (
-                            <CButton label={t("retry")} onClick={retry} />
-                          )}
-                      </div>
-                    ) : loading || isTranslationLoading ? (
-                      <div className="h-full flex justify-center items-center">
-                        <CSpinnerLayout
-                          msg={
-                            isTranslationLoading
-                              ? undefined
-                              : t("connectingServer")
-                          }
-                        />
-                      </div>
-                    ) : workerBuildId !== import.meta.env.VITE_BUILD_ID ? (
-                      <div className="h-full flex flex-col justify-center items-center space-y-6 bg-gray-200 dark:bg-gray-800">
-                        <div>{t("msgNewVersionAvailable")}</div>
-                        <CButton
-                          label={t("update")}
-                          onClick={updateVersion}
-                          disabled={updateVersionBusy}
-                        />
-                      </div>
-                    ) : !contextSessionValue.session.userDisplayName &&
-                      !import.meta.env.VITE_NO_LOGIN ? (
-                      <CLogin />
-                    ) : (
-                      <CProviderNotificationList>
-                        <CLayout>
-                          <Router>
-                            <Switch>
-                              {routes.map((d) => (
-                                <Route key="route" path={d.path}>
-                                  {/* TODO */}
-                                  <ContextRouteData.Provider value={d}>
-                                    <CGuardAllowedPage
-                                      Component={d.component}
-                                      // TODO
-                                      permission={
-                                        (d as { permission?: IDtoEPermission })
-                                          .permission
-                                      }
-                                      // TODO
-                                      orgPlanFeature={
-                                        (
-                                          d as {
-                                            orgPlanFeature?: IDtoEOrganizationPlanFeature;
-                                          }
-                                        ).orgPlanFeature
-                                      }
-                                    />
-                                  </ContextRouteData.Provider>
-                                </Route>
-                              ))}
-                              <Route component={C404} />
-                            </Switch>
-                          </Router>
-                        </CLayout>
-                      </CProviderNotificationList>
-                    )}
-                  </CProviderWs>
+                    </div>
+                  ) : loading || isTranslationLoading ? (
+                    <div className="h-full flex justify-center items-center">
+                      <CSpinnerLayout
+                        msg={
+                          isTranslationLoading
+                            ? undefined
+                            : t("connectingServer")
+                        }
+                      />
+                    </div>
+                  ) : workerBuildId !== import.meta.env.VITE_BUILD_ID ? (
+                    <div className="h-full flex flex-col justify-center items-center space-y-6 bg-gray-200 dark:bg-gray-800">
+                      <div>{t("msgNewVersionAvailable")}</div>
+                      <CButton
+                        label={t("update")}
+                        onClick={updateVersion}
+                        disabled={updateVersionBusy}
+                      />
+                    </div>
+                  ) : !contextSessionValue.session.userDisplayName &&
+                    !import.meta.env.VITE_NO_LOGIN ? (
+                    <CLogin />
+                  ) : (
+                    <CProviderNotificationList>
+                      <CLayout>
+                        <Router>
+                          <Switch>
+                            {routes.map((d) => (
+                              <Route key="route" path={d.path}>
+                                {/* TODO */}
+                                <ContextRouteData.Provider value={d}>
+                                  <CGuardAllowedPage
+                                    Component={d.component}
+                                    // TODO
+                                    permission={
+                                      (d as { permission?: IDtoEPermission })
+                                        .permission
+                                    }
+                                    // TODO
+                                    orgPlanFeature={
+                                      (
+                                        d as {
+                                          orgPlanFeature?: IDtoEOrganizationPlanFeature;
+                                        }
+                                      ).orgPlanFeature
+                                    }
+                                  />
+                                </ContextRouteData.Provider>
+                              </Route>
+                            ))}
+                            <Route component={C404} />
+                          </Switch>
+                        </Router>
+                      </CLayout>
+                    </CProviderNotificationList>
+                  )}
                 </ContextServerMaintenance.Provider>
               </ContextGlobalFilter.Provider>
             </ContextSession.Provider>
