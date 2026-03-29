@@ -1,0 +1,539 @@
+name: Workflow
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - preview/*
+      - alpha
+      - beta
+
+jobs:
+  check-paths:
+    name: Check Paths
+    if: |
+      forgejo.ref_name != 'alpha' &&
+      forgejo.ref_name != 'beta'
+    runs-on: tester
+    outputs:
+      back_changed: ${{ steps.filter.outputs.back_changed }}
+      front_changed: ${{ steps.filter.outputs.front_changed }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Paths Filter
+        uses: https://github.com/dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            back_changed:
+              - 'packages/back/**'
+            front_changed:
+              - 'packages/front/**'
+
+  lint-front:
+    name: Lint Front
+    needs: check-paths
+    if: |
+      always() &&
+      (
+        needs.check-paths.outputs.front_changed == 'true' ||
+        needs.check-paths.outputs.back_changed == 'true' ||
+        forgejo.ref_name == 'alpha' ||
+        forgejo.ref_name == 'beta'
+      )
+    runs-on: tester
+    container:
+      image: node:latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Npm Install
+        run: |
+          npm install
+
+      - name: Build API Schema
+        run: |
+          cp packages/back/.env.example packages/back/.env
+          npm run build:api-schema
+
+      - name: Integrate Static Translations
+        run: |
+          echo VITE_APP_TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }} >> packages/front/.env.development.local
+          echo VITE_APP_TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }} >> packages/front/.env.development.local
+          echo VITE_APP_TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }} >> packages/front/.env.development.local
+          npm -w packages/front run i18n:fetch
+          npm -w packages/front run i18n:integrate-static
+
+      - name: Check TS
+        run: |
+          npm -w packages/front run check:ts
+
+      - name: Check Lint
+        run: |
+          npm -w packages/front run check:lint
+
+  lint-back:
+    name: Lint Back
+    needs: check-paths
+    if: |
+      always() &&
+      (
+        needs.check-paths.outputs.back_changed == 'true' ||
+        forgejo.ref_name == 'alpha' ||
+        forgejo.ref_name == 'beta'
+      )
+    runs-on: tester
+    container:
+      image: node:latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Npm Install
+        run: |
+          npm -w packages/back install
+          npm -w packages/common install
+
+      - name: Build API Schema
+        run: |
+          cp packages/back/.env.example packages/back/.env
+          npm run build:api-schema
+
+      - name: Integrate Static Translations
+        run: |
+          echo TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }} >> packages/back/.env
+          echo TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }} >> packages/back/.env
+          echo TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }} >> packages/back/.env
+          npm -w packages/back run i18n:fetch
+          npm -w packages/back run i18n:integrate-static
+
+      - name: Check TS
+        run: |
+          npm -w packages/back run check:ts
+
+      - name: Check Lint
+        run: |
+          npm -w packages/back run check:lint
+
+  test-back:
+    name: Test Back
+    needs: check-paths
+    if: |
+      always() &&
+      (
+        needs.check-paths.outputs.back_changed == 'true' ||
+        forgejo.ref_name == 'alpha' ||
+        forgejo.ref_name == 'beta'
+      )
+    runs-on: tester
+    container:
+      image: node:latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Npm Install
+        run: |
+          npm -w packages/back install
+          npm -w packages/common install
+
+      - name: Build API Schema
+        run: |
+          npm run build:api-schema
+
+      - name: Generate Migrations
+        id: migration
+        run: |
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]] ||
+             [[ "${{ forgejo.ref_name }}" == "beta" ]]; then
+            echo db_mig_dir=migrations.prod >> $FORGEJO_OUTPUT
+          else
+            npm -w packages/back run mig:gen:local
+            echo db_mig_dir=migrations.dev >> $FORGEJO_OUTPUT
+          fi
+
+      - name: Run Test
+        run: |
+          export DB_MIG_DIR=${{ steps.migration.outputs.db_mig_dir }}
+          export LOG_LEVEL=silent
+          npm -w packages/back run test
+
+  build:
+    name: Build
+    needs:
+      - check-paths
+      - lint-front
+      - lint-back
+      - test-back
+    # If check-paths step is failed, do not build, since checks are wrongly skipped
+    # Ignore frontend failed jobs for PRs that targets track/* branches
+    # Ignore backend jobs if it is skipped
+    if: |
+      always() &&
+      (
+        needs.check-paths.result == 'success' ||
+        needs.check-paths.result == 'skipped'
+      ) &&
+      (
+        needs.lint-front.result == 'success' ||
+        needs.lint-front.result == 'skipped' ||
+        startsWith(forgejo.base_ref, 'track/')
+      ) &&
+      (
+        needs.lint-back.result == 'success' ||
+        needs.lint-back.result == 'skipped'
+      ) &&
+      (
+        needs.test-back.result == 'success' ||
+        needs.test-back.result == 'skipped'
+      )
+    runs-on: builder
+    container:
+      image: catthehacker/ubuntu:act-latest
+    outputs:
+      env_name: ${{ steps.vars.outputs.env_name }}
+      ref_slug: ${{ steps.vars.outputs.ref_slug }}
+      namespace: ${{ steps.vars.outputs.namespace }}
+      image_name_front: ${{ steps.vars.outputs.image_name_front }}
+      image_name_back: ${{ steps.vars.outputs.image_name_back }}
+      image_tag: ${{ steps.vars.outputs.image_tag }}
+      build_time: ${{ steps.vars.outputs.build_time }}
+      build_id: ${{ steps.vars.outputs.build_id }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Variables
+        id: vars
+        # Need to update "stop-deployment" workflow if you change here
+        run: |
+          if [[ "${{ forgejo.event_name }}" == "pull_request" ]]; then
+            ENV_NAME=${{ forgejo.head_ref }}
+          else
+            ENV_NAME=${{ forgejo.ref_name }}
+          fi
+
+          REF_SLUG=$(echo $ENV_NAME | sed 's/\//-/g')
+
+          if [[ $REF_SLUG == "alpha" ]] ||
+             [[ $REF_SLUG == "beta" ]]; then
+            NAMESPACE=eoms-$REF_SLUG
+          elif [[ $REF_SLUG == "main" ]]; then
+            NAMESPACE=eoms-preview
+          else
+            # Namespace name length should be lower than 63
+            # Namespace: slug-back-1 => 30 + 1 + 4 + 2 = 37
+            # Do not forget to update stop.yaml if you change here
+            NAMESPACE=${REF_SLUG:0:30}
+          fi
+          NAMESPACE=$(echo $NAMESPACE | awk '{print tolower($0)}')
+
+          BUILD_ID=${FORGEJO_SHA:0:8}
+
+          echo env_name=$ENV_NAME >> $FORGEJO_OUTPUT
+          echo ref_slug=$REF_SLUG >> $FORGEJO_OUTPUT
+          echo namespace=$NAMESPACE >> $FORGEJO_OUTPUT
+          echo build_id=$BUILD_ID >> $FORGEJO_OUTPUT
+          echo image_name_front=${{ vars.X_REGISTRY }}/${{ forgejo.repository_owner }}/eoms-app-front >> $FORGEJO_OUTPUT
+          echo image_name_back=${{ vars.X_REGISTRY }}/${{ forgejo.repository_owner }}/eoms-app-back >> $FORGEJO_OUTPUT
+          # Limit image tag by 20+1+8=29 chars
+          #   Not necessarily needed but to make "docker ps" output better
+          echo image_tag=${REF_SLUG:0:20}-${BUILD_ID} >> $FORGEJO_OUTPUT
+          echo build_time=$(TZ=UTC-3 date -Iseconds) >> $FORGEJO_OUTPUT
+
+          cat $FORGEJO_OUTPUT
+
+      #- name: Print
+      #  run: |
+      #    cat <<'EOF'
+      #    ${{ toJSON(steps.vars.outputs) }}
+      #    EOF
+      #    cat packages/front/.env.production.local
+      #    env
+      #    cat <<'EOF'
+      #    ${{ toJSON(forge) }}
+      #    EOF
+
+      # If it is a production build, fetch and integrate static locales.
+      # If it is a preview build, use tolgee dev backend configuring
+      #   environment. (For front see build section, for backend see deploy
+      #   section)
+      - name: Integrate Static Translations
+        if: ${{ forgejo.ref_name == 'alpha' || forgejo.ref_name == 'beta' }}
+        run: |
+          npm i @tolgee/cli
+
+          echo TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }} >> packages/back/.env
+          echo TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }} >> packages/back/.env
+          echo TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }} >> packages/back/.env
+          npm -w packages/back run i18n:fetch
+          npm -w packages/back run i18n:integrate-static
+
+          echo VITE_APP_TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }} >> packages/front/.env.development.local
+          echo VITE_APP_TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }} >> packages/front/.env.development.local
+          echo VITE_APP_TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }} >> packages/front/.env.development.local
+          npm -w packages/front run i18n:fetch
+          npm -w packages/front run i18n:integrate-static
+
+      - name: Build Docker Image - Front
+        run: |
+          ENV_FILE=packages/front/.env.production.local
+
+          echo "VITE_BUILD_TIME=${{ steps.vars.outputs.build_time }}" >> $ENV_FILE
+          echo "VITE_BUILD_ID=${{ steps.vars.outputs.build_id }}" >> $ENV_FILE
+          echo "VITE_ENV_NAME=${{ steps.vars.outputs.env_name }}" >> $ENV_FILE
+
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]]; then
+            echo "VITE_HCAPTCHA_SITEKEY=${{ secrets.X_HCAPTCHA_SITEKEY_ALPHA }}" >> $ENV_FILE
+          elif [[ "${{ forgejo.ref_name }}" == "beta" ]]; then
+            echo "VITE_HCAPTCHA_SITEKEY=${{ secrets.X_HCAPTCHA_SITEKEY_BETA }}" >> $ENV_FILE
+          else
+            echo "VITE_DEV_PAGES=true" >> $ENV_FILE
+            echo "VITE_APP_TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }}" >> $ENV_FILE
+            echo "VITE_APP_TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }}" >> $ENV_FILE
+            echo "VITE_APP_TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }}" >> $ENV_FILE
+          fi
+
+          # coverage may be not generated due to conditional backend test run
+          # [ -f "packages/back/coverage" ] && cp -r packages/back/coverage devops/nginx/coverage || true
+          docker build \
+            -f "./.forgejo/Dockerfile.front" \
+            -t "${{ steps.vars.outputs.image_name_front }}:${{ steps.vars.outputs.image_tag }}" \
+            .
+
+      - name: Build Docker Image - Back
+        run: |
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]] ||
+             [[ "${{ forgejo.ref_name }}" == "beta" ]]; then
+            BUILD_MODE=prod
+          else
+            BUILD_MODE=preview
+          fi
+
+          docker build \
+            -f "./.forgejo/Dockerfile.back" \
+            -t "${{ steps.vars.outputs.image_name_back }}:${{ steps.vars.outputs.image_tag }}" \
+            . \
+            --build-arg BUILD_MODE=$BUILD_MODE
+
+      - name: Push Images
+        run: |
+          echo ${{ secrets.X_REGISTRY_PASSWORD }} | docker login -u ${{ vars.X_REGISTRY_USER }} ${{ vars.X_REGISTRY }} --password-stdin
+          docker push ${{ steps.vars.outputs.image_name_front }}:${{ steps.vars.outputs.image_tag }}
+          docker push ${{ steps.vars.outputs.image_name_back }}:${{ steps.vars.outputs.image_tag }}
+
+  deploy-preview:
+    name: Deploy Preview / Alpha
+    if: forgejo.ref_name != 'beta'
+    runs-on: ${{ vars.X_DEPLOY_RUNNER_TAG_DEV }}
+    container:
+      image: catthehacker/ubuntu:act-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      #- name: Print
+      #  run: |
+      #    echo Second
+      #    cat <<'EOF'
+      #    ${{ toJSON(needs.build.outputs) }}
+      #    EOF
+
+      - name: Deploy
+        id: deploy
+        run: |
+          echo ${{ secrets.X_REGISTRY_PASSWORD }} | docker login -u ${{ vars.X_REGISTRY_USER }} ${{ vars.X_REGISTRY }} --password-stdin
+
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]]; then
+            PORT=${{ vars.X_HTTP_PORT_ALPHA }}
+          elif [[ "${{ needs.build.outputs.env_name }}" == "main" ]]; then
+            PORT=${{ vars.X_HTTP_PORT_PREVIEW }}
+          else
+            PORT=$(shuf -i 30000-32000 -n 1)
+          fi
+
+          echo VAR_IMAGE_NAME_BACK=${{ needs.build.outputs.image_name_back }} >> docker-env
+          echo VAR_IMAGE_NAME_FRONT=${{ needs.build.outputs.image_name_front }} >> docker-env
+          echo VAR_IMAGE_TAG=${{ needs.build.outputs.image_tag }} >> docker-env
+          echo VAR_ENV_NAME=${{ needs.build.outputs.env_name }} >> docker-env
+          echo VAR_BUILD_TIME=${{ needs.build.outputs.build_time }} >> docker-env
+          echo VAR_BUILD_ID=${{ needs.build.outputs.build_id }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_HOST=${{ vars.X_ISSUE_REPORT_MATRIX_HOST }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_ROOM_ID=${{ secrets.X_ISSUE_REPORT_MATRIX_ROOM_ID }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_ACCESS_TOKEN=${{ secrets.X_ISSUE_REPORT_MATRIX_ACCESS_TOKEN }} >> docker-env
+          echo VAR_WEATHER_API_TOKEN=${{ secrets.X_WEATHER_API_TOKEN }} >> docker-env
+          echo VAR_OPEN_WEATHER_TOKEN=${{ secrets.X_OPEN_WEATHER_TOKEN }} >> docker-env
+          echo VAR_DEPLOY_PORT=$PORT >> docker-env
+
+          echo VAR_WORKSPACE_ROOT_DOMAINS=${{ vars.X_WORKSPACE_ROOT_DOMAINS_DEV }} >> docker-env
+          echo VAR_OTEL_TRACE_EXPORT_URL=${{ vars.X_OTEL_TRACE_EXPORT_URL_DEV }} >> docker-env
+          echo VAR_LOG_LOKI_ENDPOINT=${{ vars.X_LOG_LOKI_ENDPOINT_DEV }} >> docker-env
+
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]]; then
+            echo VAR_DB_MIG_DIR=migrations.prod >> docker-env
+
+            echo VAR_POSTGRES_HOST=${{ vars.X_POSTGRES_HOST_DEV }} >> docker-env
+            echo VAR_POSTGRES_PORT=${{ vars.X_POSTGRES_PORT_DEV }} >> docker-env
+            echo VAR_POSTGRES_PASSWORD=${{ secrets.X_POSTGRES_PASSWORD_DEV }} >> docker-env
+            echo VAR_POSTGRES_DB_NAME=${{ vars.X_POSTGRES_DB_NAME_ALPHA }} >> docker-env
+            echo VAR_STORAGE_S3_ACCESS_KEY_ID=${{ secrets.X_STORAGE_S3_ACCESS_KEY_ID_ALPHA }} >> docker-env
+            echo VAR_STORAGE_S3_REGION=${{ vars.X_STORAGE_S3_REGION_ALPHA }} >> docker-env
+            echo VAR_STORAGE_S3_BUCKET=${{ vars.X_STORAGE_S3_BUCKET_ALPHA }} >> docker-env
+            echo VAR_STORAGE_S3_ENDPOINT=${{ vars.X_STORAGE_S3_ENDPOINT_DEV }} >> docker-env
+            echo VAR_STORAGE_S3_SECRET_ACCESS_KEY=${{ secrets.X_STORAGE_S3_SECRET_ACCESS_KEY_ALPHA }} >> docker-env
+            echo VAR_AMQP_HOST=${{ vars.X_RABBITMQ_HOST_DEV }} >> docker-env
+            echo VAR_AMQP_PORT=${{ vars.X_RABBITMQ_PORT_DEV }} >> docker-env
+            echo VAR_AMQP_USER=${{ vars.X_RABBITMQ_USER_ALPHA }} >> docker-env
+            echo VAR_AMQP_PASSWORD=${{ secrets.X_RABBITMQ_PASSWORD_ALPHA }} >> docker-env
+            echo VAR_QUEUE_AGENT_READINGS=${{ vars.X_QUEUE_AGENT_READINGS_ALPHA }} >> docker-env
+            echo VAR_QUEUE_AGENT_STATS=${{ vars.X_QUEUE_AGENT_STATS_ALPHA }} >> docker-env
+            echo VAR_QUEUE_REPORT_RENDER=${{ vars.X_QUEUE_REPORT_RENDER_ALPHA }} >> docker-env
+            echo VAR_QUEUE_REPORT_PDF=${{ vars.X_QUEUE_REPORT_PDF_ALPHA }} >> docker-env
+            echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_ALPHA }} >> docker-env
+            echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT_ALPHA }} >> docker-env
+            echo VAR_PRIVATE_INTEGRATION_PROXY_URL=${{ vars.X_PRIVATE_INTEGRATION_PROXY_URL }} >> docker-env
+            echo VAR_PRIVATE_INTEGRATION_PROXY_USER=${{ vars.X_PRIVATE_INTEGRATION_PROXY_USER }} >> docker-env
+            echo VAR_PRIVATE_INTEGRATION_PROXY_PASSWORD=${{ secrets.X_PRIVATE_INTEGRATION_PROXY_PASSWORD }} >> docker-env
+            echo VAR_COOKIE_SECRET=${{ secrets.X_COOKIE_SECRET_ALPHA }} >> docker-env
+            echo VAR_HCAPTCHA_SECRET_KEY=${{ secrets.X_HCAPTCHA_SECRET_KEY_ALPHA }} >> docker-env
+          # For preview dockers only
+          else
+            echo VAR_DB_MIG_DIR=migrations.preview >> docker-env
+            echo VAR_TOLGEE_API_URL=${{ vars.X_TOLGEE_API_URL }} >> docker-env
+            echo VAR_TOLGEE_API_KEY=${{ secrets.X_TOLGEE_API_KEY_DEV }} >> docker-env
+            echo VAR_TOLGEE_PROJECT_ID=${{ vars.X_TOLGEE_PROJECT_ID }} >> docker-env
+
+            if [[ "${{ forgejo.ref_name }}" == "main" ]]; then
+              echo VAR_AMQP_HOST="${{ vars.X_RABBITMQ_HOST_DEV }}" >> docker-env
+              echo VAR_AMQP_PORT="${{ vars.X_RABBITMQ_PORT_DEV }}" >> docker-env
+              echo VAR_AMQP_USER="${{ vars.X_RABBITMQ_USER_PREVIEW }}" >> docker-env
+              echo VAR_AMQP_PASSWORD="${{ secrets.X_RABBITMQ_PASSWORD_PREVIEW }}" >> docker-env
+              echo VAR_QUEUE_REPORT_RENDER="${{ vars.X_QUEUE_REPORT_RENDER_PREVIEW }}" >> docker-env
+              echo VAR_QUEUE_REPORT_PDF="${{ vars.X_QUEUE_REPORT_PDF_PREVIEW }}" >> docker-env
+              echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_PREVIEW }} >> docker-env
+              echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT_PREVIEW }} >> docker-env
+
+              echo VAR_HOMER=none >> docker-env
+            else
+              echo VAR_HOMER=include >> docker-env
+            fi
+          fi
+
+          # cat docker-env
+
+          if [[ "${{ forgejo.ref_name }}" == "alpha" ]]; then
+            docker compose -p ${{ needs.build.outputs.namespace }} --env-file docker-env -f ./.forgejo/docker-compose.prod.yaml up -d
+          else
+            docker compose -p ${{ needs.build.outputs.namespace }} --env-file docker-env -f ./.forgejo/docker-compose.preview.yaml up -d
+          fi
+
+          echo port=$PORT >> $FORGEJO_OUTPUT
+
+      - name: Deployed URL
+        id: url
+        run: |
+          if [[ "${{ forgejo.ref_name }}" == "main" ]]; then
+            URL=${{ vars.X_DEPLOY_URL_PREVIEW }}
+          elif [[ "${{ forgejo.ref_name }}" == "alpha" ]]; then
+            URL=${{ vars.X_DEPLOY_URL_ALPHA }}
+          else
+            URL=http://${{ vars.X_DEPLOY_HOST_PREVIEW }}:${{ steps.deploy.outputs.port }}/
+          fi
+
+          echo $URL
+
+          echo url=$URL >> $FORGEJO_OUTPUT
+
+      - name: Post Deployed URL
+        if: ${{ forgejo.event_name == 'pull_request' }}
+        run: |
+          set -x
+
+          curl -X 'POST' \
+            '${{ forgejo.api_url }}/repos/${{ forgejo.repository }}/issues/${{ forgejo.ref_name }}/comments?access_token=${{ secrets.X_ISSUE_COMMENT_ACCESS_TOKEN }}' \
+            -H 'accept: application/json' \
+            -H 'Content-Type: application/json' \
+            -d '{"body":"Deployed URL: ${{ steps.url.outputs.url }}"}'
+
+  deploy-beta:
+    name: Deploy Beta
+    if: forgejo.ref_name == 'beta'
+    runs-on: ${{ vars.X_DEPLOY_RUNNER_TAG_BETA }}
+    container:
+      image: catthehacker/ubuntu:act-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      #- name: Print
+      #  run: |
+      #    echo Second
+      #    cat <<'EOF'
+      #    ${{ toJSON(needs.build.outputs) }}
+      #    EOF
+
+      - name: Deploy
+        id: deploy
+        run: |
+          echo ${{ secrets.X_REGISTRY_PASSWORD }} | docker login -u ${{ vars.X_REGISTRY_USER }} ${{ vars.X_REGISTRY }} --password-stdin
+
+          PORT=${{ vars.X_HTTP_PORT_BETA }}
+
+          echo VAR_IMAGE_NAME_BACK=${{ needs.build.outputs.image_name_back }} >> docker-env
+          echo VAR_IMAGE_NAME_FRONT=${{ needs.build.outputs.image_name_front }} >> docker-env
+          echo VAR_IMAGE_TAG=${{ needs.build.outputs.image_tag }} >> docker-env
+          echo VAR_ENV_NAME=${{ needs.build.outputs.env_name }} >> docker-env
+          echo VAR_BUILD_TIME=${{ needs.build.outputs.build_time }} >> docker-env
+          echo VAR_BUILD_ID=${{ needs.build.outputs.build_id }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_HOST=${{ vars.X_ISSUE_REPORT_MATRIX_HOST }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_ROOM_ID=${{ secrets.X_ISSUE_REPORT_MATRIX_ROOM_ID }} >> docker-env
+          echo VAR_ISSUE_REPORT_MATRIX_ACCESS_TOKEN=${{ secrets.X_ISSUE_REPORT_MATRIX_ACCESS_TOKEN }} >> docker-env
+          echo VAR_WEATHER_API_TOKEN=${{ secrets.X_WEATHER_API_TOKEN }} >> docker-env
+          echo VAR_OPEN_WEATHER_TOKEN=${{ secrets.X_OPEN_WEATHER_TOKEN }} >> docker-env
+          echo VAR_DEPLOY_PORT=$PORT >> docker-env
+
+
+          # Beta specific vars
+          echo VAR_WORKSPACE_ROOT_DOMAINS=${{ vars.X_WORKSPACE_ROOT_DOMAINS_BETA }} >> docker-env
+          echo VAR_OTEL_TRACE_EXPORT_URL=${{ vars.X_OTEL_TRACE_EXPORT_URL_BETA }} >> docker-env
+          echo VAR_LOG_LOKI_ENDPOINT=${{ vars.X_LOG_LOKI_ENDPOINT_BETA }} >> docker-env
+          echo VAR_DB_MIG_DIR=migrations.prod >> docker-env
+
+          echo VAR_POSTGRES_HOST=${{ vars.X_POSTGRES_HOST_BETA }} >> docker-env
+          echo VAR_POSTGRES_PORT=${{ vars.X_POSTGRES_PORT_BETA }} >> docker-env
+          echo VAR_POSTGRES_PASSWORD=${{ secrets.X_POSTGRES_PASSWORD_BETA }} >> docker-env
+          echo VAR_POSTGRES_DB_NAME=${{ vars.X_POSTGRES_DB_NAME_BETA }} >> docker-env
+          echo VAR_STORAGE_S3_ACCESS_KEY_ID=${{ secrets.X_STORAGE_S3_ACCESS_KEY_ID_BETA }} >> docker-env
+          echo VAR_STORAGE_S3_REGION=${{ vars.X_STORAGE_S3_REGION_BETA }} >> docker-env
+          echo VAR_STORAGE_S3_BUCKET=${{ vars.X_STORAGE_S3_BUCKET_BETA }} >> docker-env
+          echo VAR_STORAGE_S3_ENDPOINT=${{ vars.X_STORAGE_S3_ENDPOINT_BETA }} >> docker-env
+          echo VAR_STORAGE_S3_SECRET_ACCESS_KEY=${{ secrets.X_STORAGE_S3_SECRET_ACCESS_KEY_BETA }} >> docker-env
+          echo VAR_AMQP_HOST=${{ vars.X_RABBITMQ_HOST_BETA }} >> docker-env
+          echo VAR_AMQP_PORT=${{ vars.X_RABBITMQ_PORT_BETA }} >> docker-env
+          echo VAR_AMQP_USER=${{ vars.X_RABBITMQ_USER_BETA }} >> docker-env
+          echo VAR_AMQP_PASSWORD=${{ secrets.X_RABBITMQ_PASSWORD_BETA }} >> docker-env
+          echo VAR_QUEUE_AGENT_READINGS=${{ vars.X_QUEUE_AGENT_READINGS_BETA }} >> docker-env
+          echo VAR_QUEUE_AGENT_STATS=${{ vars.X_QUEUE_AGENT_STATS_BETA }} >> docker-env
+          echo VAR_QUEUE_REPORT_RENDER=${{ vars.X_QUEUE_REPORT_RENDER_BETA }} >> docker-env
+          echo VAR_QUEUE_REPORT_PDF=${{ vars.X_QUEUE_REPORT_PDF_BETA }} >> docker-env
+          echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_BETA }} >> docker-env
+          echo VAR_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT=${{ vars.X_QUEUE_ANALYZER_FEATURE_ELIMINATION_RESULT_BETA }} >> docker-env
+          echo VAR_COOKIE_SECRET=${{ secrets.X_COOKIE_SECRET_BETA }} >> docker-env
+          echo VAR_HCAPTCHA_SECRET_KEY=${{ secrets.X_HCAPTCHA_SECRET_KEY_BETA }} >> docker-env
+
+          # cat docker-env
+
+          docker compose -p ${{ needs.build.outputs.namespace }} --env-file docker-env -f ./.forgejo/docker-compose.prod.yaml up -d
+
+          echo port=$PORT >> $FORGEJO_OUTPUT
+
+      - name: Deployed URL
+        id: url
+        run: |
+          echo ${{ vars.X_DEPLOY_URL_BETA }}

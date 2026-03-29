@@ -1,0 +1,4 @@
+- Bu sekme, tasarım faaliyetlerinde enerji performansının dikkate alınmasını sağlamak için kullanılır.
+- Tasarım faaliyetleri küçük veya büyük projeleri içerebilir.
+- Enerji maliyetleri de dahil olmak üzere tasarım kararlarının alınmasında ömür boyu maliyetini hesaba katın. Tasarım faaliyetleri küçük veya büyük projeleri içerebilir.
+- Tasarım faaliyetlerin I dokümanta ederken aşağıda verilen tasarım iş akışından faydalanabilirsiniz.

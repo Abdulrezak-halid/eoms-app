@@ -1,0 +1,103 @@
+name: Deploy Coverage
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-back:
+    name: Run Backend Test
+    runs-on: tester
+    container:
+      image: node:latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      #- name: Generate Dummy Html
+      #  run: |
+      #    mkdir -p packages/back/coverage
+      #    echo "<body>Hello2</body>" >> packages/back/coverage/index.html
+
+      - name: Npm Install
+        run: |
+          npm -w packages/back install
+          npm -w packages/common install
+
+      - name: Build API Schema
+        run: |
+          npm run build:api-schema
+
+      - name: Generate Migrations
+        id: migration
+        run: |
+          npm -w packages/back run mig:gen:local
+
+      - name: Run Test
+        run: |
+          export DB_MIG_DIR=migrations.dev
+          export LOG_LEVEL=silent
+          npm -w packages/back run test:cover
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: packages/back/coverage/
+
+  build:
+    name: Build
+    needs:
+      - test-back
+    runs-on: builder
+    container:
+      image: catthehacker/ubuntu:act-latest
+    outputs:
+      image_name: ${{ steps.vars.outputs.image_name }}
+      image_tag: ${{ steps.vars.outputs.image_tag }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Download Coverage Report
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
+
+      - name: Variables
+        id: vars
+        run: |
+          echo image_name=${{ vars.X_REGISTRY }}/${{ forge.repository_owner }}/eoms-app-coverage >> $FORGEJO_OUTPUT
+          # echo image_tag=${FORGEJO_SHA:0:8} >> $FORGEJO_OUTPUT
+          echo image_tag=latest >> $FORGEJO_OUTPUT
+          cat $FORGEJO_OUTPUT
+
+      - name: Build Docker Image - Front
+        run: |
+          echo ${{ secrets.X_COVERAGE_BASIC_AUTH_HTPASSWD }} > htpasswd
+          docker build -f "./.forgejo/Dockerfile.coverage" -t "${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.image_tag }}" .
+
+      - name: Push Images
+        run: |
+          echo ${{ secrets.X_REGISTRY_PASSWORD }} | docker login -u ${{ vars.X_REGISTRY_USER }} ${{ vars.X_REGISTRY }} --password-stdin
+          docker push ${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.image_tag }}
+
+  deploy:
+    name: Deploy
+    runs-on: deploy-bidoof
+    container:
+      image: catthehacker/ubuntu:act-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Deploy
+        id: deploy
+        run: |
+          echo ${{ secrets.X_REGISTRY_PASSWORD }} | docker login -u ${{ vars.X_REGISTRY_USER }} ${{ vars.X_REGISTRY }} --password-stdin
+
+          echo VAR_IMAGE_NAME=${{ needs.build.outputs.image_name }} >> docker-env
+          echo VAR_IMAGE_TAG=${{ needs.build.outputs.image_tag }} >> docker-env
+
+          docker compose -p eoms-coverage --env-file docker-env -f ./.forgejo/docker-compose.coverage.yaml up --pull always -d

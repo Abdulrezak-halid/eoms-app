@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Dev (Back)",
+      "path": "packages/back",
+      "type": "npm",
+      "script": "dev"
+    },
+    {
+      "label": "Run Dev (Front)",
+      "path": "packages/front",
+      "type": "npm",
+      "script": "dev"
+    },
+    {
+      "label": "Run Dev (Back + Front)",
+      "dependsOn": ["Run Dev (Back)", "Run Dev (Front)"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run Test (Watch + UI)",
+      "path": "packages/back",
+      "type": "npm",
+      "script": "test:ui"
+    },
+    {
+      "label": "Re-Generate Local Migration",
+      "path": "packages/back",
+      "type": "npm",
+      "script": "mig:regen:local"
+    },
+    {
+      "label": "Build API Schema",
+      "type": "npm",
+      "script": "build:api-schema"
+    },
+    {
+      "label": "Clean Local Build",
+      "type": "npm",
+      "script": "clean-local-build"
+    },
+    {
+      "label": "Clean Dead Branches",
+      "type": "shell",
+      "command": "git fetch -p && git branch -vv | grep 'gone]' | awk '{print $1}' | xargs -r git branch -D"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+- Bu sekme, eğitim ihtiyaçlarını planlamak ve izlemek için kullanılır.
+- Girdiler, planlama faaliyetlerinden ve enerji performansı üzerinde önemli etkileri olan kişilerin yetkinlik kontrolünden gelir.
+- İnsanlar ilk sütunda listelenir ve eğitim etkinlikleri üçüncü satırda ( başlıkta) yer alır.
+- Tarihler eğitim tarihlerini belirtir. Yeşiller tamamlanmış, maviler planlanmış eğitimlerdir
+- Enerji performansını artırmaya yardımcı olmak için bu sekmeyi sürekli olarak yeni eğitimlerle güncelleyin.

@@ -1,0 +1,6 @@
+services:
+  server:
+    image: ${VAR_IMAGE_NAME}:${VAR_IMAGE_TAG}
+    restart: always
+    ports:
+      - 3020:80

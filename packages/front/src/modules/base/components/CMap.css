@@ -1,0 +1,4 @@
+.leaflet-control-attribution A:first-child,
+.leaflet-control-attribution SPAN {
+  display: none;
+}

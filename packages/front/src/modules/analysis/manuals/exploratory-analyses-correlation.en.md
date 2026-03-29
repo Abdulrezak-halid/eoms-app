@@ -1,0 +1,5 @@
+- The energy performance of the business is mainly assessed by looking at the impact of the routers on Significant Energy Users.
+- In most cases, an increase in the number of referrers will not necessarily mean an equal increase in the effectiveness of the analysis.
+- Routers that are highly correlated with each other have the same impact on energy performance, and their use together in analyses increases the data, analysis and interpretation burden, but does not lead to a positive effect in explaining energy consumption.
+- On this page, for each energy source, you can evaluate the relational analysis of routers with key energy users and with each other.
+- It is not recommended to use two routers with very high correlation levels in regression analyses or to evaluate each of them individually to explain energy performance. Selecting and analyzing any one of them would be equally sufficient to explain the process.

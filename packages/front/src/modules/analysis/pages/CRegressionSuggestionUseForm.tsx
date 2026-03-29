@@ -1,0 +1,69 @@
+import { useCallback, useMemo } from "react";
+import { useParams } from "wouter";
+
+import { Api } from "@m/base/api/Api";
+import { CBody } from "@m/base/components/CBody";
+import { IBreadCrumb } from "@m/base/components/CBreadCrumbs";
+import { useApiToast } from "@m/base/hooks/useApiToast";
+import { CAsyncLoader } from "@m/core/components/CAsyncLoader";
+import { useLoader } from "@m/core/hooks/useLoader";
+import { useNavigate } from "@m/core/hooks/useNavigate";
+import { useTranslation } from "@m/core/hooks/useTranslation";
+
+import { CRegressionAnalysesForm } from "../components/CRegressionAnalysesForm";
+import { IDtoAdvancedRegressionCommitRequest } from "../interfaces/IDtoRegressionAnalyses";
+
+export function CRegressionSuggestionUseForm() {
+  const { t } = useTranslation();
+  const apiToast = useApiToast();
+  const navigate = useNavigate();
+  const { suggestionId = "" } = useParams();
+
+  const fetcher = useCallback(
+    () =>
+      Api.GET("/u/analysis/advanced-regression/suggest/{id}", {
+        params: { path: { id: suggestionId } },
+      }),
+    [suggestionId],
+  );
+
+  const [data] = useLoader(fetcher);
+
+  const handleSubmit = useCallback(
+    async (formData: IDtoAdvancedRegressionCommitRequest) => {
+      const res = await Api.POST("/u/analysis/advanced-regression/commit", {
+        body: formData,
+      });
+      apiToast(res, { NOT_FOUND: t("insufficientDataToProcess") });
+
+      if (!res.error) {
+        navigate(`/analysis/advanced-regression/values/${res.data.id}`);
+      }
+    },
+    [apiToast, navigate, t],
+  );
+
+  const breadcrumbs = useMemo<IBreadCrumb[]>(
+    () => [
+      {
+        label: t("regressionAnalysis"),
+        path: "/analysis/advanced-regression",
+      },
+      { label: t("add") },
+    ],
+    [t],
+  );
+
+  return (
+    <CBody breadcrumbs={breadcrumbs}>
+      <CAsyncLoader data={data}>
+        {(payload) => (
+          <CRegressionAnalysesForm
+            initialData={payload}
+            onSubmit={handleSubmit}
+          />
+        )}
+      </CAsyncLoader>
+    </CBody>
+  );
+}

@@ -1,0 +1,3 @@
+- Bu sekme, tedarik faaliyetlerinin enerji yönlerinin planlanmasında yardım amaçlı kullanılır.
+- Her ÖEK (ve ÖEK olmayanlar da dahil yapılan muhtemel diğer alımlarda) hangi ürünlerin veya hizmetlerin enerji performansını etkileyebileceğine karar verin.
+- Enerji maliyetleri de dahil olmak üzere alım kararlarında ömür boyu maliyetini hesaba katın.

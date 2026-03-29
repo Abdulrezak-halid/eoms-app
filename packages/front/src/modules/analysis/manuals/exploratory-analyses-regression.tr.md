@@ -1,0 +1,5 @@
+- İşletmenin enerji performansı, temel olarak, yönlendiricilerin Önemli Enerji Kullanıcılarının üzerindeki etkisine bakılarak değerlendirilir.
+- Çoğu zaman yönlendirici sayısındaki artış, analizlerin etkililiğinde eş oranda artış anlamına gelmeyecektir.
+- Birbiri ile korelasyonu yüksek olan yönlendiriciler, enerji performansı üzerinde aynı etkiye sahip olup analizlerde birlikte kullanılmaları veri, analiz ve yorumlama yükünü artırırken enerji tüketimini açıklamada olumlu etkiye yol açmazlar.
+- Bu sayfada her bir enerji kaynağı için, yönlendiricilerin önemli enerji kullanıcıları ile ve birbirleri ile ilişkisel analizlerini değerlendirebilirsiniz.
+- Korelasyon düzeyi çok yüksek olan iki yönlendiricinin birden regresyon analizlerinde kullanılmaması veya enerji performansını açıklamak için her birinin tek tek değerlendirilmesi önerilmez. Herhangi birinin seçilip incelenmesi, süreci açıklamak için eş düzeyde yeterli olacaktır.

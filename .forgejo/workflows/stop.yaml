@@ -1,0 +1,29 @@
+name: Stop Deployment
+
+on:
+  workflow_dispatch:
+  delete:
+
+jobs:
+  stop:
+    name: Stop Deployment
+    runs-on: ${{ vars.X_DEPLOY_RUNNER_TAG_DEV }}
+    container:
+      image: docker:latest
+    steps:
+      - name: Stop Deployment
+        run: |
+          ENV_NAME=$(echo ${{ forge.event.ref }} | cut -d\/ -f3-)
+
+          REF_SLUG=$(echo $ENV_NAME | sed 's/\//-/g')
+
+          if [[ $REF_SLUG == "alpha" ]]; then
+            NAMESPACE=eoms-$REF_SLUG
+          elif [[ $REF_SLUG == "main" ]]; then
+            NAMESPACE=eoms-preview
+          else
+            NAMESPACE=${REF_SLUG:0:30}
+          fi
+          NAMESPACE=$(echo $NAMESPACE | awk '{print tolower($0)}')
+
+          docker-compose -p $NAMESPACE down

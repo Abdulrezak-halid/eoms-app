@@ -1,0 +1,25 @@
+/**
+ * @file: EApiFailCode.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 07.11.2024
+ * Last Modified Date: 07.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
+export const enum EApiFailCode {
+  BAD_REQUEST = "BAD_REQUEST",
+  ALREADY_EXISTS = "ALREADY_EXISTS",
+  RECORD_IN_USE = "RECORD_IN_USE",
+  FOREIGN_KEY_IN_USE = "FOREIGN_KEY_IN_USE",
+  FOREIGN_KEY_NOT_FOUND = "FOREIGN_KEY_NOT_FOUND",
+  NOT_FOUND = "NOT_FOUND",
+  FORBIDDEN = "FORBIDDEN",
+  UNAUTHORIZED = "UNAUTHORIZED",
+  INTERNAL = "INTERNAL",
+  UNKNOWN = "UNKNOWN",
+  PLAN_DISABLED_OP = "PLAN_DISABLED_OP",
+  PLAN_LIMIT_EXCEEDED = "PLAN_LIMIT_EXCEEDED",
+  INVALID_TOKEN = "INVALID_TOKEN",
+  TIMEOUT = "TIMEOUT",
+  MAINTENANCE = "MAINTENANCE",
+}

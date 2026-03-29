@@ -1,0 +1,9 @@
+- This list is a central point in the continuous improvement of your energy performance.
+- Regardless of the source of the ESO, they should all be listed here.
+- There should be a row in this table for each ESO.
+- When new ESOs are identified, you need to add new rows.
+- Ideas, initially, are added to the list by filling in the "idea generation" columns. These provide basic information to start the evaluation. The description should be as specific as possible to allow the reader to understand what is being proposed.
+- The "Technical and financial evaluation" columns should be filled out by a competent person. This information will facilitate the decision whether to implement the ESO or not.
+- The "Application management" columns are used to identify and monitor the progress of the ESO during the implementation phase.
+- The "Verification of results" columns are used to record actual measured and verified savings.
+- Comments are provided in each column header to help you understand the purpose and content of each cell.

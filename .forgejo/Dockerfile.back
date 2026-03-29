@@ -1,0 +1,21 @@
+# Stage 1: Build the app
+# Stage 1 - Layer 1
+FROM node:22-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+COPY packages/back/package.json packages/back/
+COPY packages/common/package.json packages/common/
+RUN npm -w packages/back/ install
+
+# Stage 1 - Layer 2
+COPY packages/back/ packages/back/
+COPY packages/common/ packages/common/
+ARG BUILD_MODE="prod"
+RUN npm -w packages/back/ run build:${BUILD_MODE}
+
+# Stage 2: Create the production image
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=builder /app/packages/back/dist .
+EXPOSE 3000
+CMD ["node", "index.cjs"]

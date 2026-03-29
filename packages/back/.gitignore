@@ -1,0 +1,41 @@
+# build
+dist/
+coverage/
+build-api.json
+
+# dev
+.yarn/
+!.yarn/releases
+.vscode/*
+!.vscode/launch.json
+!.vscode/*.code-snippets
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf
+migrations.dev/
+
+# deps
+node_modules/
+.wrangler
+
+# env
+.env
+# .dev.vars
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# misc
+.DS_Store
+
+# Temporary dev translations
+src/locales/
+
+# storage
+storage_data/

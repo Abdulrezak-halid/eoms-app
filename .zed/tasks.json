@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Run Vitest",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/back",
+    "command": "npx vitest run",
+    "args": ["$ZED_FILE", "-t=\"$ZED_SYMBOL\""],
+    "tags": ["ts-test", "js-test"]
+  },
+  {
+    "label": "Run Dev (Back)",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/back",
+    "command": "npm run dev"
+  },
+  {
+    "label": "Run Dev (Front)",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/front",
+    "command": "npm run dev"
+  },
+  {
+    "label": "Run Test (Watch + UI)",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/back",
+    "command": "npm run test:ui"
+  },
+  {
+    "label": "Re-Generate Local Migration",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/back",
+    "command": "npm run mig:regen:local"
+  },
+  {
+    "label": "Build API Schema",
+    "cwd": "$ZED_WORKTREE_ROOT/packages/back",
+    "command": "npm run build:api-schema"
+  },
+  {
+    "label": "Clean Local Build",
+    "command": "npm run clean-local-build"
+  },
+  {
+    "label": "Clean Dead Branches",
+    "command": "git fetch -p && git branch -vv | grep 'gone]' | awk '{print $1}' | xargs -r git branch -D"
+  }
+]

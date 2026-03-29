@@ -1,0 +1,4 @@
+- Bu sekme, iç denetimin yürütülmesi sırasında bir kontrol listesi olarak kullanılır.
+- Görev ve sorumluluklar matrisine dayanmaktadır.
+- İç denetimler sırasında ortaya çıkan uygunsuzluklar ve gözlemler, izleme ve düzeltici faaliyetler için uygunsuzluklar listesine eklenmelidir.
+- Bazı durumlarda ek bir iç denetim raporu gerekebilir.

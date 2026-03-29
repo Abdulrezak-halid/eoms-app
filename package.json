@@ -1,0 +1,36 @@
+{
+  "name": "eoms-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knip": "knip",
+    "build:api-schema": "npm -w packages/back run build:api-json && npm -w packages/common run build:api-schema:file",
+    "clean-local-build": "npm run build:api-schema && npm -w packages/back run mig:regen:local"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "packages/front",
+    "packages/back",
+    "packages/common"
+  ],
+  "_overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.0"
+    },
+    "@esbuild-kit/esm-loader": {
+      "esbuild": "0.25.0"
+    },
+    "drizzle-kit": {
+      "esbuild": "0.25.0"
+    }
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "knip": "^5.63.1",
+    "prettier": "^3.6.2"
+  }
+}

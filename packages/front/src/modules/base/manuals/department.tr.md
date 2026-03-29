@@ -1,0 +1,1 @@
+- Yeni Bir Departman Eklerken ,Sayaç listesinde yalnızca seçtiğiniz enerji kaynağına sahip sayaçlar görünecektir.

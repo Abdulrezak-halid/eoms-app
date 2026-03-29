@@ -1,0 +1,3066 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`E2E - RouterReportRender > ACTION_PLANS section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Action Plans Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Action Plans Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Action Plans Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Action Plans Overview</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Action Plans Overview</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{actionPlan}</th>
+                      <th>{reasonsForStatus}</th>
+                      <th>{responsibleUser}</th>
+                      <th>{startDate}</th>
+                      <th>{targetIdentificationDate}</th>
+                      <th>{actualIdentificationDate}</th>
+                      <th>{actualSavingsVerifications}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test Action Plan</td>
+                      <td>Test Reasons for Status</td>
+                      <td>admin</td>
+                      <td>01.08.2025</td>
+                      <td>01.08.2025</td>
+                      <td>01.08.2025</td>
+                      <td>Test Actual Savings Verifications</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > COMPANY_INFO section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Company Info Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Company Info Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Company Info Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Company Overview</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Company Overview</div>
+                <div>
+                  <b>Example Org.</b>
+                  <div>
+                    <div>
+                      <b>{address}:</b>
+                      <span>Example Address</span>
+                    </div>
+                    <div>
+                      <b>{phone}:</b>
+                      <span>+1234567890</span>
+                    </div>
+                    <div>
+                      <b>{email}:</b>
+                      <span>example@example.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > CRITICAL_OPERATIONAL_PARAMETERS section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Critical Operational Parameters section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Critical Operational Parameters section Test - Example
+                Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Critical Operational Parameters section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Critical Operational Parameters Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Critical Operational Parameters Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{resource}</th>
+                      <th>{parameter}</th>
+                      <th>{unit}</th>
+                      <th>{normalSettingValue}</th>
+                      <th>{upperLimit}</th>
+                      <th>{lowerLimit}</th>
+                      <th>{measurementTool}</th>
+                      <th>{accuracyCalibrationFrequency}</th>
+                      <th>{valueResponsibleUser}</th>
+                      <th>{deviationResponsibleUser}</th>
+                      <th>{note}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>seu1</td>
+                      <td>{diesel}</td>
+                      <td>Test Parameter</td>
+                      <td>{unitPiece}</td>
+                      <td>10</td>
+                      <td>20</td>
+                      <td>2</td>
+                      <td>Test Measurement Tool</td>
+                      <td>5</td>
+                      <td>User1</td>
+                      <td>User2</td>
+                      <td>Test Note</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Change language using header 1`] = `
+"<html lang="tr-TR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Raporu</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Test Raporu - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Test Raporu</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 01.08.2025 - {dateEndPeriod}: 31.08.2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul></ul>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > ENERGY_POLICIES section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Energy Policies Section</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Energy Policies Section - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Energy Policies Section</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2042
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Policy Overview</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Policy Overview</div>
+                <ul>
+                  <li>Content of the energy policy item</li>
+                </ul>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > ENERGY_SAVING_OPPORTUNITIES section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Energy Saving Opportunities section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Energy Saving Opportunities section Test - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Energy Saving Opportunities section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Energy Saving Opportunities Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Energy Saving Opportunities Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{definition}</th>
+                      <th>{significantEnergyUsers}</th>
+                      <th>{investmentBudget}</th>
+                      <th>{investmentApplicationPeriod}</th>
+                      <th>{paybackMonth}</th>
+                      <th>{responsibleUser}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test Energy Saving Opportunity</td>
+                      <td><div>Test SEU</div></td>
+                      <td>10000</td>
+                      <td>{dynamicMonths#month=5}</td>
+                      <td>{dynamicMonths#month=24}</td>
+                      <td>admin</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Energy Consumption Pie Chart 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Energy Consumption Pie Chart Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Energy Consumption Pie Chart Test - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Energy Consumption Pie Chart Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">1. Energy Consumption Pie Chart</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Energy Consumption Pie Chart</div>
+                <div>
+                  <div class="chart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      class="marks"
+                      width="697"
+                      height="274"
+                      viewBox="0 0 697 274"
+                    >
+                      <g
+                        fill="none"
+                        stroke-miterlimit="10"
+                        transform="translate(0,47)"
+                      >
+                        <g
+                          class="mark-group role-frame root"
+                          role="graphics-object"
+                          aria-roledescription="group mark container"
+                        >
+                          <g transform="translate(0,0)">
+                            <path
+                              class="background"
+                              aria-hidden="true"
+                              d="M0,0h540v180h-540Z"
+                            />
+                            <g>
+                              <g
+                                class="mark-arc role-mark"
+                                role="graphics-symbol"
+                                aria-roledescription="arc mark container"
+                              >
+                                <path
+                                  transform="translate(270,90)"
+                                  d="M0,-135A135,135,0,1,1,0,135A135,135,0,1,1,0,-135Z"
+                                  fill="oklch(70.4% 0.14 182.503)"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linejoin="round"
+                                />
+                              </g>
+                              <g
+                                class="mark-text role-mark"
+                                role="graphics-object"
+                                aria-roledescription="text mark container"
+                              >
+                                <text
+                                  text-anchor="middle"
+                                  transform="translate(269.67800638729443,189.49945142757906)"
+                                  font-family="sans-serif"
+                                  font-size="15px"
+                                  fill="black"
+                                >
+                                  110 kWh (100%)
+                                </text>
+                              </g>
+                              <g
+                                class="mark-group role-legend"
+                                role="graphics-symbol"
+                                aria-roledescription="legend"
+                                aria-label="Symbol legend titled 'Species' for fill color with 1 value: {electric}"
+                              >
+                                <g transform="translate(558,0)">
+                                  <path
+                                    class="background"
+                                    aria-hidden="true"
+                                    d="M0,0h139v32h-139Z"
+                                    pointer-events="none"
+                                  />
+                                  <g>
+                                    <g class="mark-group role-legend-entry">
+                                      <g transform="translate(0,16)">
+                                        <path
+                                          class="background"
+                                          aria-hidden="true"
+                                          d="M0,0h0v0h0Z"
+                                          pointer-events="none"
+                                        />
+                                        <g>
+                                          <g
+                                            class="mark-group role-scope"
+                                            role="graphics-object"
+                                            aria-roledescription="group mark container"
+                                          >
+                                            <g transform="translate(0,0)">
+                                              <path
+                                                class="background"
+                                                aria-hidden="true"
+                                                d="M0,0h139v15.5h-139Z"
+                                                pointer-events="none"
+                                                opacity="1"
+                                              />
+                                              <g>
+                                                <g
+                                                  class="mark-symbol role-legend-symbol"
+                                                  pointer-events="none"
+                                                >
+                                                  <path
+                                                    transform="translate(7.5,7.5)"
+                                                    d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+                                                    fill="oklch(70.4% 0.14 182.503)"
+                                                    stroke-width="1.5"
+                                                    opacity="1"
+                                                  />
+                                                </g>
+                                                <g
+                                                  class="mark-text role-legend-label"
+                                                  pointer-events="none"
+                                                >
+                                                  <text
+                                                    text-anchor="start"
+                                                    transform="translate(19,12.5)"
+                                                    font-family="sans-serif"
+                                                    font-size="15px"
+                                                    fill="#000"
+                                                    opacity="1"
+                                                  >
+                                                    {electric}
+                                                  </text>
+                                                </g>
+                                              </g>
+                                              <path
+                                                class="foreground"
+                                                aria-hidden="true"
+                                                d=""
+                                                pointer-events="none"
+                                                display="none"
+                                              />
+                                            </g>
+                                          </g>
+                                        </g>
+                                        <path
+                                          class="foreground"
+                                          aria-hidden="true"
+                                          d=""
+                                          pointer-events="none"
+                                          display="none"
+                                        />
+                                      </g>
+                                    </g>
+                                    <g
+                                      class="mark-text role-legend-title"
+                                      pointer-events="none"
+                                    >
+                                      <text
+                                        text-anchor="start"
+                                        transform="translate(0,9)"
+                                        font-family="sans-serif"
+                                        font-size="11px"
+                                        font-weight="bold"
+                                        fill="#000"
+                                        opacity="1"
+                                      >
+                                        Species
+                                      </text>
+                                    </g>
+                                  </g>
+                                  <path
+                                    class="foreground"
+                                    aria-hidden="true"
+                                    d=""
+                                    pointer-events="none"
+                                    display="none"
+                                  />
+                                </g>
+                              </g>
+                            </g>
+                            <path
+                              class="foreground"
+                              aria-hidden="true"
+                              d=""
+                              display="none"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Energy Consumption Table 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Energy Consumption Table Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Energy Consumption Table Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Energy Consumption Table Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Energy Consumption Table</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Energy Consumption Table</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th colspan="2">{electric}</th>
+                      <th colspan="2">{gas}</th>
+                      <th colspan="2">{water}</th>
+                      <th colspan="2">{total}</th>
+                    </tr>
+                    <tr>
+                      <th>{months}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{cost}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{cost}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{cost}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{cost}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td s="true">February 2025</td>
+                      <td>30.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td>20.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td>10.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td class="right">60.00 kWh</td>
+                      <td class="right">0.00</td>
+                    </tr>
+                    <tr>
+                      <td s="true">March 2025</td>
+                      <td>45.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td>30.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td>10.00 kWh</td>
+                      <td class="right">0.00</td>
+                      <td class="right">85.00 kWh</td>
+                      <td class="right">0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Header section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Header Test Report</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Header Test Report - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Header Test Report</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Intro</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Intro</div>
+                <p></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Primary Regression Analysis Table  1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Primary Regression Analysis Table Overview</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Primary Regression Analysis Table Overview - Example
+                Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Primary Regression Analysis Table Overview</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Primary Regression Analysis Table Section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Primary Regression Analysis Table Section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{driver}</th>
+                      <th class="right">{rsquared}</th>
+                      <th class="right">{rootMeanSquareError}</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Primary Seu Consumption Table Section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Primary Seu Consumption Table</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Primary Seu Consumption Table - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Primary Seu Consumption Table</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 12/1/2024 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">1. Primary Seu Consumption Overview</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Primary Seu Consumption Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{resource}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{percentage}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test SEU</td>
+                      <td>{electric}</td>
+                      <td class="right">200.00 kWh</td>
+                      <td class="right">181.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Primary Seu Total Consumption Pie Chart Section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Primary Seu Total Consumption Pie Chart</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Primary Seu Total Consumption Pie Chart - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Primary Seu Total Consumption Pie Chart</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 12/1/2024 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Primary Seu Total Consumption Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Primary Seu Total Consumption Overview
+                </div>
+                <div>
+                  <h3>{electric}</h3>
+                  <div class="chart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      class="marks"
+                      width="673"
+                      height="274"
+                      viewBox="0 0 673 274"
+                    >
+                      <g
+                        fill="none"
+                        stroke-miterlimit="10"
+                        transform="translate(0,47)"
+                      >
+                        <g
+                          class="mark-group role-frame root"
+                          role="graphics-object"
+                          aria-roledescription="group mark container"
+                        >
+                          <g transform="translate(0,0)">
+                            <path
+                              class="background"
+                              aria-hidden="true"
+                              d="M0,0h540v180h-540Z"
+                            />
+                            <g>
+                              <g
+                                class="mark-arc role-mark"
+                                role="graphics-symbol"
+                                aria-roledescription="arc mark container"
+                              >
+                                <path
+                                  transform="translate(270,90)"
+                                  d="M0,-135A135,135,0,1,1,0,135A135,135,0,1,1,0,-135Z"
+                                  fill="oklch(70.4% 0.14 182.503)"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linejoin="round"
+                                />
+                              </g>
+                              <g
+                                class="mark-text role-mark"
+                                role="graphics-object"
+                                aria-roledescription="text mark container"
+                              >
+                                <text
+                                  text-anchor="middle"
+                                  transform="translate(269.67800638729443,189.49945142757906)"
+                                  font-family="sans-serif"
+                                  font-size="15px"
+                                  fill="black"
+                                >
+                                  90 kWh (100%)
+                                </text>
+                              </g>
+                              <g
+                                class="mark-group role-legend"
+                                role="graphics-symbol"
+                                aria-roledescription="legend"
+                                aria-label="Symbol legend titled 'Species' for fill color with 1 value: Test SEU"
+                              >
+                                <g transform="translate(558,0)">
+                                  <path
+                                    class="background"
+                                    aria-hidden="true"
+                                    d="M0,0h115v32h-115Z"
+                                    pointer-events="none"
+                                  />
+                                  <g>
+                                    <g class="mark-group role-legend-entry">
+                                      <g transform="translate(0,16)">
+                                        <path
+                                          class="background"
+                                          aria-hidden="true"
+                                          d="M0,0h0v0h0Z"
+                                          pointer-events="none"
+                                        />
+                                        <g>
+                                          <g
+                                            class="mark-group role-scope"
+                                            role="graphics-object"
+                                            aria-roledescription="group mark container"
+                                          >
+                                            <g transform="translate(0,0)">
+                                              <path
+                                                class="background"
+                                                aria-hidden="true"
+                                                d="M0,0h115v15.5h-115Z"
+                                                pointer-events="none"
+                                                opacity="1"
+                                              />
+                                              <g>
+                                                <g
+                                                  class="mark-symbol role-legend-symbol"
+                                                  pointer-events="none"
+                                                >
+                                                  <path
+                                                    transform="translate(7.5,7.5)"
+                                                    d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+                                                    fill="oklch(70.4% 0.14 182.503)"
+                                                    stroke-width="1.5"
+                                                    opacity="1"
+                                                  />
+                                                </g>
+                                                <g
+                                                  class="mark-text role-legend-label"
+                                                  pointer-events="none"
+                                                >
+                                                  <text
+                                                    text-anchor="start"
+                                                    transform="translate(19,12.5)"
+                                                    font-family="sans-serif"
+                                                    font-size="15px"
+                                                    fill="#000"
+                                                    opacity="1"
+                                                  >
+                                                    Test SEU
+                                                  </text>
+                                                </g>
+                                              </g>
+                                              <path
+                                                class="foreground"
+                                                aria-hidden="true"
+                                                d=""
+                                                pointer-events="none"
+                                                display="none"
+                                              />
+                                            </g>
+                                          </g>
+                                        </g>
+                                        <path
+                                          class="foreground"
+                                          aria-hidden="true"
+                                          d=""
+                                          pointer-events="none"
+                                          display="none"
+                                        />
+                                      </g>
+                                    </g>
+                                    <g
+                                      class="mark-text role-legend-title"
+                                      pointer-events="none"
+                                    >
+                                      <text
+                                        text-anchor="start"
+                                        transform="translate(0,9)"
+                                        font-family="sans-serif"
+                                        font-size="11px"
+                                        font-weight="bold"
+                                        fill="#000"
+                                        opacity="1"
+                                      >
+                                        Species
+                                      </text>
+                                    </g>
+                                  </g>
+                                  <path
+                                    class="foreground"
+                                    aria-hidden="true"
+                                    d=""
+                                    pointer-events="none"
+                                    display="none"
+                                  />
+                                </g>
+                              </g>
+                            </g>
+                            <path
+                              class="foreground"
+                              aria-hidden="true"
+                              d=""
+                              display="none"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Primary Seu consumption table section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Primary Seu consumption table section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Primary Seu consumption table section Test - Example
+                Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Primary Seu consumption table section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Primary Seu consumption table section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Primary Seu consumption table section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{resource}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{percentage}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test SEU</td>
+                      <td>{electric}</td>
+                      <td class="right">200.00 kWh</td>
+                      <td class="right">181.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Primary Seu consumption table section with specific datetime. 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Primary Seu consumption table section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Primary Seu consumption table section Test - Example
+                Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Primary Seu consumption table section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Primary Seu consumption table section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Primary Seu consumption table section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{resource}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{percentage}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test SEU</td>
+                      <td>{electric}</td>
+                      <td class="right">120.00 kWh</td>
+                      <td class="right">200.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Regression Analysis Table  1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Regression Analysis Table Overview</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Regression Analysis Table Overview - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Regression Analysis Table Overview</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Regression Analysis Table Section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Regression Analysis Table Section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{driver}</th>
+                      <th class="right">{rsquared}</th>
+                      <th class="right">{rootMeanSquareError}</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Regression driver list section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Regression driver list section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Regression driver list section Test - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Regression driver list section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Regression driver list section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Regression driver list section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{driver}</th>
+                      <th>{unit}</th>
+                      <th>{period}</th>
+                      <th>{departments}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Driver1</td>
+                      <td>{unitGroupTemperature}</td>
+                      <td>-</td>
+                      <td><div>Test Department</div></td>
+                    </tr>
+                    <tr>
+                      <td>Driver2</td>
+                      <td>{unitGroupTemperature}</td>
+                      <td>-</td>
+                      <td><div>Test Department</div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Scope and limits section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scope and limits Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Scope and limits Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Scope and limits Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Scope and limits Overview</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Scope and limits Overview</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{departments}</th>
+                      <th>{excludedResources}</th>
+                      <th>{excludedResourceReason}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ul>
+                          <li>Department</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>{electric}</li>
+                        </ul>
+                      </td>
+                      <td>Air conditioner</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Seu Total Consumption Pie Chart Section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Seu Total Consumption Pie Chart</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Seu Total Consumption Pie Chart - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Seu Total Consumption Pie Chart</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">1. Seu Total Consumption Overview</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Seu Total Consumption Overview
+                </div>
+                <div>
+                  <h3>{electric}</h3>
+                  <div class="chart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      class="marks"
+                      width="619"
+                      height="180"
+                      viewBox="0 0 619 180"
+                    >
+                      <g
+                        fill="none"
+                        stroke-miterlimit="10"
+                        transform="translate(0,0)"
+                      >
+                        <g
+                          class="mark-group role-frame root"
+                          role="graphics-object"
+                          aria-roledescription="group mark container"
+                        >
+                          <g transform="translate(0,0)">
+                            <path
+                              class="background"
+                              aria-hidden="true"
+                              d="M0,0h540v180h-540Z"
+                            />
+                            <g>
+                              <g
+                                class="mark-arc role-mark"
+                                role="graphics-symbol"
+                                aria-roledescription="arc mark container"
+                              />
+                              <g
+                                class="mark-text role-mark"
+                                role="graphics-object"
+                                aria-roledescription="text mark container"
+                              />
+                              <g
+                                class="mark-group role-legend"
+                                role="graphics-symbol"
+                                aria-roledescription="legend"
+                                aria-label="Symbol legend titled 'Species' for fill color with 0 values: "
+                              >
+                                <g transform="translate(558,0)">
+                                  <path
+                                    class="background"
+                                    aria-hidden="true"
+                                    d="M0,0h61v11h-61Z"
+                                    pointer-events="none"
+                                  />
+                                  <g>
+                                    <g class="mark-group role-legend-entry">
+                                      <g transform="translate(0,16)">
+                                        <path
+                                          class="background"
+                                          aria-hidden="true"
+                                          d="M0,0h0v0h0Z"
+                                          pointer-events="none"
+                                        />
+                                        <g>
+                                          <g
+                                            class="mark-group role-scope"
+                                            role="graphics-object"
+                                            aria-roledescription="group mark container"
+                                          />
+                                        </g>
+                                        <path
+                                          class="foreground"
+                                          aria-hidden="true"
+                                          d=""
+                                          pointer-events="none"
+                                          display="none"
+                                        />
+                                      </g>
+                                    </g>
+                                    <g
+                                      class="mark-text role-legend-title"
+                                      pointer-events="none"
+                                    >
+                                      <text
+                                        text-anchor="start"
+                                        transform="translate(0,9)"
+                                        font-family="sans-serif"
+                                        font-size="11px"
+                                        font-weight="bold"
+                                        fill="#000"
+                                        opacity="1"
+                                      >
+                                        Species
+                                      </text>
+                                    </g>
+                                  </g>
+                                  <path
+                                    class="foreground"
+                                    aria-hidden="true"
+                                    d=""
+                                    pointer-events="none"
+                                    display="none"
+                                  />
+                                </g>
+                              </g>
+                            </g>
+                            <path
+                              class="foreground"
+                              aria-hidden="true"
+                              d=""
+                              display="none"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Seu consumption table section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Seu consumption table section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Seu consumption table section Test - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Seu consumption table section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Seu consumption table section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Seu consumption table section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{significantEnergyUser}</th>
+                      <th>{resource}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{percentage}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Seu</td>
+                      <td>{electric}</td>
+                      <td class="right">190.00 kWh</td>
+                      <td class="right">190.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > TABLE_HORIZONTAL section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Horizontal Table Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Horizontal Table Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Horizontal Table Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. KPI Table</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. KPI Table</div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>Energy</th>
+                      <td>1000 kWh</td>
+                    </tr>
+                    <tr>
+                      <th>Cost</th>
+                      <td>$500</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > TABLE_VERTICAL section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vertical Table Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Vertical Table Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Vertical Table Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Production Data</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Production Data</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="">Month</th>
+                      <th class="right">Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="">August</td>
+                      <td class="right">1200</td>
+                    </tr>
+                    <tr>
+                      <td class="">September</td>
+                      <td class="right">1400</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > TARGETS section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Targets section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Targets section Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Targets section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Targets Overview</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Targets Overview</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{year}</th>
+                      <th>{resource}</th>
+                      <th class="right">{percentage}</th>
+                      <th class="right">{consumption}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025</td>
+                      <td>{gas}</td>
+                      <td class="right">75.0%</td>
+                      <td class="right">2000.00 kWh</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > TARGETS with empty title 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Targets section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Targets section Test - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Targets section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/1970 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. {targets}</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. {targets}</div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{year}</th>
+                      <th>{resource}</th>
+                      <th class="right">{percentage}</th>
+                      <th class="right">{consumption}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025</td>
+                      <td>{gas}</td>
+                      <td class="right">75.0%</td>
+                      <td class="right">2000.00 kWh</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > TEXT section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TEXT Test Report</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>TEXT Test Report - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>TEXT Test Report</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Intro</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Intro</div>
+                <p>This is a simple text.</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > Total consumption cost table section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Total consumption cost table section Test</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Total consumption cost table section Test - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Total consumption cost table section Test</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 12/1/2024 - {dateEndPeriod}: 1/1/2026
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li>
+                    <a href="#section-1">
+                      1. Total consumption cost table section Overview
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">
+                  1. Total consumption cost table section Overview
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>{energyResource}</th>
+                      <th class="right">{consumption}</th>
+                      <th class="right">{cost}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{electric}</td>
+                      <td class="right">110.00 kWh</td>
+                      <td class="right">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > report layout 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Factory Energy Consumption Report</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>
+                Factory Energy Consumption Report - Example Organization
+              </div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Factory Energy Consumption Report</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 8/1/2025 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Overview</a></li>
+                  <li>
+                    <a href="#section-1.1">1.1. Total Energy Consumption</a>
+                  </li>
+                  <li>
+                    <a href="#section-1.1.1">1.1.1. Breakdown by Source</a>
+                  </li>
+                  <li>
+                    <a href="#section-2">2. Energy Efficiency Measures</a>
+                  </li>
+                  <li><a href="#section-2.1">2.1. Lighting Upgrade</a></li>
+                  <li><a href="#section-2.1.1">2.1.1. Expected Savings</a></li>
+                  <li><a href="#section-3">3. Recommendations</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Overview</div>
+                <p>
+                  This report provides a detailed overview of the energy
+                  consumption and efficiency of our main manufacturing plant for
+                  August 2025.
+                </p>
+              </div>
+              <div id="section-1.1" class="section">
+                <div class="section-title">1.1. Total Energy Consumption</div>
+                <p>
+                  The factory consumed a total of 1,250,000 kWh during the
+                  reporting period, representing a 5% increase compared to July
+                  2025.
+                </p>
+              </div>
+              <div id="section-1.1.1" class="section">
+                <div class="section-title">1.1.1. Breakdown by Source</div>
+                <p>
+                  Electricity: 800,000 kWh, Natural Gas: 350,000 kWh, Solar:
+                  100,000 kWh.
+                </p>
+              </div>
+              <div id="section-2" class="section">
+                <div class="section-title">2. Energy Efficiency Measures</div>
+                <p>
+                  Several measures were implemented to reduce energy
+                  consumption, including upgrading lighting systems and
+                  optimizing machinery operation schedules.
+                </p>
+              </div>
+              <div id="section-2.1" class="section">
+                <div class="section-title">2.1. Lighting Upgrade</div>
+                <p>
+                  Replaced all high-consumption bulbs with LED alternatives,
+                  reducing electricity use in production halls by 12%.
+                </p>
+              </div>
+              <div id="section-2.1.1" class="section">
+                <div class="section-title">2.1.1. Expected Savings</div>
+                <p>Projected annual savings: 50,000 kWh and $6,000.</p>
+              </div>
+              <div id="section-3" class="section">
+                <div class="section-title">3. Recommendations</div>
+                <p>
+                  Further efficiency improvements can be achieved through
+                  automated energy monitoring, employee training, and investment
+                  in renewable energy sources.
+                </p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;
+
+exports[`E2E - RouterReportRender > seu primary graph section 1`] = `
+"<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Seu primary graph section</title>
+  </head>
+  <body>
+    <table class="report-header-table">
+      <thead>
+        <tr>
+          <td>
+            <div class="report-header">
+              <div>Seu primary graph section - Example Organization</div>
+              <div>eoms</div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="content">
+              <h1>Seu primary graph section</h1>
+              <div id="report-period-info">
+                {dateStartPeriod}: 1/1/2024 - {dateEndPeriod}: 8/31/2025
+              </div>
+              <div id="authors">
+                <h2>{authors}:</h2>
+                <ul>
+                  <li>admin</li>
+                </ul>
+              </div>
+              <div id="table-of-contents">
+                <h2>{tableOfContents}</h2>
+                <ul>
+                  <li><a href="#section-1">1. Primary Seus graph.</a></li>
+                </ul>
+              </div>
+              <div id="section-1" class="section">
+                <div class="section-title">1. Primary Seus graph.</div>
+                <div>
+                  <h3>{electric}</h3>
+                  <div>
+                    <div class="chart">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1"
+                        class="marks"
+                        width="910"
+                        height="300"
+                        viewBox="0 0 910 300"
+                      >
+                        <g
+                          fill="none"
+                          stroke-miterlimit="10"
+                          transform="translate(60,20)"
+                        >
+                          <g
+                            class="mark-group role-frame root"
+                            role="graphics-object"
+                            aria-roledescription="group mark container"
+                          >
+                            <g transform="translate(0,0)">
+                              <path
+                                class="background"
+                                aria-hidden="true"
+                                d="M0,0h630v180h-630Z"
+                              />
+                              <g>
+                                <g
+                                  class="mark-group role-axis"
+                                  role="graphics-symbol"
+                                  aria-roledescription="axis"
+                                  aria-label="X-axis for a utc scale with values from {dayWednesday}, 01 {monthJanuary} 2025, 03:00:00 UTC to {daySaturday}, 01 {monthMarch} 2025, 03:00:00 UTC"
+                                >
+                                  <g transform="translate(0.5,180.5)">
+                                    <path
+                                      class="background"
+                                      aria-hidden="true"
+                                      d="M0,0h0v0h0Z"
+                                      pointer-events="none"
+                                    />
+                                    <g>
+                                      <g
+                                        class="mark-rule role-axis-grid"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(41,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(116,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(191,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(266,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(340,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(415,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(490,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(565,0)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                      <g
+                                        class="mark-rule role-axis-tick"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(41,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(116,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(191,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(266,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(340,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(415,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(490,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(565,0)"
+                                          x2="0"
+                                          y2="5"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                      <g
+                                        class="mark-text role-axis-label"
+                                        pointer-events="none"
+                                      >
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(41.3771186440678,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortJa…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(116.12288135593221,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortJa…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(190.86864406779662,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortJa…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(265.614406779661,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortJa…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(340.3601694915254,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortFe…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(415.10593220338984,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortFe…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(489.85169491525426,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortFe…
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(564.5974576271187,7) rotate(-45) translate(0,12)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          {monthShortFe…
+                                        </text>
+                                      </g>
+                                      <g
+                                        class="mark-rule role-axis-domain"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(0,0)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                    </g>
+                                    <path
+                                      class="foreground"
+                                      aria-hidden="true"
+                                      d=""
+                                      pointer-events="none"
+                                      display="none"
+                                    />
+                                  </g>
+                                </g>
+                                <g
+                                  class="mark-group role-axis"
+                                  role="graphics-symbol"
+                                  aria-roledescription="axis"
+                                  aria-label="Y-axis titled 'kWh' for a linear scale with values from 0 to 30"
+                                >
+                                  <g transform="translate(0.5,0.5)">
+                                    <path
+                                      class="background"
+                                      aria-hidden="true"
+                                      d="M0,0h0v0h0Z"
+                                      pointer-events="none"
+                                    />
+                                    <g>
+                                      <g
+                                        class="mark-rule role-axis-grid"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(0,180)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,150)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,120)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,90)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,60)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,30)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,0)"
+                                          x2="630"
+                                          y2="0"
+                                          stroke="#ddd"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                      <g
+                                        class="mark-rule role-axis-tick"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(0,180)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,150)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,120)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,90)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,60)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,30)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                        <line
+                                          transform="translate(0,0)"
+                                          x2="-5"
+                                          y2="0"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                      <g
+                                        class="mark-text role-axis-label"
+                                        pointer-events="none"
+                                      >
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,185)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          0
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,155)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          5
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,125.00000000000001)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          10
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,95)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          15
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,65)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          20
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,34.99999999999999)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          25
+                                        </text>
+                                        <text
+                                          text-anchor="end"
+                                          transform="translate(-7,5)"
+                                          font-family="sans-serif"
+                                          font-size="15px"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          30
+                                        </text>
+                                      </g>
+                                      <g
+                                        class="mark-rule role-axis-domain"
+                                        pointer-events="none"
+                                      >
+                                        <line
+                                          transform="translate(0,180)"
+                                          x2="0"
+                                          y2="-180"
+                                          stroke="#888"
+                                          stroke-width="1"
+                                          opacity="1"
+                                        />
+                                      </g>
+                                      <g
+                                        class="mark-text role-axis-title"
+                                        pointer-events="none"
+                                      >
+                                        <text
+                                          text-anchor="middle"
+                                          transform="translate(-35,90) rotate(-90) translate(0,-2)"
+                                          font-family="sans-serif"
+                                          font-size="11px"
+                                          font-weight="bold"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          kWh
+                                        </text>
+                                      </g>
+                                    </g>
+                                    <path
+                                      class="foreground"
+                                      aria-hidden="true"
+                                      d=""
+                                      pointer-events="none"
+                                      display="none"
+                                    />
+                                  </g>
+                                </g>
+                                <g
+                                  class="mark-line role-mark"
+                                  role="graphics-symbol"
+                                  aria-roledescription="line mark container"
+                                >
+                                  <path
+                                    d="M0,0L331.017,0L630,0"
+                                    stroke="oklch(70.4% 0.14 182.503)"
+                                    stroke-width="2"
+                                  />
+                                </g>
+                                <g
+                                  class="mark-rule role-mark"
+                                  role="graphics-symbol"
+                                  aria-roledescription="rule mark container"
+                                >
+                                  <line
+                                    transform="translate(0,180)"
+                                    x2="630"
+                                    y2="0"
+                                    stroke="#888"
+                                  />
+                                </g>
+                                <g
+                                  class="mark-group role-legend"
+                                  role="graphics-symbol"
+                                  aria-roledescription="legend"
+                                  aria-label="Symbol legend titled 'Species' for fill color with 1 value: Test SEU"
+                                >
+                                  <g transform="translate(648,0)">
+                                    <path
+                                      class="background"
+                                      aria-hidden="true"
+                                      d="M0,0h115v32h-115Z"
+                                      pointer-events="none"
+                                    />
+                                    <g>
+                                      <g class="mark-group role-legend-entry">
+                                        <g transform="translate(0,16)">
+                                          <path
+                                            class="background"
+                                            aria-hidden="true"
+                                            d="M0,0h0v0h0Z"
+                                            pointer-events="none"
+                                          />
+                                          <g>
+                                            <g
+                                              class="mark-group role-scope"
+                                              role="graphics-object"
+                                              aria-roledescription="group mark container"
+                                            >
+                                              <g transform="translate(0,0)">
+                                                <path
+                                                  class="background"
+                                                  aria-hidden="true"
+                                                  d="M0,0h115v15.5h-115Z"
+                                                  pointer-events="none"
+                                                  opacity="1"
+                                                />
+                                                <g>
+                                                  <g
+                                                    class="mark-symbol role-legend-symbol"
+                                                    pointer-events="none"
+                                                  >
+                                                    <path
+                                                      transform="translate(7.5,7.5)"
+                                                      d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+                                                      fill="oklch(70.4% 0.14 182.503)"
+                                                      stroke-width="1.5"
+                                                      opacity="1"
+                                                    />
+                                                  </g>
+                                                  <g
+                                                    class="mark-text role-legend-label"
+                                                    pointer-events="none"
+                                                  >
+                                                    <text
+                                                      text-anchor="start"
+                                                      transform="translate(19,12.5)"
+                                                      font-family="sans-serif"
+                                                      font-size="15px"
+                                                      fill="#000"
+                                                      opacity="1"
+                                                    >
+                                                      Test SEU
+                                                    </text>
+                                                  </g>
+                                                </g>
+                                                <path
+                                                  class="foreground"
+                                                  aria-hidden="true"
+                                                  d=""
+                                                  pointer-events="none"
+                                                  display="none"
+                                                />
+                                              </g>
+                                            </g>
+                                          </g>
+                                          <path
+                                            class="foreground"
+                                            aria-hidden="true"
+                                            d=""
+                                            pointer-events="none"
+                                            display="none"
+                                          />
+                                        </g>
+                                      </g>
+                                      <g
+                                        class="mark-text role-legend-title"
+                                        pointer-events="none"
+                                      >
+                                        <text
+                                          text-anchor="start"
+                                          transform="translate(0,9)"
+                                          font-family="sans-serif"
+                                          font-size="11px"
+                                          font-weight="bold"
+                                          fill="#000"
+                                          opacity="1"
+                                        >
+                                          Species
+                                        </text>
+                                      </g>
+                                    </g>
+                                    <path
+                                      class="foreground"
+                                      aria-hidden="true"
+                                      d=""
+                                      pointer-events="none"
+                                      display="none"
+                                    />
+                                  </g>
+                                </g>
+                              </g>
+                              <path
+                                class="foreground"
+                                aria-hidden="true"
+                                d=""
+                                display="none"
+                              />
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+"
+`;

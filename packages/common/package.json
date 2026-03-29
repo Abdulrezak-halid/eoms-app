@@ -1,0 +1,25 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:lint": "eslint .",
+    "check:ts": "tsc --noEmit",
+    "check:all": "npm run check:ts && npm run check:lint",
+    "build:api-schema:http": "npx openapi-typescript http://localhost:3000/doc --root-types --root-types-no-schema-prefix -o ./build-api-schema.ts",
+    "build:api-schema:file": "npx openapi-typescript ../back/build-api.json --root-types --root-types-no-schema-prefix -o ./build-api-schema.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@tolgee/cli": "^2.14.0",
+    "eslint": "^9.34.0",
+    "openapi-typescript": "^7.9.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  },
+  "description": ""
+}

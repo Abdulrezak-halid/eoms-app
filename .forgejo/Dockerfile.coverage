@@ -1,0 +1,4 @@
+FROM nginx:alpine
+COPY .forgejo/nginx.coverage.conf /etc/nginx/nginx.conf
+COPY htpasswd /etc/nginx/htpasswd
+COPY coverage /usr/share/nginx/html
