@@ -1,6 +1,0 @@
-- Veri Görünümleri sayfası, Enerji Yönetim Sistemi (ENMS) içinde enerjiyle ilgili metriklerin görüntülenmesi, yönetilmesi ve analiz edilmesi için merkezi bir arayüz sağlar.
-- Kullanıcıların farklı sayaçlar, sensörler veya sistemlerden toplanan verileri yapılandırılabilir metrik setleri aracılığıyla düzenlemesine ve görselleştirmesine olanak tanır.
-- Her bir veri görünümü, birden fazla metrik, değer ve açıklayıcı bilgi içerebilir; bu da kullanıcıların enerji performansını departmanlar, ekipmanlar veya operasyonel alanlar arasında yorumlamasına yardımcı olur.
-- Kullanıcılar, analiz hedefleri veya raporlama gereksinimlerine uygun şekilde veri görünümlerini ve metrikleri ekleyebilir, düzenleyebilir veya silebilir.
-- Platform, gerçek zamanlı ve geçmiş verilerin görselleştirilmesini destekleyerek performansın doğru bir şekilde izlenmesini ve zaman içindeki karşılaştırmaların yapılmasını sağlar.
-- Veri görünümlerinin düzenli olarak gözden geçirilmesi ve güncellenmesi, veri doğruluğu, tutarlılığı ve karar alma ile raporlama için anlamlı içgörüler sağlar.

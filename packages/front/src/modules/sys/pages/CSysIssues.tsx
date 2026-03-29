@@ -1,10 +1,3 @@
-/**
- * @file: CSysIssues.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.12.2024
- * Last Modified Date: 25.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useContext } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 import { Trash2 } from "lucide-react";

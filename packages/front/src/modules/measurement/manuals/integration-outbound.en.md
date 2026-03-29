@@ -1,8 +1,0 @@
-- This page is used to configure and manage outbound integrations, which enable data exchange between the Energy Management System (ENMS) and external data sources or services.
-- Outbound integrations automatically request and recieve energy-related data such as temperature, consumption, or performance indicators from third-party systems.
-- Different integration types (e.g., Meteorology, PI Vision) allow flexible connections to various platforms and data providers.
-- Each integration can include multiple output metrics, defining which data points will be updated or synchronized.
-- Integration periods (such as hourly, daily, or custom intervals) determine how frequently data is transmitted or retrieved.
-- Configurations may include settings like API URLs, credentials, and mapping parameters to ensure secure and reliable data communication.
-- Once configured, integrations automatically update metric values without manual input, ensuring real-time and consistent energy monitoring.
-- Regularly review integrations to verify connection stability and data accuracy.

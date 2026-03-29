@@ -1,7 +1,5 @@
 import { pgTable, uniqueIndex, uuid } from "drizzle-orm/pg-core";
 
-import { TbMetric } from "@m/measurement/orm/TbMetric";
-
 import { TbAccessToken } from "./TbAccessToken";
 import { TbOrganization } from "./TbOrganization";
 
@@ -15,9 +13,9 @@ export const TbAccessTokenPermissionMetricResourceValue = pgTable(
     subjectId: uuid()
       .notNull()
       .references(() => TbAccessToken.id),
-    metricId: uuid()
-      .notNull()
-      .references(() => TbMetric.id),
+    // Keep metric id as raw uuid in cleanup baseline.
+    // Measurement module and its tables are intentionally removed.
+    metricId: uuid().notNull(),
   },
   (t) => [uniqueIndex().on(t.orgId, t.subjectId, t.metricId)],
 );

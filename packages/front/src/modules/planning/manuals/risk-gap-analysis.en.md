@@ -1,8 +1,0 @@
-- This tab is used to identify gaps in processes and evaluate their current state.
-- Each question should be assessed objectively based on actual implementation.
-- Scores (0–5) reflect the maturity level of the evaluated item.
-- All scores must be supported with clear and relevant evidence.
-- Evidence should include documents, records, or observations proving the given score.
-- Consideration field explains the reasoning behind the score and highlights gaps.
-- Action Required indicates whether improvement actions are needed.
-- The information entered here is used in reporting and decision-making processes.

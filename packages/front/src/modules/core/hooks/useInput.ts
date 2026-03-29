@@ -1,10 +1,3 @@
-/**
- * @file: useInput.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 31.10.2024
- * Last Modified Date: 31.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useEffect, useState } from "react";
 
 type UseInputContext<T> = {

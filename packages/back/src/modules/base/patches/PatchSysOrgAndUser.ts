@@ -1,10 +1,3 @@
-/**
- * @file: PatchSysOrgAndUser.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.02.2025
- * Last Modified Date: 27.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { eq } from "drizzle-orm";
 
 import {

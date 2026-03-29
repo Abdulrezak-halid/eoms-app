@@ -1,10 +1,3 @@
-/**
- * @file: CButtonPopup.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 29.11.2024
- * Last Modified Date: 29.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import {
   autoUpdate,
   flip,

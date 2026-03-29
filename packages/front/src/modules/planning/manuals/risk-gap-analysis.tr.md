@@ -1,8 +1,0 @@
-- Bu sekme, süreçlerdeki boşlukları (gap) belirlemek ve mevcut durumu değerlendirmek için kullanılır.
-- Her soru, gerçek uygulamalara dayanarak objektif şekilde değerlendirilmelidir.
-- Puanlar (0–5), değerlendirilen konunun olgunluk seviyesini gösterir.
-- Verilen her puan, açık ve ilgili kanıtlarla desteklenmelidir.
-- Kanıtlar; dokümanlar, kayıtlar veya gözlemler içermelidir.
-- Değerlendirme (Consideration) alanı, verilen puanın gerekçesini ve eksiklikleri açıklar.
-- Aksiyon Gerekli alanı, iyileştirme gerekip gerekmediğini belirtir.
-- Buradaki bilgiler raporlama ve karar alma süreçlerinde kullanılır.

@@ -1,10 +1,3 @@
-/**
- * @file: CMessageText.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 28.04.2025
- * Last Modified Date: 28.04.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { classNames } from "../utils/classNames";
 import { CIcon, IconType } from "./CIcon";
 import { CLine } from "./CLine";

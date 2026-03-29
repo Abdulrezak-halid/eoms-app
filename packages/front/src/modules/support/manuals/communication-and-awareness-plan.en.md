@@ -1,3 +1,0 @@
-- This tab is used to prepare communication plans and keep records of these communications.
-- Develop a plan and decide what, to whom, and how it should be communicated. Also, consider whether you need to check if the communication was successful.
-- Continuously add new communication materials and keep copies of communication materials recorded here as well.

@@ -1,10 +1,3 @@
-/**
- * @file: SchemaSessionDetail.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.11.2024
- * Last Modified Date: 06.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { z } from "@hono/zod-openapi";
 
 import { SchemaDatetime } from "@m/core/schemas/SchemaDatetime";

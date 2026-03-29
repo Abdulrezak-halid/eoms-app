@@ -1,10 +1,3 @@
-/**
- * @file: CAsyncLoader.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 19.10.2024
- * Last Modified Date: 19.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import { SearchX } from "lucide-react";
 import { ReactNode, useMemo } from "react";

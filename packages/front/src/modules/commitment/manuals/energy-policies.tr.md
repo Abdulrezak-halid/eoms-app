@@ -1,8 +1,0 @@
-- Enerji politikası, işletmede Enerji Yönetim Sistemi’nin çerçevesini, hedefleirni ve kritik unsurlarını işletmenin en üst düzeyde yönetiminin taahütleri ile ortaya koyan politika belgesidir.
-- ISO50001:2018 gereği Enerji Politikası ile işletme ENYS kapsamında;
-- Satın alma karar mekanizmasında enerji verimliliğini bir unsur olarak göz önünde bulunduracağını,
-- Tasarım faaliyetleri sırasında enerji verimliliğini bir unsur olarak göz önünde bulunduracağını,
-- Enerji performansı iyileşme hedeflerini ortaya koyarak bunu sağlamak için gerekli tüm kaynakları ayıracağını,
-- Enerji performansı ve enerji yönetim sistema performansını birbirini destekleyici iki ayrı unsur olarak sürekli iyileştirme esası ile artırmayı hedeflediğini,
-- Enerji ile ilgli yasal ve diğer gereklilikleri sürekli ve düzenli oalrak takip edeceğini ve gereklerini yerine getireceğini
-- Taahhüt etmeli ve bir taahhütname olarak enerji politika belgesini işletmenin üst düzey yöneticisine imzalatarak tüm personelin görmesini sağlaycak şekilde duyurmalıdır.

@@ -1,16 +1,12 @@
-/**
- * @file: drizzle.config.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 26.12.2024
- * Last Modified Date: 26.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import "dotenv/config";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
   out: process.env.DB_MIG_DIR || "./migrations.dev",
-  schema: "./src/modules/*/orm/",
+  schema: [
+    "./src/modules/base/orm/",
+    "./src/modules/core/orm/",
+  ],
   dialect: "postgresql",
   dbCredentials: {
     host: process.env.DB_HOST || "",

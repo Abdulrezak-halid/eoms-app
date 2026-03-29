@@ -1,3 +1,0 @@
-- This tab is used to assist in planning the energy aspects of procurement activities.
-- For each EEC (and potentially other purchases, including non-EECs), determine which products or services may affect energy performance.
-- Consider the life-cycle cost in procurement decisions, including energy costs.

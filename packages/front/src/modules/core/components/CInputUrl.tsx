@@ -1,10 +1,3 @@
-/**
- * @file: CInputEmail.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 29.10.2024
- * Last Modified Date: 29.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { URL_REGEX } from "common";
 import { Link } from "lucide-react";
 

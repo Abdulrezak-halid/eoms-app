@@ -1,10 +1,3 @@
-/**
- * @file: CLogin.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.11.2024
- * Last Modified Date: 06.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import {
   EApiFailCode,
@@ -14,7 +7,7 @@ import {
 import { CircleUser } from "lucide-react";
 import { useCallback, useContext, useMemo, useRef, useState } from "react";
 
-import logo from "@/assets/images/eoms-logo.horizontal.shadow.768x227.webp";
+import logo from "@/assets/images/reneryo-logo.horizontal.shadow.768x227.webp";
 
 import { Api, generateRequestGetPath } from "@m/base/api/Api";
 import { CDarkThemeSwitch } from "@m/base/components/CDarkThemeSwitch";

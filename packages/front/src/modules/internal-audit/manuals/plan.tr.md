@@ -1,4 +1,0 @@
-- Bu sekme, tarih, içerik ve iç denetçiyi planlamak için kullanılır.
-- EnYS'nin tüm bölümleri yılda bir kez iç denetime tabi tutulmalıdır.
-- Denetçi, denetlenen bölüm için yetkin ve bölümden bağımsız olmalıdır.
-- Her yıl bir büyük denetim veya belli sayıda kısmi denetimler olabilir.

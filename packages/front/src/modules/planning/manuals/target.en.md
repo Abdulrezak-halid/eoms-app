@@ -1,3 +1,0 @@
-- This tab is used to track energy saving targets.
-- Targets are monitored in line with energy policy, action plan and energy performance indicators.
-- Target gains are included in analysis and reporting using the inputs in this tab and consumption net of energy diverters.

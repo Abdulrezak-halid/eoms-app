@@ -1,10 +1,3 @@
-/**
- * @file: RouterUSysOrganization.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.11.2024
- * Last Modified Date: 08.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { createRoute, z } from "@hono/zod-openapi";
 import { EApiFailCode } from "common";
 

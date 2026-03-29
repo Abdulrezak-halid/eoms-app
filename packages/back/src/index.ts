@@ -1,31 +1,21 @@
-// sort-imports-ignore
-/**
- * @file: index.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.11.2024
- * Last Modified Date: 06.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
-// This import must be at the top to inject instruments.
-//   That's why import sort is ignored.
-import { ServiceOpenTelemetry } from "@m/core/services/ServiceOpenTelemetry.js";
-
 import { serve } from "@hono/node-server";
 
+import { errorToObject } from "@m/core/middlewares/ErrorHandler";
 import { RouterRoot } from "@m/core/routers/RouterRoot";
 import { ServiceDb } from "@m/core/services/ServiceDb";
 import { ServiceEnv } from "@m/core/services/ServiceEnv";
 import { ServiceJob } from "@m/core/services/ServiceJob";
-import { ServiceRuntimePatcher } from "@m/core/services/ServiceRuntimePatcher";
-import { UtilContext } from "@m/core/utils/UtilContext";
 import { ServiceLog } from "@m/core/services/ServiceLog";
-import { ServiceOpenApiDoc } from "@m/dev/services/ServiceOpenApiDoc";
-import { ServiceStorage } from "@m/core/services/ServiceStorage";
 import { ServiceMessageQueue } from "@m/core/services/ServiceMessageQueue";
-import { errorToObject } from "@m/core/middlewares/ErrorHandler";
+import { ServiceOpenTelemetry } from "@m/core/services/ServiceOpenTelemetry.js";
 import { ServiceRouteManager } from "@m/core/services/ServiceRouteManager";
-import { initModules } from "./initModules";
+import { ServiceRuntimePatcher } from "@m/core/services/ServiceRuntimePatcher";
+import { ServiceStorage } from "@m/core/services/ServiceStorage";
 import { ServiceWebSocket } from "@m/core/services/ServiceWebSocket";
+import { UtilContext } from "@m/core/utils/UtilContext";
+import { ServiceOpenApiDoc } from "@m/dev/services/ServiceOpenApiDoc";
+
+import { initModules } from "./initModules";
 
 async function init() {
   ServiceEnv.init();

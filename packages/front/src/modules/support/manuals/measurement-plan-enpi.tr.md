@@ -1,6 +1,0 @@
-- Bu sekme, EnPG'ler ile ilgili ölçüm aletleri ve diğer veriler için bir ölçüm planı hazırlamak amacıyla kullanılır.
-- Her enerji kaynağı ve ÖEK için, enerji girdisini ve ilgili değişkenleri listeleyin.
-- Her biri için, ÖEK'nin veya toplam enerji kaynağının enerji performanslarının izlenebilmesi için ideal verileri listeleyin.
-- Her biri için, mevcut verileri listeleyin.
-- Yukarıdaki ikisi arasındaki fark, boşluk veya eksik veri ve ayrıca ek veri için potansiyel gerekliliklerdir.
-- İhtiyacınız olan ek aletleri/sayaçları belirleyin. Bu karar mevcut mali durumdan etkilenecektir. Ek cihaz kurmak her zaman gerekli değildir.

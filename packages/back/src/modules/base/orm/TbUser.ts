@@ -1,10 +1,3 @@
-/**
- * @file: TbUser.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.11.2024
- * Last Modified Date: 08.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { sql } from "drizzle-orm";
 import {
   BuildAliasTable,

@@ -1,3 +1,0 @@
-- Bu sekme, iletişim planlarını hazırlamak ve bu iletişimlerin kaydını tutmak için kullanılır.
-- Bir plan geliştirin ve neyin, kime ve nasıl iletilmesi gerektiğine karar verin. Ayrıca, iletişimin başarılı olup olmadığını kontrol etmenizin gerekip gerekmediğini düşünün.
-- Sürekli yeni iletişim materyalleri ekleyin ve iletişim materyallerinin kopyalarını ek olarak burada da kayıt altında tutun.

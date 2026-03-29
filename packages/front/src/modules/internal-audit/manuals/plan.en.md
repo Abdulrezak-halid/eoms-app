@@ -1,4 +1,0 @@
-- This tab is used to plan the date, content, and internal auditor.
-- All sections of the energy management system should be subject to internal audit once a year.
-- The auditor should be competent for the audited section and independent from the section.
-- There can be one major audit or a certain number of partial audits every year.

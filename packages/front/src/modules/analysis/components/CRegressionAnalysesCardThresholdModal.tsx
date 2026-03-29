@@ -1,10 +1,3 @@
-/**
- * @file: CRegressionAnalysesCardThresholdModal.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.02.2026
- * Last Modified Date: 09.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback } from "react";
 
 import { Api } from "@m/base/api/Api";

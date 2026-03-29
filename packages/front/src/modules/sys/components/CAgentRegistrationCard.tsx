@@ -1,10 +1,3 @@
-/**
- * @file: CAgentRegistrationCardata.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 03.10.2025
- * Last Modified Date: 03.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ChartNoAxesColumn, Pencil, Trash2 } from "lucide-react";
 import { useCallback, useContext } from "react";
 

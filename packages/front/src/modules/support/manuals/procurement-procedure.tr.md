@@ -1,4 +1,0 @@
-- ISO50001:2018 gereği, işletme enerji tüketimini etkileyen ekipman, hizmet ve doğrudan enerji satın almalarında enerji verimliliğini bir kriter olarak değerlendirmek durumundadır.
-- Tedarik prosedürünüzde enerji verimliliğinin bir unsur olarak değerlendirildiğinden ve değerlendir yönteminin prosedür dokümanında tanımlanmış olduğundan emin olun.
-- Enerji verimli satın almanın bir kriter olarak değerlendirildiğini tedarikçileriniz ile de paylaşmanız gerekmektedir.
-- Enerji Verimli Satın Alma prodesüdürünüzde bu kriterin hangi bilgi, belge ve yöntemler ile paydaşlarla iletişiminin sağlanacağını da belirttiğinizden emin olun.

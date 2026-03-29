@@ -1,10 +1,3 @@
-/**
- * @file: CDevForm.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 17.10.2024
- * Last Modified Date: 29.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { UtilDate } from "common";
 import { Star } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";

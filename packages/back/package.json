@@ -19,7 +19,7 @@
     "mig:regen:local": "rm -rf migrations.dev && npm run mig:gen:local && npm run recreate-all-storages",
     "mig:gen:local": "DB_MIG_DIR=migrations.dev npm run _mig:gen",
     "mig:gen:prod": "DB_MIG_DIR=migrations.prod npm run _mig:gen",
-    "_mig:gen": "tsx --tsconfig tsconfig.app.json ../../node_modules/.bin/drizzle-kit generate --dialect postgresql --out $DB_MIG_DIR --schema=src/modules/*/orm",
+    "_mig:gen": "tsx --tsconfig tsconfig.app.json ../../node_modules/.bin/drizzle-kit generate --config=drizzle.config.ts",
     "mig:apply:local": "drizzle-kit migrate",
     "mig:sys:local": "curl \"http://localhost:3000/s/migrate\" -H X-Token:DUMMY -w \"\\n\"",
     "i18n:fetch": "./scripts/i18n-fetch.sh",

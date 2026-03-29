@@ -1,5 +1,0 @@
-- Bu sekme, tüm ÖEK'ler için kritik işletme parametrelerinin izlenmesini planlamak için kullanılır.
-- Her ÖEK için, kritik işletme parametrelerinin neler olduğuna ve bunların nasıl ölçülüp izleneceğine karar verin.
-- Kalibrasyon veya diğer kontrollerle bu aletlerin doğru olmasını sağlamak çok önemlidir.
-- Eğer bir bakım yönetim sisteminiz varsa, doğruluk kontrolü/kalibrasyon faaliyeti burada belgelenmelidir.
-- Enerji performansını artırmaya yardımcı olması için bu sekmeyi sürekli güncelleyin.

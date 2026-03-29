@@ -1,8 +1,0 @@
-- Bu sayfa, enerji tüketim verilerini kaydeden ölçüm cihazlarını (metreleri) düzenlemek ve yönetmek için kullanılır.
-- Varsayılan olarak, metreler bağlı oldukları departmanlar altında gruplandırılır.
-- Her departman içinde, seçilen metrelerin tüketimini daha ayrıntılı izlemek için alt gruplar (dilimler/slices) oluşturabilirsiniz.
-- Metreleri gruplandırmak, ilgili metrelerin toplam tüketimini birlikte analiz etmenizi ve raporlamanızı sağlar.
-- Her departman için birden fazla ana sayaç tanımlanabilir. Ana sayaçlar, tüketimin birincil kaynaklarını temsil eder ve analiz ile raporlamada referans olarak kullanılır.
-- Sayaç ve SEU yüzdeleri, seçilen ana sayaçlara göre hesaplanır.
-- Yalnızca “Toplam (Sum)” toplama yöntemine sahip metrikler seçim için uygundur. Bu, her metriğin benzersiz şekilde atanmasını sağlar ve metreler arasında yinelenmeyi önler.
-- Enerji takibini ve raporlamayı doğru şekilde sürdürebilmek için metre yapılandırmalarını düzenli olarak gözden geçirin.

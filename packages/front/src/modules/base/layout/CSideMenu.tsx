@@ -1,10 +1,3 @@
-/**
- * @file: CSideMenu.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 17.10.2024
- * Last Modified Date: 17.04.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import {
   Bug,
   CircleUser,
@@ -16,7 +9,7 @@ import {
 import { useContext, useMemo, useState } from "react";
 import { Link } from "wouter";
 
-import logo from "@/assets/images/eoms-logo.horizontal.shadow.768x227.webp";
+import logo from "@/assets/images/reneryo-logo.horizontal.shadow.768x227.webp";
 
 import { CDarkThemeSwitch } from "@m/base/components/CDarkThemeSwitch";
 import { VERSION } from "@m/base/constants/Version";

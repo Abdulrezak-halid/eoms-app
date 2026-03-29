@@ -1,7 +1,5 @@
 # eoms Project
 
-[![workflow](https://git.arti.ac/eoms/eoms-app/badges/workflows/workflow.yaml/badge.svg?label=workflow)](https://git.arti.ac/eoms/eoms-app/actions)
-
 ## Setup Guide
 
 Follow these steps to set up and run the project.

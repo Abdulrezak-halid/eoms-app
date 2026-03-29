@@ -1,6 +1,0 @@
-- This tab is used to prepare a measurement plan for measurement instruments and other data related to EnPGs.
-- List the energy input and relevant variables for each energy source and SEUs.
-- List the ideal data for tracking the energy performance of the SEU or Total energy source for each.
-- List the current data for each.
-- The difference between the above two is the potential requirements for gaps or missing data and additional data.
-- Identify any additional Tools/meters you need. This decision will be influenced by the current financial situation. Installing additional devices is not always necessary.

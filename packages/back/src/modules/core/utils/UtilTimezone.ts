@@ -1,10 +1,3 @@
-/**
- * @file: UtilTimezone.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 28.10.2025
- * Last Modified Date: 28.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode, UtilDate } from "common";
 
 import { ApiException } from "@m/core/exceptions/ApiException";

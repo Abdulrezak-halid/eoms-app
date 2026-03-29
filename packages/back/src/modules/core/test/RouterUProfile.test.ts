@@ -1,10 +1,3 @@
-/**
- * @file: RouterUProfile.test.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.01.2025
- * Last Modified Date: 09.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EXAMPLE_USER_EMAIL } from "common";
 import { describe, expect, it } from "vitest";
 

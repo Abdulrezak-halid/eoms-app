@@ -1,7 +1,0 @@
-- Bu sayfa, dış sistemlerin veya cihazların Enerji Yönetim Sistemine (ENMS) enerjiyle ilgili veriler göndermesine olanak tanıyan gelen entegrasyonları (inbound integrations) yapılandırmak ve yönetmek için kullanılır.
-- Gelen entegrasyonlar, bağlı ajanlardan veya API’lerden sayaç okuma değerleri, sıcaklık verileri veya diğer performans göstergeleri gibi gerçek zamanlı verilerin otomatik toplanmasını sağlar.
-- Farklı entegrasyon türleri (örneğin Agent, Webhook), gelen verilerin sisteme nasıl iletildiğini ve işlendiğini tanımlar.
-- Agent entegrasyonları, genellikle saha cihazlarından, sensörlerden veya yerel veri toplayıcılardan gelen sürekli veri akışları için kullanılır.
-- Webhook entegrasyonları, harici uygulamaların verileri güvenli API uç noktaları üzerinden doğrudan ENMS’ye iletmesine olanak tanır.
-- Her entegrasyon, alınan verilerin nerede saklanacağını ve hangi birimlerin kullanılacağını belirleyen çıktı metriklerini içerir.
-- Gelen entegrasyonları düzenli olarak izlemek, bağlantıların kararlılığını, veri akışının doğruluğunu ve harici sistemlerle senkronizasyonu sağlamak açısından önemlidir.

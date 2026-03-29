@@ -1,10 +1,3 @@
-/**
- * @file: PatchExampleOrgAndUser.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.02.2025
- * Last Modified Date: 27.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EXAMPLE_USER_EMAIL, EXAMPLE_USER_NAME } from "common";
 
 import { ROOT_ORG_ID, ROOT_ORG_USER_ID } from "@/constants";

@@ -1,10 +1,3 @@
-/**
- * @file: CLoading.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.11.2024
- * Last Modified Date: 10.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import { classNames } from "../utils/classNames";

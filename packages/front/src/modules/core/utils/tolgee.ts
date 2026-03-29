@@ -1,10 +1,3 @@
-/**
- * @file: tolgee.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.11.2025
- * Last Modified Date: 10.11.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { FormatSimple, Tolgee } from "@tolgee/react";
 import { InContextTools } from "@tolgee/web/tools";
 

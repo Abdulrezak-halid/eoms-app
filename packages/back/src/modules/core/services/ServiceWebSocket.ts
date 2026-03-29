@@ -1,10 +1,3 @@
-/**
- * @file: ServiceWebSocket.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 19.12.2025
- * Last Modified Date: 19.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ServerType } from "@hono/node-server";
 import { createNodeWebSocket } from "@hono/node-ws";
 import { OpenAPIHono } from "@hono/zod-openapi";

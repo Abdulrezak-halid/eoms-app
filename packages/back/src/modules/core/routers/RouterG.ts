@@ -1,10 +1,3 @@
-/**
- * @file: RouterG.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.11.2024
- * Last Modified Date: 10.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { createRoute, z } from "@hono/zod-openapi";
 import { EXAMPLE_USER_EMAIL, EXAMPLE_USER_PASSWORD } from "common";
 

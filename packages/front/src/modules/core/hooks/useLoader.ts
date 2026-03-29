@@ -1,10 +1,3 @@
-/**
- * @file: useFetcher.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.10.2024
- * Last Modified Date: 20.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import { useCallback, useContext, useEffect, useState } from "react";
 

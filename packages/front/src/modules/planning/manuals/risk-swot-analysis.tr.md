@@ -1,5 +1,0 @@
-- Bu teknik mevcut durumu şu 4 başlık altında incelemeyi içerir: Güçlü Yönler, Zayıf Yönler, Fırsatlar ve Tehditler (GZFT).
-- Bu başlıkların her birinde kendi durumunuzu düşünün. Örneklerimizi silin ve kendi durumunuzla değiştirin.
-- Durumuzu kuruluşunuzun içinde ve dışında değerlendirin.
-- Bu konu hakkında daha fazla bilgi için çevrimiçi (internet'te) arama yapın.
-- Bir tehdide ilişkin zayıf yönü olan herhangi bir öğeye özel dikkat gösterin. Böyle bir durum, bu faktörlerin etkisini ve dezavantajını artırabilir.

@@ -1,4 +1,0 @@
-- In accordance with ISO50001:2018, the company must consider energy efficiency as a criterion for equipment, service and direct energy purchases that affect energy consumption.
-- Ensure that energy efficiency is considered as an element in your procurement procedure and that the method of assessment is defined in the procedure document.
-- You should also share with your suppliers that energy efficient procurement is considered as a criterion.
-- In your Energy Efficient Procurement procedure, be sure to specify the information, documents and methods by which this criterion will be communicated to stakeholders.

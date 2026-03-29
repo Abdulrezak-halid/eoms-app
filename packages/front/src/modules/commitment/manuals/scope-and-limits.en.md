@@ -1,6 +1,0 @@
-
-- The scope table should show the activities where the energy resources used in the enterprise are included in the EnYS.
-- In accordance with ISO50001:2018, it is not appropriate to completely exclude an energy source used by the enterprise. For example; While it is possible for the enterprise that uses LPG in production activities to exclude LPG used in the kitchen, it is not possible to completely exclude LPG from the management system.
-- The boundaries table should show which physical areas of the organization are included in the EnYS and which are excluded.
-- An enterprise may choose to exclude a physical area (boundaries) or the energy source used in a specific activity (scope) from the EnYS on the grounds that the energy metering infrastructure used is not sufficient, there is no significant consumption, there are no savings/efficiency opportunities, or it is not a priority for the enterprise in this period.
-- Justification for exclusion of any item from the scope or limits as required by ISO50001:2018 must be stated.

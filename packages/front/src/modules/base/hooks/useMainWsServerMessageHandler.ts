@@ -1,10 +1,3 @@
-/**
- * @file: useMainWsServerMessageHandler.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 03.02.2026
- * Last Modified Date: 11.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoWsServerMessage } from "common/build-api-schema";
 import { useCallback, useContext } from "react";
 

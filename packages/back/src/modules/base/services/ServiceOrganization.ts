@@ -1,10 +1,3 @@
-/**
- * @file: ServiceOrganization.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2025
- * Last Modified Date: 08.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import { EXAMPLE_USER_PASSWORD } from "common";
 import { and, count, desc, eq, max, or } from "drizzle-orm";

@@ -1,10 +1,3 @@
-/**
- * @file: TbUserSession.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 28.12.2024
- * Last Modified Date: 28.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { index, jsonb, pgTable, timestamp, uuid } from "drizzle-orm/pg-core";
 
 import { IOrganizationPlan } from "../interfaces/IOrganizationPlan";

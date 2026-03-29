@@ -1,10 +1,3 @@
-/**
- * @file: CDropdown.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 02.12.2024
- * Last Modified Date: 02.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EllipsisVertical } from "lucide-react";
 import { ReactNode, useCallback, useMemo, useState } from "react";
 

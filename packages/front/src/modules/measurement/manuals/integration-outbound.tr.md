@@ -1,8 +1,0 @@
-- Bu sayfa, Enerji Yönetim Sistemi (ENMS) ile harici veri kaynakları veya servisler arasında veri alışverişini sağlayan giden entegrasyonları (outbound integrations) yapılandırmak ve yönetmek için kullanılır.
-- Giden entegrasyonlar, üçüncü taraf sistemlerden sıcaklık, tüketim veya performans göstergeleri gibi enerjiyle ilgili verileri otomatik olarak ister ve alır.
-- Meteoroloji, PI Vision gibi farklı entegrasyon türleri, çeşitli platformlara ve veri sağlayıcılara esnek bağlantılar kurulmasını sağlar.
-- Her entegrasyon, güncellenecek veya senkronize edilecek veri noktalarını tanımlayan birden fazla çıktı metriği (output metric) içerebilir.
-- Saatlik, günlük veya özel aralıklar gibi entegrasyon periyotları, verilerin ne sıklıkla iletileceğini veya alınacağını belirler.
-- Yapılandırmalar; API adresleri, kimlik bilgileri ve eşleştirme parametreleri gibi ayarları içerebilir, bu da güvenli ve güvenilir veri iletişimi sağlar.
-- Entegrasyonlar yapılandırıldıktan sonra, metrik değerleri manuel giriş olmadan otomatik olarak güncellenir, bu da gerçek zamanlı ve tutarlı enerji izleme sağlar.
-- Entegrasyonları düzenli olarak gözden geçirerek bağlantı kararlılığını ve veri doğruluğunu kontrol edin.

@@ -1,10 +1,3 @@
-/**
- * @file: TbIssue.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.12.2024
- * Last Modified Date: 25.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { index, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 import { TbOrganization } from "@m/base/orm/TbOrganization";

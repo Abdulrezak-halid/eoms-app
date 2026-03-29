@@ -1,10 +1,3 @@
-/**
- * @file: RouterUIssue.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.12.2024
- * Last Modified Date: 25.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { createRoute, z } from "@hono/zod-openapi";
 import { MAX_ISSUE_DESC, MIN_ISSUE_DESC } from "common";
 

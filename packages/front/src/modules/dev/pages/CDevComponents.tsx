@@ -1,10 +1,3 @@
-/**
- * @file: CDevComponents.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 17.10.2024
- * Last Modified Date: 17.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Link, Star, UserCircle, X } from "lucide-react";
 import { House, KeyRound } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";

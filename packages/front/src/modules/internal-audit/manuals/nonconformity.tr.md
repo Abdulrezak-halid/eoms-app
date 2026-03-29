@@ -1,3 +1,0 @@
-- Bu sekme, EnYS ve diğer EnYS iyileştirme fırsatlarındaki uygunsuzlukları yönetmek ve belgelemek için kullanılır.
-- Uygunsuzluklar birçok kaynaktan gelebilir; iç denetimler, sertifikasyon denetimleri veya operasyonel gözlemler…
-- Benzer şekilde, iyileştirme fırsatları da aynı kaynaklardan gelebilir.

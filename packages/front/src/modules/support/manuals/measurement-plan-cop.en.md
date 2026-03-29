@@ -1,4 +1,0 @@
-- This tab is used to prepare a measurement plan for other data related to measuring instruments and critical operational parameters.
-- List the critical operational parameters that are currently not being measured for each energy variable.
-- Identify any additional instruments/meters you need. This decision will be influenced by the current financial situation.
-- Installing additional devices is not always necessary.

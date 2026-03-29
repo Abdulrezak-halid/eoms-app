@@ -1,4 +1,0 @@
-- This tab is used as a checklist during the execution of internal audit.
-- It is based on the matrix of tasks and responsibilities.
-- Non-conformities and observations arising during internal audits should be added to the non-conformities list for monitoring and corrective actions.
-- In some cases, an additional internal audit report may be required.
