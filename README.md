@@ -13,21 +13,7 @@ Run the following command to install the required npm packages:
 npm install
 ```
 
-### 2. Set Up a PostgreSQL Container
-
-Use Docker to create a PostgreSQL container:
-
-> Omit `-p 5432:5432` if you don't want to expose the port.
-
-```bash
-docker run -d --name timescaledb \
-  -e POSTGRES_PASSWORD=postgres \
-  -p 5432:5432 \
-  --restart unless-stopped \
-  timescale/timescaledb:latest-pg18
-```
-
-### 3. Configure Backend Environment Variables
+### 2. Configure Backend Environment Variables
 
 1. Copy the `.env.example` file to create a new `.env` file inside the `packages/back` folder:
 
@@ -51,7 +37,7 @@ docker run -d --name timescaledb \
    ```env
    DB_HOST=172.17.0.2
    ```
-### 5. Generate Required Files
+### 3. Generate Required Files
 
 Run all necessary generation commands:
 
@@ -59,7 +45,7 @@ Run all necessary generation commands:
 npm run clean-local-build
 ```
 
-### 6. Start the Project
+### 4. Start the Project
 
 Start both the backend and frontend services:
 
@@ -127,11 +113,6 @@ Tasks are available for **VSCode** and **Zed**.
 
 - Press `Ctrl+P`, type `task ` (with a space), and select a task.
 - Alternatively, click the `v` icon next to the `+` button in the terminal and select **Run Task...**.
-
-**Zed:**
-
-- Press `Alt+Shift+T` to list and select a task.
-- Or press `Ctrl+Shift+P`, type and select `task: spawn`, then choose a task.
 
 ### Available Tasks
 
