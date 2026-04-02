@@ -1,5 +1,4 @@
-# Eoms Project
-## Enterprise Operations Managements System
+# Enterprise Operations Managements System
 
 ## Setup Guide
 
