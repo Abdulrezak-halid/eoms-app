@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionVerticalTableRow.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.01.2026
- * Last Modified Date: 06.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Trash2 } from "lucide-react";
 
 import { CButton } from "@m/core/components/CButton";

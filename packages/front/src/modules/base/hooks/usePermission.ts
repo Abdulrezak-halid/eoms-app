@@ -1,10 +1,3 @@
-/**
- * @file: usePermission.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 28.09.2025
- * Last Modified Date: 28.09.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEPermission } from "common/build-api-schema";
 import { useContext, useMemo } from "react";
 

@@ -1,10 +1,3 @@
-/**
- * @file: index.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.07.2025
- * Last Modified Date: 10.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IOutboundIntegrationHandler } from "../interfaces/IOutboundIntegrationHandler";
 import { IOutboundIntegrationType } from "../interfaces/IOutboundIntegrationType";
 import { OutboundIntegrationHandlerAvevaPi } from "./OutboundIntegrationHandlerAvevaPi";

@@ -1,10 +1,3 @@
-/**
- * @file: UtilMetricValueQuery.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 14.02.2026
- * Last Modified Date: 14.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { and, between, eq, inArray, sql } from "drizzle-orm";
 
 import { IContextOrg } from "@m/core/interfaces/IContext";

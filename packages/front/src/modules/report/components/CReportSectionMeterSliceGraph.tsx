@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionMeterSliceGraph.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2026
- * Last Modified Date: 08.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useEffect, useState } from "react";
 
 import { CChart } from "@m/base/components/CChart";

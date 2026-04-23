@@ -1,10 +1,3 @@
-/**
- * @file: ServiceOpenTelemetry.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.03.2025
- * Last Modified Date: 02.05.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-proto";
 import { NodeSDK } from "@opentelemetry/sdk-node";
 import {

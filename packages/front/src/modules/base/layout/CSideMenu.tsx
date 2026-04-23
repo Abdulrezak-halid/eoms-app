@@ -1,10 +1,3 @@
-/**
- * @file: CSideMenu.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 17.10.2024
- * Last Modified Date: 17.04.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Bug, CircleUser, History, LayoutGrid, LogOut } from "lucide-react";
 import { useContext, useMemo, useState } from "react";
 import { Link } from "wouter";

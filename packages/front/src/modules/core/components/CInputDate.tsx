@@ -1,10 +1,3 @@
-/**
- * @file: CInputDate.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 18.10.2024
- * Last Modified Date: 18.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { UtilDate } from "common";
 import { CalendarDays, Paintbrush } from "lucide-react";
 import { useCallback, useEffect, useMemo } from "react";

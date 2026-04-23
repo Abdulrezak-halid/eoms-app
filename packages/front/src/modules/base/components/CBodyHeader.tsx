@@ -1,10 +1,3 @@
-/**
- * @file: CBodyHeader.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.09.2025
- * Last Modified Date: 10.09.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { BookOpen, Menu, MousePointer2 } from "lucide-react";
 import { useContext, useEffect, useMemo } from "react";
 

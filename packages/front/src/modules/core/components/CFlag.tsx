@@ -1,10 +1,3 @@
-/**
- * @file: CFlag.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 04.02.2026
- * Last Modified Date: 04.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import Flag from "react-world-flags";
 
 import { classNames } from "../utils/classNames";

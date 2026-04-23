@@ -1,10 +1,3 @@
-/**
- * @file: RouterCore.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 16.03.2025
- * Last Modified Date: 16.03.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IHonoContextUser } from "../interfaces/IContext";
 import { UtilOpenApi } from "../utils/UtilOpenApi";
 import { RouterCalendar } from "./RouterCalendar";

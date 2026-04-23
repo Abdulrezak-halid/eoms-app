@@ -1,10 +1,3 @@
-/**
- * @file: CInboundIntegrationList.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.07.2025
- * Last Modified Date: 15.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { FileCode2, Pencil, Trash2 } from "lucide-react";
 import { useCallback, useContext, useMemo, useState } from "react";
 

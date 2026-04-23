@@ -1,10 +1,3 @@
-/**
- * @file: TestHelperOutboundIntegration.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.07.2025
- * Last Modified Date: 10.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEMetricResourceValuePeriod } from "common/build-api-schema";
 import { eq } from "drizzle-orm";
 import { vi } from "vitest";

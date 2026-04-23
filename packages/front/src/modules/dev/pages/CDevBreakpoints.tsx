@@ -1,10 +1,3 @@
-/**
- * @file: CDevBreakpoints.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.06.2025
- * Last Modified Date: 09.06.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { CBody } from "@m/base/components/CBody";
 
 export function CDevBreakpoints() {

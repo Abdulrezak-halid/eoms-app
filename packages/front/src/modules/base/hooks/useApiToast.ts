@@ -1,10 +1,3 @@
-/**
- * @file: useApiToast.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.11.2024
- * Last Modified Date: 18.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import { useCallback, useContext } from "react";
 import { TrafficCone, TriangleAlert, WifiOff } from "lucide-react";

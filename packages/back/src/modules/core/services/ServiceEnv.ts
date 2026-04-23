@@ -1,10 +1,3 @@
-/**
- * @file: UtilEnv.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2025
- * Last Modified Date: 08.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { config } from "dotenv";
 
 import { type IEnv } from "../interfaces/IEnv";

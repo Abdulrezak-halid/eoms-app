@@ -1,10 +1,3 @@
-/**
- * @file: CDevChart.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.02.2025
- * Last Modified Date: 20.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useMemo } from "react";
 
 import { CBody } from "@m/base/components/CBody";

@@ -1,10 +1,3 @@
-/**
- * @file: CMetricList.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.08.2025
- * Last Modified Date: 27.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IUnitGroup } from "common";
 import { Search } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";

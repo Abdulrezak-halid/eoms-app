@@ -1,10 +1,3 @@
-/**
- * @file: RouterInboundIntegration.test.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 11.07.2025
- * Last Modified Date: 11.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import { describe, expect, it } from "vitest";
 

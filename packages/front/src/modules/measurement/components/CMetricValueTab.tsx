@@ -1,10 +1,3 @@
-/**
- * @file: CMetricValueTab.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 13.10.2025
- * Last Modified Date: 13.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IUnit, IUnitGroup, UtilUnit } from "common";
 import { Upload } from "lucide-react";
 import { useMemo } from "react";

@@ -1,10 +1,3 @@
-/**
- * @file: PatchExampleJob.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.02.2025
- * Last Modified Date: 27.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ROOT_ORG_ID } from "@/constants";
 
 import { ServiceJob } from "@m/core/services/ServiceJob";

@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionActionPlans.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.01.2026
- * Last Modified Date: 07.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { UtilDate } from "common";
 import { useCallback, useMemo } from "react";
 

@@ -1,10 +1,3 @@
-/**
- * @file: CReportOutputFile.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2026
- * Last Modified Date: 08.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ArrowRight } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useParams } from "wouter";

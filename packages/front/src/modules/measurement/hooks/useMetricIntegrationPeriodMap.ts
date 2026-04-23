@@ -1,10 +1,3 @@
-/**
- * @file: useMetricIntegrationPeriodMap.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 31.08.2025
- * Last Modified Date: 31.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEMetricIntegrationPeriod } from "common/build-api-schema";
 import { useMemo } from "react";
 import { Calendar, CalendarDays, Timer } from "lucide-react";

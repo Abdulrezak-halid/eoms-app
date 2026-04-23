@@ -1,10 +1,3 @@
-/**
- * @file: CMessageSelectDateRange.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.01.2026
- * Last Modified Date: 07.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { TriangleAlert } from "lucide-react";
 
 import { CMessageText } from "@m/core/components/CMessageText";

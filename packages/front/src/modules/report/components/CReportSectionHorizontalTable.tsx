@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionHorizontalTable.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.01.2026
- * Last Modified Date: 07.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { MAX_REPORT_TABLE_ROW_LENGTH } from "common";
 import { IDtoPlainOrTranslatableText } from "common/build-api-schema";
 import { memo, useCallback, useEffect, useRef, useState } from "react";

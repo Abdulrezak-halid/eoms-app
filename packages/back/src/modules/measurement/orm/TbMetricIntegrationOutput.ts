@@ -1,10 +1,3 @@
-/**
- * @file: TbMetricIntegrationOutput.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.07.2025
- * Last Modified Date: 22.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { DataUnit } from "common";
 import {
   boolean,

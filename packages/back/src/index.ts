@@ -1,11 +1,4 @@
 // sort-imports-ignore
-/**
- * @file: index.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.11.2024
- * Last Modified Date: 06.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 // This import must be at the top to inject instruments.
 //   That's why import sort is ignored.
 import { ServiceOpenTelemetry } from "@m/core/services/ServiceOpenTelemetry.js";

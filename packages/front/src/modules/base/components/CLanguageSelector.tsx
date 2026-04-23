@@ -1,10 +1,3 @@
-/**
- * @file: CLanguageSelector.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 04.05.2025
- * Last Modified Date: 04.05.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useTolgee } from "@tolgee/react";
 import { Globe } from "lucide-react";
 import { useCallback, useMemo } from "react";

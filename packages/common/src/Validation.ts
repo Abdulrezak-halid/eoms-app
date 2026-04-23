@@ -1,10 +1,3 @@
-/**
- * @file: Validation.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 16.11.2024
- * Last Modified Date: 16.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 
 export const MAX_API_STRING_LENGTH = 100;
 export const MAX_API_STRING_LONG_LENGTH = 300;

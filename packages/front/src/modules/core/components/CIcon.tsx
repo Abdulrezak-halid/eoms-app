@@ -1,10 +1,3 @@
-/**
- * @file: CIcon.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.11.2024
- * Last Modified Date: 25.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { LucideProps } from "lucide-react";
 import {
   ForwardRefExoticComponent,

@@ -1,10 +1,3 @@
-/**
- * @file: RouterG.test.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.01.2025
- * Last Modified Date: 09.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import {
   EApiFailCode,
   EXAMPLE_USER_EMAIL,

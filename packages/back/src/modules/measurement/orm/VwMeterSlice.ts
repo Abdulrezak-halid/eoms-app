@@ -1,10 +1,3 @@
-/**
- * @file: VwMeterSlice.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 28.08.2025
- * Last Modified Date: 28.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IUnitGroup } from "common";
 import { eq, sql } from "drizzle-orm";
 import { pgView } from "drizzle-orm/pg-core";

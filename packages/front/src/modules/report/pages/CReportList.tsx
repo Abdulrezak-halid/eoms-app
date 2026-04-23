@@ -1,10 +1,3 @@
-/**
- * @file: CReportList.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.01.2026
- * Last Modified Date: 06.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoWsServerMessage } from "common/build-api-schema";
 import { ArrowRight, Copy, FileScan, Mail, Trash2 } from "lucide-react";
 import { useCallback, useContext, useMemo, useState } from "react";

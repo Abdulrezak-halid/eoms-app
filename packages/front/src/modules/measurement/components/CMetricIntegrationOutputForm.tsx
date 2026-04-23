@@ -1,10 +1,3 @@
-/**
- * @file: CMetricIntegrationOutputForm.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 14.08.2025
- * Last Modified Date: 14.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import {
   Dispatch,
   SetStateAction,

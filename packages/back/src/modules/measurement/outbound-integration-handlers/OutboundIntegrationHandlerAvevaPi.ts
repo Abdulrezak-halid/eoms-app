@@ -1,10 +1,3 @@
-/**
- * @file: OutboundIntegrationHandlerAvevaPi.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.08.2025
- * Last Modified Date: 20.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { z } from "@hono/zod-openapi";
 import { EApiFailCode, UtilDate } from "common";
 import { and, eq } from "drizzle-orm";

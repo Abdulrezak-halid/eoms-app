@@ -1,10 +1,3 @@
-/**
- * @file: CComboboxMetricResource.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.12.2025
- * Last Modified Date: 27.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEMetricType } from "common/build-api-schema";
 import { Gauge } from "lucide-react";
 

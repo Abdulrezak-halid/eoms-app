@@ -1,10 +1,3 @@
-/**
- * @file: SchemaOutboundIntegrationConfig.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.07.2025
- * Last Modified Date: 09.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { z } from "@hono/zod-openapi";
 
 import { SchemaString } from "@m/core/schemas/SchemaString";

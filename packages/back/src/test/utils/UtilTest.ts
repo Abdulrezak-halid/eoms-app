@@ -1,10 +1,3 @@
-/**
- * @file: UtilsTest.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.01.2025
- * Last Modified Date: 09.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { z } from "@hono/zod-openapi";
 import { EXAMPLE_USER_EMAIL, EXAMPLE_USER_PASSWORD } from "common";
 import type { paths } from "common/build-api-schema";

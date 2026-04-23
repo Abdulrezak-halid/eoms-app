@@ -1,10 +1,3 @@
-/**
- * @file: COutboundIntegrationList.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.07.2025
- * Last Modified Date: 15.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Pencil, Trash2 } from "lucide-react";
 import { useCallback, useContext, useMemo } from "react";
 

@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionRegressionResult.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.01.2026
- * Last Modified Date: 07.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useEffect } from "react";
 
 import { CComboboxRegressionResult } from "@m/analysis/components/CComboboxRegressionResult";

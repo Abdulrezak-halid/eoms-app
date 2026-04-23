@@ -1,10 +1,3 @@
-/**
- * @file: ServiceMaintenance.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 26.12.2024
- * Last Modified Date: 26.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { eq } from "drizzle-orm";
 
 import { TbGlobalConfig } from "@m/core/orm/TbGlobalConfig";

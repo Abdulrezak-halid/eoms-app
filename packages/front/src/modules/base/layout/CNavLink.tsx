@@ -1,10 +1,3 @@
-/**
- * @file: CNavLink.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 30.11.2024
- * Last Modified Date: 30.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useMemo } from "react";
 import { Link, useLocation } from "wouter";
 

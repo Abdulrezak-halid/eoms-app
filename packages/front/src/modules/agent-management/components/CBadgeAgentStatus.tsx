@@ -1,10 +1,3 @@
-/**
- * @file: CBadgeAgentStatus.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 02.10.2025
- * Last Modified Date: 02.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEAgentStatTypeNullable } from "common/build-api-schema";
 import { Server, ServerCog, ServerOff } from "lucide-react";
 import { useMemo } from "react";

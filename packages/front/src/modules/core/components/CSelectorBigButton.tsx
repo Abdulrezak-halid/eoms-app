@@ -1,10 +1,3 @@
-/**
- * @file: CSelectorBigButton.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 30.01.2026
- * Last Modified Date: 31.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { CheckCircle2 } from "lucide-react";
 import { useCallback } from "react";
 

@@ -1,10 +1,3 @@
-/**
- * @file: CBadgeMetricResource.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.12.2025
- * Last Modified Date: 27.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoMetricResourceLabel } from "common/build-api-schema";
 import { useMemo } from "react";
 import { Gauge } from "lucide-react";

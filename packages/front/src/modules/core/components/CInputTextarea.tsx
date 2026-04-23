@@ -1,10 +1,3 @@
-/**
- * @file: CInputTextarea.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.11.2024
- * Last Modified Date: 01.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { MAX_API_STRING_LONG_LENGTH } from "common";
 import { ChevronsUpDown, Paintbrush } from "lucide-react";
 import {

@@ -1,10 +1,3 @@
-/**
- * @file: CButtonReportSectionCustomTableConverter.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 21.01.2026
- * Last Modified Date: 21.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ArrowRight } from "lucide-react";
 import { useCallback, useContext } from "react";
 

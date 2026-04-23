@@ -1,10 +1,3 @@
-/**
- * @file: TbOutboundIntegrationRunnerJob.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.07.2025
- * Last Modified Date: 09.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { index, pgTable, uniqueIndex, uuid } from "drizzle-orm/pg-core";
 
 import { TbOrganization } from "@m/base/orm/TbOrganization";

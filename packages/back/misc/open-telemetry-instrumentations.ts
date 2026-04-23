@@ -1,10 +1,3 @@
-/**
- * @file: open-telemetry-instruments.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 03.05.2025
- * Last Modified Date: 03.05.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { AmqplibInstrumentation } from "@opentelemetry/instrumentation-amqplib";
 import { PgInstrumentation } from "@opentelemetry/instrumentation-pg";
 import { UndiciInstrumentation } from "@opentelemetry/instrumentation-undici";

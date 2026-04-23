@@ -1,10 +1,3 @@
-/**
- * @file: CMultiSelect.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 16.02.2025
- * Last Modified Date: 16.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useEffect, useMemo } from "react";
 
 import { useTranslation } from "@m/core/hooks/useTranslation";

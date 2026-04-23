@@ -1,10 +1,3 @@
-/**
- * @file: CDevWebSocketHandling.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 22.12.2025
- * Last Modified Date: 11.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoWsServerMessage } from "common/build-api-schema";
 import { User, Users } from "lucide-react";
 import { useCallback, useState } from "react";

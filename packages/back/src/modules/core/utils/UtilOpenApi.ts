@@ -1,10 +1,3 @@
-/**
- * @file: OpenApiUtils.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.11.2024
- * Last Modified Date: 15.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { OpenAPIHono, z } from "@hono/zod-openapi";
 import type { Env } from "hono";
 

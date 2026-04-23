@@ -1,10 +1,3 @@
-/**
- * @file: UtilMetricExcelImporter.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.08.2025
- * Last Modified Date: 08.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode, UtilDate } from "common";
 import ExcelJS from "exceljs";
 import { Logger } from "pino";

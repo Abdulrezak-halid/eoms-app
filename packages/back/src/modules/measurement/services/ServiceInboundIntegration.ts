@@ -1,10 +1,3 @@
-/**
- * @file: ServiceInboundIntegration.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 02.03.2025
- * Last Modified Date: 09.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode, IUnit } from "common";
 import { and, eq } from "drizzle-orm";
 

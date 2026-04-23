@@ -1,10 +1,3 @@
-/**
- * @file: CMetricCard.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 27.08.2025
- * Last Modified Date: 27.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { ChartLine, Pencil, Plug, Trash2 } from "lucide-react";
 import { useCallback, useContext } from "react";
 

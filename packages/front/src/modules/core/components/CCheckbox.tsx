@@ -1,10 +1,3 @@
-/**
- * @file: CCheckbox2.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 22.10.2024
- * Last Modified Date: 27.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Check, Minus } from "lucide-react";
 import { useCallback } from "react";
 

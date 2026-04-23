@@ -1,10 +1,3 @@
-/**
- * @file: TestHelperInboundIntegration.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 21.07.2025
- * Last Modified Date: 21.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IUnit } from "common";
 import { expect } from "vitest";
 

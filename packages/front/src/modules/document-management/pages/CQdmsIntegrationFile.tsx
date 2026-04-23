@@ -1,10 +1,3 @@
-/**
- * @file: CQdmsIntegrationFile.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 18.08.2025
- * Last Modified Date: 18.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useMemo } from "react";
 import { useParams } from "wouter";
 

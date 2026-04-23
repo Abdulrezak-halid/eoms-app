@@ -1,10 +1,3 @@
-/**
- * @file: initModules.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 21.01.2025
- * Last Modified Date: 22.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { RouterAgent } from "@m/agent/routers/RouterAgent";
 import { MqConsumerDriverSuggestions } from "@m/analysis/mq-consumers/MqConsumerDriverSuggestions";
 import { RouterAnalysis } from "@m/analysis/routers/RouterAnalysis";

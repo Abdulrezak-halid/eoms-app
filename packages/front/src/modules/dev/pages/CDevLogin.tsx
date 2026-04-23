@@ -1,10 +1,3 @@
-/**
- * @file: CDevLogin.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.11.2024
- * Last Modified Date: 01.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useState } from "react";
 import { CircleUser } from "lucide-react";
 

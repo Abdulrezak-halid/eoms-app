@@ -1,10 +1,3 @@
-/**
- * @file: CInboundIntegrationAddForm.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.07.2025
- * Last Modified Date: 15.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 

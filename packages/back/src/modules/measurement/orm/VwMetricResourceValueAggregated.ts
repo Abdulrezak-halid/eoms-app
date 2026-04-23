@@ -1,10 +1,3 @@
-/**
- * @file: VwMetricResourceValueAggregated.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 03.08.2025
- * Last Modified Date: 25.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import {
   doublePrecision,
   integer,

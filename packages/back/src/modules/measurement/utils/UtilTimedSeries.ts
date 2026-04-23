@@ -1,10 +1,3 @@
-/**
- * @file: UtilTimedSeries.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.08.2025
- * Last Modified Date: 25.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 
 import { ApiException } from "@m/core/exceptions/ApiException";

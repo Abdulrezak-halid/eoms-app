@@ -1,10 +1,3 @@
-/**
- * @file: UtilMetricResourceLabel.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.12.2025
- * Last Modified Date: 25.12.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { EApiFailCode } from "common";
 import xxhash from "xxhash-wasm";
 

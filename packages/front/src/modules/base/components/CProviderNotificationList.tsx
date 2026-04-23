@@ -1,10 +1,3 @@
-/**
- * @file: CProviderNotificationList.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.02.2026
- * Last Modified Date: 25.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoWsServerMessage } from "common/build-api-schema";
 import { PropsWithChildren, useCallback, useMemo } from "react";
 

@@ -1,10 +1,3 @@
-/**
- * @file: RouterUSysUser.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.12.2024
- * Last Modified Date: 26.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { createRoute, z } from "@hono/zod-openapi";
 
 import { SchemaSessionDetail } from "@m/base/schemas/SchemaSessionDetail";

@@ -1,10 +1,3 @@
-/**
- * @file: CDevMarkdown.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 31.03.2025
- * Last Modified Date: 31.03.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useMemo } from "react";
 
 import { CBody } from "@m/base/components/CBody";

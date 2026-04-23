@@ -1,10 +1,3 @@
-/**
- * @file: CButtonRefresh.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 29.12.2024
- * Last Modified Date: 29.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { RefreshCcw } from "lucide-react";
 
 import { CButton } from "@m/core/components/CButton";

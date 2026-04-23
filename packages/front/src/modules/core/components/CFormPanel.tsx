@@ -1,10 +1,3 @@
-/**
- * @file: CFormPanel.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 17.10.2024
- * Last Modified Date: 17.10.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { PropsWithChildren } from "react";
 
 import { CFixedFormWidth } from "./CFixedFormWidth";

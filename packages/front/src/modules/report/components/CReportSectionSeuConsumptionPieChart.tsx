@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionSeuConsumptionPieChart.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.01.2026
- * Last Modified Date: 07.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useEffect, useState } from "react";
 
 import { CMultiSelectSeu } from "@m/base/components/CMultiSelectSeu";

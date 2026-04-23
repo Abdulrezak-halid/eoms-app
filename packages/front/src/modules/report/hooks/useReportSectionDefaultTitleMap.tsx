@@ -1,10 +1,3 @@
-/**
- * @file: useReportSectionDefaultTitleMap.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2026
- * Last Modified Date: 08.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoPlainOrTranslatableText } from "common/build-api-schema";
 import { useMemo } from "react";
 

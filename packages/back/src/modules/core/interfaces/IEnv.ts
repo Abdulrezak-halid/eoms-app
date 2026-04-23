@@ -1,10 +1,3 @@
-/**
- * @file: IEnv.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2025
- * Last Modified Date: 08.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 
 // Note: Don't forget to update ServiceEnv when you change here
 export interface IEnv {

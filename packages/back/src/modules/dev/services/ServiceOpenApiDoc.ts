@@ -1,10 +1,3 @@
-/**
- * @file: ServiceOpenApiDoc.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 18.05.2025
- * Last Modified Date: 18.05.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono, z } from "@hono/zod-openapi";
 

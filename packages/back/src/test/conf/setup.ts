@@ -1,10 +1,3 @@
-/**
- * @file: setup.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.01.2025
- * Last Modified Date: 15.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { PGlite } from "@electric-sql/pglite";
 import { UtilDate } from "common";
 import { sql } from "drizzle-orm";

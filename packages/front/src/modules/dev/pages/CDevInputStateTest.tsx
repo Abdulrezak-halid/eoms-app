@@ -1,10 +1,3 @@
-/**
- * @file: CDevInputStateTest.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 25.06.2025
- * Last Modified Date: 25.06.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useMemo } from "react";
 
 import { CBody } from "@m/base/components/CBody";

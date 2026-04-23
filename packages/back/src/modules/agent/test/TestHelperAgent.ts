@@ -1,10 +1,3 @@
-/**
- * @file: TestHelperAgent.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.08.2025
- * Last Modified Date: 01.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { expect } from "vitest";
 
 import { SYSADMIN_EMAIL, SYSADMIN_PASSWORD } from "@/constants";

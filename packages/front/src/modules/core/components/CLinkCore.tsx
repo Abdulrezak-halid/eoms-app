@@ -1,10 +1,3 @@
-/**
- * @file: CLinkCore.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 18.11.2025
- * Last Modified Date: 18.11.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { PropsWithChildren } from "react";
 import { Link } from "wouter";
 

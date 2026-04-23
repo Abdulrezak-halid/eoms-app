@@ -1,10 +1,3 @@
-/**
- * @file: CReportSectionText.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.01.2026
- * Last Modified Date: 06.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useEffect } from "react";
 
 import { CFormLine, CFormPanel } from "@m/core/components/CFormPanel";

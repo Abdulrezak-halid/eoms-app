@@ -1,10 +1,3 @@
-/**
- * @file: constants.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 08.01.2025
- * Last Modified Date: 08.01.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 // import { IMetricResourceValuePeriod } from "@m/measurement/interfaces/IMetricResourceValuePeriod";
 
 export const APP_NAME = "Reneryo";

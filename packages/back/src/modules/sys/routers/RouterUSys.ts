@@ -1,10 +1,3 @@
-/**
- * @file: RouterUSys.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 19.11.2024
- * Last Modified Date: 19.11.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { RouterSysAgent } from "@m/agent/routers/RouterSysAgent";
 import { guardOrganizationPlanFeature } from "@m/base/middlewares/guardOrganizationPlanFeature";
 import { IHonoContextUser } from "@m/core/interfaces/IContext";

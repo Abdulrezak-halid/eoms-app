@@ -1,10 +1,3 @@
-/**
- * @file: JobTypes.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 23.02.2025
- * Last Modified Date: 23.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IJobName } from "./IJobHandler";
 
 export type IJobMeta = {

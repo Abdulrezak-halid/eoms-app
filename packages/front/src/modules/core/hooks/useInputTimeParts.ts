@@ -1,10 +1,3 @@
-/**
- * @file: useInputTimeParts.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 30.03.2025
- * Last Modified Date: 30.03.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useMemo } from "react";
 
 export function useInputTimeParts(value?: string, min?: string, max?: string) {

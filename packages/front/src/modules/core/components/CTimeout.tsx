@@ -1,10 +1,3 @@
-/**
- * @file: CTimeout.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 07.12.2024
- * Last Modified Date: 07.12.2024
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { WifiOff } from "lucide-react";
 
 import { useTranslation } from "@m/core/hooks/useTranslation";

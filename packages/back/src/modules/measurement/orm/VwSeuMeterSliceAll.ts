@@ -1,10 +1,3 @@
-/**
- * @file: VwSeuMeterSliceAll.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.06.2025
- * Last Modified Date: 20.06.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { and, eq, sql } from "drizzle-orm";
 import { pgView } from "drizzle-orm/pg-core";
 

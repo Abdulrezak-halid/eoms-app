@@ -1,10 +1,3 @@
-/**
- * @file: CInputStringPlainOrTranslatable.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 06.01.2026
- * Last Modified Date: 06.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { MAX_REPORT_TEXT_STRING_LENGTH } from "common";
 import { IDtoPlainOrTranslatableText } from "common/build-api-schema";
 import { Languages, RotateCcw } from "lucide-react";

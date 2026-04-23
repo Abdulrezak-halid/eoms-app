@@ -1,10 +1,3 @@
-/**
- * @file: CRadioGroupPrimaryRecord.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.01.2026
- * Last Modified Date: 10.01.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useMemo } from "react";
 
 import { CRadioGroup } from "@m/core/components/CRadioGroup";

@@ -1,10 +1,3 @@
-/**
- * @file: permissions.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 02.03.2025
- * Last Modified Date: 02.03.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 
 export const permissions = [
   "/", // Group

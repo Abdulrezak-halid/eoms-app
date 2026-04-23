@@ -1,10 +1,3 @@
-/**
- * @file: CProviderWs.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 10.11.2024
- * Last Modified Date: 03.02.2026
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoWsServerMessage } from "common/build-api-schema";
 import {
   PropsWithChildren,

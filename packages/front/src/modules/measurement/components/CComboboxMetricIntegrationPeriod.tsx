@@ -1,10 +1,3 @@
-/**
- * @file: CComboboxMetricIntegrationPeriod.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 31.08.2025
- * Last Modified Date: 31.08.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IDtoEMetricIntegrationPeriod } from "common/build-api-schema";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 

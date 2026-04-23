@@ -1,10 +1,3 @@
-/**
- * @file: MqConsumerAgentReading.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 01.08.2025
- * Last Modified Date: 02.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { z } from "@hono/zod-openapi";
 import { eq, inArray } from "drizzle-orm";
 

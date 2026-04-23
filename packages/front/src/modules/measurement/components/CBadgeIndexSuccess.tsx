@@ -1,10 +1,3 @@
-/**
- * @file: CBadgeIndexSuccess.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.09.2025
- * Last Modified Date: 09.09.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { CircleCheck, CircleX } from "lucide-react";
 
 import { CBadge } from "@m/core/components/CBadge";

@@ -1,10 +1,3 @@
-/**
- * @file: IOutboundIntegrationHandler.ts
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 09.07.2025
- * Last Modified Date: 09.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { IContextCore } from "@m/core/interfaces/IContext";
 import { ITimedValue } from "@m/core/interfaces/ITimedValue";
 import { MaybePromise } from "@m/core/interfaces/MaybePromise";

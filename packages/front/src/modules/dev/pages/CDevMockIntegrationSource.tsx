@@ -1,10 +1,3 @@
-/**
- * @file: CDevMockIntegrationSource.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 20.02.2025
- * Last Modified Date: 21.02.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useMemo } from "react";
 
 import { Api, InferApiResponse } from "@m/base/api/Api";

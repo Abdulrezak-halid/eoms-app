@@ -1,10 +1,3 @@
-/**
- * @file: CReportStyle.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 05.09.2025
- * Last Modified Date: 15.10.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { Style, css } from "hono/css";
 
 export const CReportStyle = () => (

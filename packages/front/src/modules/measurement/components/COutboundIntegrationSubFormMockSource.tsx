@@ -1,10 +1,3 @@
-/**
- * @file: COutboundIntegrationSubFormMockSource.tsx
- * @author: H.Alper Tuna <halpertuna@gmail.com>
- * Date: 15.07.2025
- * Last Modified Date: 15.07.2025
- * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
- */
 import { useCallback, useEffect, useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
 
