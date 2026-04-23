@@ -1,0 +1,7 @@
+- This page is used to configure and manage inbound integrations, which allow external systems or devices to send energy-related data into the Energy Management System (ENMS).
+- Inbound integrations enable the automatic collection of real-time data such as meter readings, temperature values, or other performance indicators from connected agents or APIs.
+- Different integration types (e.g., Agent, Webhook) define how incoming data is transmitted and processed within the system.
+- Agent integrations are typically used for continuous data streams from field devices, sensors, or local data collectors.
+- Webhook integrations allow external applications to push specific data directly to ENMS via secure API endpoints.
+- Each integration includes output metrics, which specify where the received data will be stored and which units will be used.
+- Regularly monitor inbound integrations to ensure stable connections, accurate data flow, and synchronization with external systems.

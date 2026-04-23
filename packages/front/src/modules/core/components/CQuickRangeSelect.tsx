@@ -35,17 +35,27 @@ export interface ICQuickDateRangeValue {
   customMax?: string;
 }
 
+function hasQuickRangeValue(value?: ICQuickRangeValue | ICQuickDateRangeValue) {
+  return Boolean(value?.quickRange || (value?.customMin && value?.customMax));
+}
+
+type ICQuickRangeBaseProps = {
+  placeholder?: string;
+  required?: boolean;
+  invalid?: boolean;
+};
+
 type ICQuickRangeSelectProps =
-  | {
+  | (ICQuickRangeBaseProps & {
       mode?: "datetime";
       value?: ICQuickRangeValue;
       onChange?: (value: ICQuickRangeValue) => void;
-    }
-  | {
+    })
+  | (ICQuickRangeBaseProps & {
       mode: "dateOnly";
       value?: ICQuickDateRangeValue;
       onChange?: (value: ICQuickDateRangeValue) => void;
-    };
+    });
 
 function CQuickRangeSelectDatetimePopup({
   value,
@@ -228,12 +238,19 @@ function CQuickRangeSelectDateOnlyPopup({
 }
 
 function CQuickRangeSelectDatetime({
-  value = { quickRange: "LAST_7_DAYS" },
+  value,
   onChange,
+  placeholder,
+  required,
+  invalid,
 }: {
   value?: ICQuickRangeValue;
   onChange?: (value: ICQuickRangeValue) => void;
+  placeholder?: string;
+  required?: boolean;
+  invalid?: boolean;
 }) {
+  const { t } = useTranslation();
   const popupState = usePopupState();
   const ranges = useQuickTimeRanges();
 
@@ -260,6 +277,11 @@ function CQuickRangeSelectDatetime({
     return null;
   }, [selectedRangeItem, value?.customMin, value?.customMax]);
 
+  const placeholderValue = placeholder || t("selectDateRange");
+  const isInvalid = Boolean(
+    invalid || (required && !hasQuickRangeValue(value)),
+  );
+
   const popupComponent = useCallback(
     () => (
       <CQuickRangeSelectDatetimePopup
@@ -277,6 +299,8 @@ function CQuickRangeSelectDatetime({
       caretIcon={Calendar}
       popupComponent={popupComponent}
       popupFixedSize
+      placeholder={placeholderValue}
+      invalid={isInvalid}
       classNameChildrenContainer="pl-1"
     >
       {displayValue ? (
@@ -301,12 +325,19 @@ function CQuickRangeSelectDatetime({
 }
 
 function CQuickRangeSelectDateOnly({
-  value = { quickRange: "LAST_7_DAYS" },
+  value,
   onChange,
+  placeholder,
+  required,
+  invalid,
 }: {
   value?: ICQuickDateRangeValue;
   onChange?: (value: ICQuickDateRangeValue) => void;
+  placeholder?: string;
+  required?: boolean;
+  invalid?: boolean;
 }) {
+  const { t } = useTranslation();
   const popupState = usePopupState();
   const ranges = useQuickDateRanges();
 
@@ -333,6 +364,11 @@ function CQuickRangeSelectDateOnly({
     return null;
   }, [selectedRangeItem, value?.customMin, value?.customMax]);
 
+  const placeholderValue = placeholder || t("selectDateRange");
+  const isInvalid = Boolean(
+    invalid || (required && !hasQuickRangeValue(value)),
+  );
+
   const popupComponent = useCallback(
     () => (
       <CQuickRangeSelectDateOnlyPopup
@@ -350,6 +386,8 @@ function CQuickRangeSelectDateOnly({
       caretIcon={Calendar}
       popupComponent={popupComponent}
       popupFixedSize
+      placeholder={placeholderValue}
+      invalid={isInvalid}
       classNameChildrenContainer="pl-1"
     >
       {displayValue ? (

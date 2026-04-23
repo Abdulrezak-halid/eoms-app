@@ -1,0 +1,5 @@
+- This tab is used to plan the monitoring of critical operating parameters for all EECs.
+- For each EEC, determine what the critical operating parameters are and how they will be measured and monitored.
+- Ensuring the accuracy of these tools with calibration or other checks is crucial.
+- If you have a maintenance management system, accuracy check/calibration activities should be documented here.
+- Keep updating this tab continuously to help improve energy performance.

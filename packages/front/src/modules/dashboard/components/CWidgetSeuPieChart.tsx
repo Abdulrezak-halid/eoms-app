@@ -23,7 +23,7 @@ export function CWidgetSeuPieChart({
   });
 
   return (
-    <CAsyncLoader data={data}>
+    <CAsyncLoader data={data} className="min-h-72 h-full">
       {(payload) => (
         <div className="space-y-6 p-4">
           {payload.map(({ energyResource, pieData, unit }) => (

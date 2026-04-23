@@ -1,3 +1,11 @@
+/**
+ * @file: DateUtils.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.11.2024
+ * Last Modified Date: 14.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
 export namespace UtilDate {
   // Format -------------------------------------------------------
   // TODO no default locale

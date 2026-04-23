@@ -1,0 +1,3 @@
+- Bu sekme, enerji tasarrufu hedeflerini takip etmek için kullanılır.
+- Hedefler, enerji politikası, eylem planı ve enerji performan göstergeleri doğrultusunda takip edilir.
+- Hedef kazanımlar, bu sekmedeki girdiler ile enerji yönlendiricilerinden arındırılmış tüketimler kullanılarak analiz ve raporlamalara dahil edilir.

@@ -1,3 +1,10 @@
+/**
+ * @file: CSlider.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 30.10.2024
+ * Last Modified Date: 30.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useEffect, useMemo, useRef } from "react";
 
 export function CSlider({

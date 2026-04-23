@@ -1,3 +1,10 @@
+/**
+ * @file: CInputCore.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 06.11.2024
+ * Last Modified Date: 06.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import {
   ChangeEvent,
   ForwardedRef,
@@ -14,8 +21,10 @@ export const CInputCore = forwardRef(function CInputCore(
     value = "",
     onChange,
     onFocus,
+    onKeyDown,
     disabled,
     onEnter,
+    autoFocus,
 
     type = "text",
     maxLength,
@@ -25,8 +34,10 @@ export const CInputCore = forwardRef(function CInputCore(
     value?: string;
     onChange?: (value: string) => void;
     onFocus?: () => void;
+    onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     disabled?: boolean;
     onEnter?: () => void;
+    autoFocus?: boolean;
 
     type?: "text" | "password";
     maxLength?: number;
@@ -42,7 +53,12 @@ export const CInputCore = forwardRef(function CInputCore(
   );
 
   const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      onKeyDown?.(e);
+      if (e.defaultPrevented) {
+        return;
+      }
+
       if (!onEnter) {
         return;
       }
@@ -51,7 +67,7 @@ export const CInputCore = forwardRef(function CInputCore(
         onEnter();
       }
     },
-    [onEnter],
+    [onEnter, onKeyDown],
   );
 
   return (
@@ -70,6 +86,7 @@ export const CInputCore = forwardRef(function CInputCore(
       onFocus={onFocus}
       disabled={disabled}
       maxLength={maxLength}
+      autoFocus={autoFocus}
     />
   );
 });

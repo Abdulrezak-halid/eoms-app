@@ -1,3 +1,10 @@
+/**
+ * @file: ContextSession.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 06.11.2024
+ * Last Modified Date: 06.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { SetStateAction, createContext } from "react";
 
 import { InferApiResponse } from "@m/base/api/Api";
@@ -9,6 +16,7 @@ export const defaultContextSession: ISession = {
   userId: "",
   userDisplayName: import.meta.env.VITE_NO_LOGIN ? "No-Login" : "",
   userEmail: "",
+  orgEmail: "",
   orgId: "",
   orgDisplayName: "",
   orgPlan: {

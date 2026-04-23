@@ -1,0 +1,3 @@
+- This tab is used to manage and document nonconformities in EnMS and other EnMS improvement opportunities.
+- Nonconformities can come from various sources such as internal audits, certification audits, or operational observations.
+- Similarly, improvement opportunities can also come from the same sources.

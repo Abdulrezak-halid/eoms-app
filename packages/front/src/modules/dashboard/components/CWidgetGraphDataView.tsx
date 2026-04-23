@@ -14,7 +14,7 @@ export function CWidgetGraphDataView({
   const [data] = useFetchDataViewValues(config.dataViewId, range);
 
   return (
-    <CAsyncLoader data={data}>
+    <CAsyncLoader data={data} className="min-h-72 h-full">
       {(payload) => (
         <CChart
           series={payload.series}

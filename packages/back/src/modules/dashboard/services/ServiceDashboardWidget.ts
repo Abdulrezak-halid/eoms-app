@@ -6,7 +6,7 @@ import { ServiceAdvancedRegression } from "@m/analysis/services/ServiceAdvancedR
 import { ApiException } from "@m/core/exceptions/ApiException";
 import { IContextUser } from "@m/core/interfaces/IContext";
 import { UtilDb } from "@m/core/utils/UtilDb";
-import { ServiceDataViewProfile } from "@m/measurement/services/ServiceDataViewProfile";
+import { ServiceDataViewProfile } from "@m/analysis/services/ServiceDataViewProfile";
 import { ServiceMetric } from "@m/measurement/services/ServiceMetric";
 import { ServiceSeu } from "@m/measurement/services/ServiceSeu";
 

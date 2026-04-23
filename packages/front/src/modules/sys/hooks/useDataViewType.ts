@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 
+import { IDtoEDataViewType } from "@m/analysis/interfaces/IDtoDataViewProfile";
 import { IValueLabelMap } from "@m/base/interfaces/IValueLabelMap";
 import { useTranslation } from "@m/core/hooks/useTranslation";
-import { IDtoEDataViewType } from "@m/measurement/interfaces/IDtoDataViewProfile";
 
 export function useDataViewTypeMap() {
   const { t } = useTranslation();

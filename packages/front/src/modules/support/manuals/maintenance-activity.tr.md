@@ -1,0 +1,3 @@
+- Bu sekme, ÖEK'lerle ilgili bakım faaliyetlerinin planlanmasında yardımcı olmak için kullanılır.
+- Her ÖEK'de, enerji performansının düşmediğinden emin olmak için hangi bakıma ihtiyaç olduğuna karar verin.
+- Bir bakım yönetim sisteminiz varsa, bu faaliyetler belgelenmeli ve orada izlenmelidir.

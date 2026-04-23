@@ -1,6 +1,14 @@
+/**
+ * @file: CInputString.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 17.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { MAX_API_STRING_LENGTH } from "common";
 import { Paintbrush } from "lucide-react";
 import {
+  KeyboardEvent,
   PropsWithChildren,
   RefObject,
   useCallback,
@@ -36,6 +44,8 @@ export type ICInputStringProps = PropsWithChildren<{
   classNameInput?: string;
   noCleanButton?: boolean;
   onFocus?: () => void;
+  autoFocus?: boolean;
+  onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
 
   // Forward ref is not used because ref is also used internally
   ref?: RefObject<HTMLInputElement | null>;
@@ -60,6 +70,8 @@ export function CInputString({
   classNameInput,
   noCleanButton,
   onFocus,
+  autoFocus,
+  onKeyDown,
 
   ref,
   children,
@@ -136,9 +148,11 @@ export function CInputString({
         value={value}
         onChange={onChange}
         onFocus={onFocus}
+        onKeyDown={onKeyDown}
         disabled={disabled}
         className={classNames(classNameInput, icon && "pl-12")}
         maxLength={max}
+        autoFocus={autoFocus}
       />
 
       {!noCleanButton && !required && !disabled && value && (

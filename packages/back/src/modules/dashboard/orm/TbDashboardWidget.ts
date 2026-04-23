@@ -8,9 +8,9 @@ import {
 } from "drizzle-orm/pg-core";
 
 import { TbAdvancedRegressionResult } from "@m/analysis/orm/TbAdvancedRegressionResult";
+import { TbDataViewProfile } from "@m/analysis/orm/TbDataViewProfile";
 import { TbOrganization } from "@m/base/orm/TbOrganization";
 import { TbUser } from "@m/base/orm/TbUser";
-import { TbDataViewProfile } from "@m/measurement/orm/TbDataViewProfile";
 import { TbMetric } from "@m/measurement/orm/TbMetric";
 
 import { DataDashboardWidgetType } from "../interfaces/IDashboardWidgetType";

@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceSession.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 10.12.2024
+ * Last Modified Date: 10.12.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { EApiFailCode, VERSION_API } from "common";
 import { and, eq, ne, sql } from "drizzle-orm";
 import type { Context } from "hono";
@@ -138,6 +145,7 @@ export namespace ServiceSession {
         },
         org: {
           id: TbOrganization.id,
+          email: TbOrganization.email,
           displayName: TbOrganization.displayName,
           plan: TbOrganization.plan,
           hasBanner: TbOrganization.hasBanner,
@@ -159,6 +167,7 @@ export namespace ServiceSession {
       userDisplayName: rec.user.displayName,
       userEmail: rec.user.email,
       orgId: rec.org.id,
+      orgEmail: rec.org.email,
       orgDisplayName: rec.org.displayName,
       orgPlan: rec.org.plan,
       orgHasBanner: rec.org.hasBanner,

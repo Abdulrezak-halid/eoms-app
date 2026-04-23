@@ -1,3 +1,10 @@
+/**
+ * @file: CInputPassword.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 21.10.2024
+ * Last Modified Date: 21.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { Eye, EyeOff, KeyRound } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
 

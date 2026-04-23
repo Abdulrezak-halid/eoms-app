@@ -1,3 +1,10 @@
+/**
+ * @file: DbUtils.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 09.02.2025
+ * Last Modified Date: 09.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { EApiFailCode } from "common";
 import {
   AnyColumn,

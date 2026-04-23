@@ -9,7 +9,7 @@ import { CForm } from "@m/core/components/CForm";
 import { CFormLine, CFormPanel } from "@m/core/components/CFormPanel";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 import { useTranslation } from "@m/core/hooks/useTranslation";
-import { CComboboxDataView } from "@m/measurement/components/CComboboxDataView";
+import { CComboboxDataView } from "@m/analysis/components/CComboboxDataView";
 import { CComboboxMetric } from "@m/measurement/components/CComboboxMetric";
 
 import {

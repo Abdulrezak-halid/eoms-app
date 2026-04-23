@@ -1,3 +1,10 @@
+/**
+ * @file: CSelectTimeBody.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 29.03.2025
+ * Last Modified Date: 09.09.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { RefObject, useCallback, useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 

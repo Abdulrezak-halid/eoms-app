@@ -1,3 +1,10 @@
+/**
+ * @file: useLogout.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 30.11.2024
+ * Last Modified Date: 30.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useCallback, useContext } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 

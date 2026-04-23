@@ -1,3 +1,10 @@
+/**
+ * @file: CSwitch.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 18.10.2024
+ * Last Modified Date: 18.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useCallback, useRef, useState } from "react";
 
 import { classNames } from "@m/core/utils/classNames";

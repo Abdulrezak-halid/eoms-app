@@ -1,3 +1,10 @@
+/**
+ * @file: CDevComponents.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 17.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { Link, Star, UserCircle, X } from "lucide-react";
 import { House, KeyRound } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
@@ -39,6 +46,7 @@ import { CInputEmail } from "@m/core/components/CInputEmail";
 import { CInputFile } from "@m/core/components/CInputFile";
 import { CInputImage } from "@m/core/components/CInputImage";
 import { CInputJson } from "@m/core/components/CInputJson";
+import { CInputMultiEmail } from "@m/core/components/CInputMultiEmail";
 import { CInputMultiPhone } from "@m/core/components/CInputMultiPhone";
 import { CInputMultiString } from "@m/core/components/CInputMultiString";
 import { CInputNumber } from "@m/core/components/CInputNumber";
@@ -1091,6 +1099,10 @@ export function CDevComponents() {
 
         <CDevComponentLine label="CInputMultiPhone">
           <CInputMultiPhone value={strArrState} onChange={setStrArrState} />
+        </CDevComponentLine>
+
+        <CDevComponentLine label="CInputMultiEmail">
+          <CInputMultiEmail value={strArrState} onChange={setStrArrState} />
         </CDevComponentLine>
 
         <CDevComponentLine label="CInputMultiDomainIp - domain">

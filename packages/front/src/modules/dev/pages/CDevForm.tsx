@@ -1,3 +1,10 @@
+/**
+ * @file: CDevForm.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 29.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { UtilDate } from "common";
 import { Star } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -17,6 +24,7 @@ import { CInputDate } from "@m/core/components/CInputDate";
 import { CInputDatetime } from "@m/core/components/CInputDatetime";
 import { CInputEmail } from "@m/core/components/CInputEmail";
 import { CInputFile } from "@m/core/components/CInputFile";
+import { CInputMultiEmail } from "@m/core/components/CInputMultiEmail";
 import { CInputMultiString } from "@m/core/components/CInputMultiString";
 import { CInputNumber } from "@m/core/components/CInputNumber";
 import { CInputPassword } from "@m/core/components/CInputPassword";
@@ -78,6 +86,7 @@ export function CDevForm() {
   const inputDatetimeEmpty = useInput<string>();
 
   const inputMultiString = useInput<string[]>();
+  const inputMultiEmail = useInput<string[]>();
   const inputMultiStringNoUnique = useInput<string[]>(noUniqueArr);
 
   const loading = useMemo(() => ({}), []);
@@ -234,6 +243,13 @@ export function CDevForm() {
             invalidMsg={inputMultiString.invalidMsg}
           >
             <CInputMultiString {...inputMultiString} required />
+          </CFormLine>
+
+          <CFormLine
+            label="CInputMultiEmail required"
+            invalidMsg={inputMultiEmail.invalidMsg}
+          >
+            <CInputMultiEmail {...inputMultiEmail} required />
           </CFormLine>
 
           <CFormLine

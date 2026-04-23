@@ -3,6 +3,10 @@ import { describe, expect, it } from "vitest";
 
 import { UtilTest } from "@/test/utils/UtilTest";
 
+import { ApiException } from "@m/core/exceptions/ApiException";
+
+import { ServiceOrganizationPartner } from "../services/ServiceOrganizationPartner";
+
 describe("E2E - RouterOrganizationPartner", () => {
   it("Create Partner", async () => {
     const org1 = await UtilTest.createClientLoggedIn();
@@ -158,6 +162,40 @@ describe("E2E - RouterOrganizationPartner", () => {
         id: expect.any(String),
       },
     ]);
+  });
+
+  it("should resolve if organization is a valid partner", async () => {
+    const contextU = await UtilTest.createTestContextUser();
+    const org1 = await UtilTest.createClientLoggedIn();
+    const partnerToken = await org1.client.PUT("/u/organization/partner/token");
+
+    const org2 = await UtilTest.createClientLoggedIn({
+      username: "admin@example2.com",
+    });
+
+    const partnerRes = await org2.client.POST("/u/organization/partner/item", {
+      body: { token: partnerToken.data!.token },
+    });
+    expect(partnerRes).toBeApiOk();
+
+    await expect(
+      ServiceOrganizationPartner.checkOrgPartnerShip(contextU, [
+        org2.session.orgId,
+      ]),
+    ).resolves.not.toThrow();
+  });
+
+  it("should throw FOREIGN_KEY_NOT_FOUND if organization is not a partner", async () => {
+    const contextU = await UtilTest.createTestContextUser();
+    const org2 = await UtilTest.createClientLoggedIn({
+      username: "admin@example2.com",
+    });
+
+    await expect(
+      ServiceOrganizationPartner.checkOrgPartnerShip(contextU, [
+        org2.session.orgId,
+      ]),
+    ).rejects.toThrowError(new ApiException(EApiFailCode.BAD_REQUEST));
   });
 
   it("should respond FORBIDDEN error without permission", async () => {

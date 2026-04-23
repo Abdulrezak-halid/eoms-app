@@ -1,3 +1,10 @@
+/**
+ * @file: useInputDateInvalidMsg.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 09.09.2025
+ * Last Modified Date: 09.09.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { UtilDate } from "common";
 import { useMemo } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";

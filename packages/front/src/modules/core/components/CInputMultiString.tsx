@@ -1,3 +1,10 @@
+/**
+ * @file: CInputMultiString.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 01.11.2024
+ * Last Modified Date: 24.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useTranslation } from "@m/core/hooks/useTranslation";

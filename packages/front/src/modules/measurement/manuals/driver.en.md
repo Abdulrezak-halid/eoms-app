@@ -1,0 +1,3 @@
+- This tab was developed to manage Drivers that may affect energy consumption.
+- Energy diverters are mainly used to predict the energy consumption of the enterprise and explain changes in consumption by performing regression analyses.
+- It is very important for the energy performance of the enterprise to analyze the impact level of each parameter affecting energy consumption in the enterprise, to monitor it in line with its importance and to analyze deviations..

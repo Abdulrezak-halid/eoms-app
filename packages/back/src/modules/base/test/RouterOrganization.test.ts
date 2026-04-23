@@ -51,7 +51,7 @@ describe("E2E - RouterOrganization", () => {
           "ORGANIZATION_PARTNER",
           "PRODUCT",
           "QDMS",
-          "eoms_AGENT",
+          "RENERYO_AGENT",
           "REPORT",
           "SUPPLY_CHAIN",
           "UNCATEGORIZED",

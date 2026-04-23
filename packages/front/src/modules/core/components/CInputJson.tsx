@@ -1,3 +1,10 @@
+/**
+ * @file: CInputJson.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 25.03.2025
+ * Last Modified Date: 25.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { JsonEditor, githubDarkTheme } from "json-edit-react";
 import { useContext, useMemo } from "react";
 import { Check, Pencil, Plus, Trash2, X } from "lucide-react";

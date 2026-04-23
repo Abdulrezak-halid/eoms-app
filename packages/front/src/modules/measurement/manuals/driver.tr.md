@@ -1,0 +1,3 @@
+- Bu sekme, enerji tüketimini etkileyebilecek yönlendiricileri yönetmek için geliştirilmiştir.
+- Enerji yönlendiricileri, temel olarak regresyon analizleri yapılarak işletmenin enerji tüketimini tahminlemede ve tüketimdeki değişimleri açıklamada kullanılır.
+- İşletmede enerji tüketimini etkileyen her bir parametrenin, etki düzeyini analiz ederek önemi doğrultsunda izlenmesi, sapmaların analiz edilmesi işletmenin enerji performansı açısından oldukça önemlidir.

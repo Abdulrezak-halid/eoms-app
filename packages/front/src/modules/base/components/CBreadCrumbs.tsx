@@ -1,3 +1,10 @@
+/**
+ * @file: CBreadCrumbs.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 19.10.2024
+ * Last Modified Date: 09.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { ArrowUp, ChevronRight, Ellipsis } from "lucide-react";
 import { Fragment, useMemo } from "react";
 

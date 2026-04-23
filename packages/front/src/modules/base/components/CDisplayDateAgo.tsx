@@ -1,3 +1,10 @@
+/**
+ * @file: CDateAgo.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 22.04.2024
+ * Last Modified Date: 22.04.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { UtilDate } from "common";
 import { useMemo } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";

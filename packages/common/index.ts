@@ -1,3 +1,11 @@
+/**
+ * @file: index.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 07.11.2024
+ * Last Modified Date: 17.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
 export * from "./src/EApiFailCode";
 export * from "./src/IUnit";
 export * from "./src/IUnitGroup";

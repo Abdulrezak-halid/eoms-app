@@ -90,11 +90,6 @@ export function CRegressionAnalysesCardBody({
           </div>
         </div>
 
-        <div className="space-x-1">
-          <CMutedText>{t("threshold")}</CMutedText>
-          <CDisplayNumber value={data.threshold} />
-        </div>
-
         <div className="flex flex-col @md:flex-row @md:gap-2 @md:items-center">
           <div className="flex items-center gap-1">
             <CMutedText>{t("createdAt")}</CMutedText>

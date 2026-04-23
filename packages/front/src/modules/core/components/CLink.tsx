@@ -1,3 +1,10 @@
+/**
+ * @file: CLink.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 07.11.2024
+ * Last Modified Date: 07.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { classNames } from "@m/core/utils/classNames";
 
 import { IRoutePath } from "../interfaces/IRoutePath";

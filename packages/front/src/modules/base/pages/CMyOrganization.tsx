@@ -6,6 +6,7 @@ import { CBadgeEnergyResource } from "@m/base/components/CBadgeEnergyResource";
 import { CBadgePhone } from "@m/base/components/CBadgePhone";
 import { CBody } from "@m/base/components/CBody";
 import { CDisplayImage } from "@m/base/components/CDisplayImage";
+import { CDisplayIntegrationGrid } from "@m/base/components/CDisplayIntegrationGrid";
 import { ContextSession } from "@m/base/contexts/ContextSession";
 import { CAsyncLoader } from "@m/core/components/CAsyncLoader";
 import { CBadge } from "@m/core/components/CBadge";
@@ -16,6 +17,8 @@ import { CMutedText } from "@m/core/components/CMutedText";
 import { useLoader } from "@m/core/hooks/useLoader";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 import { usePlanFeatureMap } from "@m/sys/hooks/usePlanFeatureMap";
+
+import { CButtonAddToReport } from "../components/CButtonAddToReport";
 
 export function CMyOrganization() {
   const { t } = useTranslation();
@@ -47,6 +50,9 @@ export function CMyOrganization() {
       <CAsyncLoader data={data}>
         {(organization) => (
           <CFormPanel>
+            <CFormLine>
+              <CButtonAddToReport sectionType="COMPANY_INFO" />
+            </CFormLine>
             <CFormLine label={t("banner")}>
               <CCard className="p-3">
                 <CDisplayImage
@@ -141,6 +147,12 @@ export function CMyOrganization() {
                 ) : (
                   <CMutedText value={t("noFeature")} />
                 )}
+              </CCard>
+            </CFormLine>
+
+            <CFormLine label={t("integrations")}>
+              <CCard className="p-3">
+                <CDisplayIntegrationGrid />
               </CCard>
             </CFormLine>
           </CFormPanel>

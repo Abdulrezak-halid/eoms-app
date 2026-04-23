@@ -1,3 +1,10 @@
+/**
+ * @file: CNavLinkGroup.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 30.11.2024
+ * Last Modified Date: 30.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 

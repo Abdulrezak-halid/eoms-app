@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceRuntimePatcher.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 19.11.2024
+ * Last Modified Date: 27.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { EApiFailCode } from "common";
 import { desc, eq } from "drizzle-orm";
 

@@ -1,3 +1,10 @@
+/**
+ * @file: CNotificationBalloonPanel.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 31.10.2024
+ * Last Modified Date: 18.12.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import {
   ArrowRight,
   Check,

@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceJob.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 22.02.2025
+ * Last Modified Date: 05.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { SpanStatusCode, trace } from "@opentelemetry/api";
 import { EApiFailCode, UtilDate } from "common";
 import { and, eq, sql } from "drizzle-orm";

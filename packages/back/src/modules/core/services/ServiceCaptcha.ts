@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceCaptcha.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 03.07.2025
+ * Last Modified Date: 21.11.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { getConnInfo } from "@hono/node-server/conninfo";
 import { EApiFailCode } from "common";
 import { Context } from "hono";

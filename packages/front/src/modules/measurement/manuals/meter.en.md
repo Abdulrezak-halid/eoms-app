@@ -1,0 +1,8 @@
+- This page is used to organize and manage meters that record energy consumption data.
+- By default, meters are grouped under their respective departments.
+- Within each department, you can create sub-groups (slices) to monitor the consumption of selected meters in more detail.
+- Grouping meters allows you to analyze and report total consumption of related meters collectively.
+- Each department can have multiple main meters, which represent primary sources of consumption and are used as a reference in analysis and reporting.
+- Meter and SEU percentages are calculated based on the selected main meters.
+- Only metrics with “Sum” aggregation are available for selection. This ensures that each metric is uniquely assigned and avoids duplication across meters.
+- Review meter configurations regularly to ensure accurate energy tracking and reporting.

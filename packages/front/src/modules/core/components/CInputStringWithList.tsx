@@ -1,3 +1,10 @@
+/**
+ * @file: CInputStringWithList.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 01.02.2026
+ * Last Modified Date: 01.02.2026
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import {
   flip,
   offset,

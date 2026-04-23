@@ -1,0 +1,3 @@
+- This tab is used to assist in planning maintenance activities related to EECs.
+- For each EEC, determine what maintenance is needed to ensure that energy performance does not decline.
+- If you have a maintenance management system, these activities should be documented and tracked there.

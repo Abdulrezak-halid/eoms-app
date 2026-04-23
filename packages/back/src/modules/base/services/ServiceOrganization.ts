@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceOrganization.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 08.01.2025
+ * Last Modified Date: 08.01.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { EApiFailCode } from "common";
 import { EXAMPLE_USER_PASSWORD } from "common";
 import { and, count, desc, eq, max, or } from "drizzle-orm";
@@ -15,6 +22,7 @@ import { TbNotification } from "@m/core/orm/TbNotification";
 import { ServiceNotification } from "@m/core/services/ServiceNotification";
 import { UtilDb } from "@m/core/utils/UtilDb";
 import { UtilHash } from "@m/core/utils/UtilHash";
+import { TbReportProfile } from "@m/report/orm/TbReportProfile";
 
 export namespace ServiceOrganization {
   export async function hasEnergyResource(
@@ -232,6 +240,7 @@ export namespace ServiceOrganization {
 
     await c.db.transaction(async (tx) => {
       await tx.delete(TbNotification).where(eq(TbNotification.orgId, id));
+      await tx.delete(TbReportProfile).where(eq(TbReportProfile.orgId, id));
       await tx.delete(TbUserPermission).where(eq(TbUserPermission.orgId, id));
       await tx.delete(TbUser).where(eq(TbUser.orgId, id));
       await tx

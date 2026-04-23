@@ -1,6 +1,6 @@
 import { IDtoEEnergyResource } from "common/build-api-schema";
-import { useCallback, useEffect, useRef } from "react";
 import { Play } from "lucide-react";
+import { useCallback, useEffect, useRef } from "react";
 
 import { Api } from "@m/base/api/Api";
 import { CComboboxOrganizationEnergyResource } from "@m/base/components/CComboboxOrganizationEnergyResource";
@@ -8,9 +8,13 @@ import { useApiToast } from "@m/base/hooks/useApiToast";
 import { CButton } from "@m/core/components/CButton";
 import { CForm } from "@m/core/components/CForm";
 import { CFormFooter, CFormLine } from "@m/core/components/CFormPanel";
-import { CInputDatetime } from "@m/core/components/CInputDatetime";
+import {
+  CQuickRangeSelect,
+  ICQuickRangeValue,
+} from "@m/core/components/CQuickRangeSelect";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 import { useTranslation } from "@m/core/hooks/useTranslation";
+import { quickRangeToDatetimeRange } from "@m/core/utils/UtilQuickRange";
 import { CComboboxMetric } from "@m/measurement/components/CComboboxMetric";
 import { CMultiSelectMeterSlice } from "@m/measurement/components/CMultiSelectMeterSlice";
 
@@ -29,16 +33,16 @@ export function CExploratoryAnalysesRegressionForm({
   const inputMeterSliceIds = useInput<string[]>([]);
   const inputEnergyResource = useInput<IDtoEEnergyResource>();
   const inputDriverId = useInput<string>();
-  const inputdatetimeStart = useInput<string>();
-  const inputdatetimeEnd = useInput<string>();
+  const inputDatetimeRange = useInput<ICQuickRangeValue | undefined>();
+  const datetimeRange = quickRangeToDatetimeRange(inputDatetimeRange.value);
 
   const invalid = useInputInvalid(
     inputMeterSliceIds,
     inputDriverId,
-    inputdatetimeStart,
-    inputdatetimeEnd,
     inputEnergyResource,
   );
+  const hasInvalidDatetimeRange = Boolean(datetimeRange.invalidMsg);
+  const invalidForm = invalid || hasInvalidDatetimeRange;
 
   const lastLoadedRerunId = useRef<string | null>(null);
 
@@ -57,14 +61,15 @@ export function CExploratoryAnalysesRegressionForm({
     inputEnergyResource.setValue(rerunData.energyResource);
     inputMeterSliceIds.setValue(rerunData.meterSlices.map((slice) => slice.id));
     inputDriverId.setValue(rerunData.driver.id);
-    inputdatetimeStart.setValue(rerunData.datetimeStart);
-    inputdatetimeEnd.setValue(rerunData.datetimeEnd);
+    inputDatetimeRange.setValue({
+      customMin: rerunData.datetimeStart,
+      customMax: rerunData.datetimeEnd,
+    });
   }, [
     inputMeterSliceIds,
     inputEnergyResource,
     inputDriverId,
-    inputdatetimeStart,
-    inputdatetimeEnd,
+    inputDatetimeRange,
     rerunData,
   ]);
 
@@ -80,10 +85,10 @@ export function CExploratoryAnalysesRegressionForm({
 
   const handleSubmit = useCallback(async () => {
     if (
-      invalid ||
+      invalidForm ||
       !inputDriverId.value ||
-      !inputdatetimeStart.value ||
-      !inputdatetimeEnd.value ||
+      !datetimeRange.datetimeMin ||
+      !datetimeRange.datetimeMax ||
       !inputEnergyResource.value
     ) {
       return;
@@ -93,8 +98,8 @@ export function CExploratoryAnalysesRegressionForm({
       body: {
         meterSliceIds: inputMeterSliceIds.value,
         driverId: inputDriverId.value,
-        datetimeStart: inputdatetimeStart.value,
-        datetimeEnd: inputdatetimeEnd.value,
+        datetimeStart: datetimeRange.datetimeMin,
+        datetimeEnd: datetimeRange.datetimeMax,
       },
     });
 
@@ -104,12 +109,11 @@ export function CExploratoryAnalysesRegressionForm({
       await onSubmitSuccess();
     }
   }, [
-    invalid,
+    invalidForm,
+    datetimeRange,
     inputMeterSliceIds,
     inputEnergyResource,
     inputDriverId,
-    inputdatetimeStart,
-    inputdatetimeEnd,
     apiToast,
     onSubmitSuccess,
     t,
@@ -149,26 +153,11 @@ export function CExploratoryAnalysesRegressionForm({
           />
         </CFormLine>
 
-        <CFormLine
-          label={t("datetimeStart")}
-          invalidMsg={inputdatetimeStart.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputdatetimeStart}
-            max={inputdatetimeEnd.value}
-            placeholder={t("datetimeStart")}
-            required
-          />
-        </CFormLine>
-
-        <CFormLine
-          label={t("datetimeEnd")}
-          invalidMsg={inputdatetimeEnd.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputdatetimeEnd}
-            min={inputdatetimeStart.value}
-            placeholder={t("datetimeEnd")}
+        <CFormLine label={t("dateRange")} invalidMsg={datetimeRange.invalidMsg}>
+          <CQuickRangeSelect
+            value={inputDatetimeRange.value || {}}
+            onChange={inputDatetimeRange.onChange}
+            invalid={hasInvalidDatetimeRange}
             required
           />
         </CFormLine>
@@ -179,7 +168,7 @@ export function CExploratoryAnalysesRegressionForm({
             primary
             label={t("run")}
             onClick={handleSubmit}
-            disabled={invalid}
+            disabled={invalidForm}
           />
         </CFormFooter>
       </div>

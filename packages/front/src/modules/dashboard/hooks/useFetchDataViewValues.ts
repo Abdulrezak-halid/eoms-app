@@ -17,7 +17,7 @@ export function useFetchDataViewValues(
       return undefined;
     }
 
-    return Api.GET("/u/measurement/data-view/values/{profileId}", {
+    return Api.GET("/u/analysis/data-view/values/{profileId}", {
       params: {
         path: { profileId: dataViewId },
         query: range,
@@ -30,7 +30,7 @@ export function useFetchDataViewValues(
   const middleware = useCallback(
     (
       payload: InferApiResponse<
-        "/u/measurement/data-view/values/{profileId}",
+        "/u/analysis/data-view/values/{profileId}",
         "get"
       >,
     ) => {

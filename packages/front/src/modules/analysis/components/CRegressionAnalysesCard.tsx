@@ -1,5 +1,5 @@
-import { ChartLine, CircleGauge, Copy, Trash2 } from "lucide-react";
-import { useCallback, useContext, useState } from "react";
+import { ChartLine, Copy, Trash2 } from "lucide-react";
+import { useCallback, useContext } from "react";
 
 import { Api } from "@m/base/api/Api";
 import { useApiToast } from "@m/base/hooks/useApiToast";
@@ -12,7 +12,6 @@ import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import { IDtoAdvancedRegressionResultItem } from "../interfaces/IDtoRegressionAnalyses";
 import { CRegressionAnalysesCardBody } from "./CRegressionAnalysesCardBody";
-import { CRegressionAnalysesCardThresholdModal } from "./CRegressionAnalysesCardThresholdModal";
 
 export function CRegressionAnalysesCard({
   data,
@@ -24,14 +23,6 @@ export function CRegressionAnalysesCard({
   const { t } = useTranslation();
   const { push } = useContext(ContextAreYouSure);
   const apiToast = useApiToast();
-
-  const [showThresholdModal, setShowThresholdModal] = useState(false);
-  const openThresholdModal = useCallback(() => {
-    setShowThresholdModal(true);
-  }, []);
-  const closeThresholdModal = useCallback(() => {
-    setShowThresholdModal(false);
-  }, []);
 
   const handlePrimaryChange = useCallback(
     async (selected: boolean) => {
@@ -80,11 +71,6 @@ export function CRegressionAnalysesCard({
         path: `/analysis/advanced-regression/values/${d.id}`,
       },
       {
-        icon: CircleGauge,
-        label: t("adjustThreshold"),
-        onClick: openThresholdModal,
-      },
-      {
         icon: Copy,
         label: t("clone"),
         path: `/analysis/advanced-regression/clone/${d.id}`,
@@ -95,7 +81,7 @@ export function CRegressionAnalysesCard({
         onClick: handleDelete,
       },
     ],
-    [handleDelete, openThresholdModal, t],
+    [handleDelete, t],
   );
 
   return (
@@ -120,15 +106,6 @@ export function CRegressionAnalysesCard({
           />
         </CLine>
       </CCard>
-
-      {showThresholdModal && (
-        <CRegressionAnalysesCardThresholdModal
-          id={data.id}
-          initialValue={data.threshold}
-          onClose={closeThresholdModal}
-          onDone={load}
-        />
-      )}
     </>
   );
 }

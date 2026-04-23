@@ -1,3 +1,10 @@
+/**
+ * @file: CGuardAllowedPage.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 04.04.2025
+ * Last Modified Date: 06.04.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import {
   IDtoEOrganizationPlanFeature,
   IDtoEPermission,

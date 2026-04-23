@@ -70,7 +70,7 @@ export function CWidgetEditForm({
 
   useEffect(() => {
     if (widget.config.type === "GRAPH_DATA_VIEW_VALUE") {
-      void Api.GET("/u/measurement/data-view/profile/{id}", {
+      void Api.GET("/u/analysis/data-view/profile/{id}", {
         params: { path: { id: widget.config.dataViewId } },
       }).then((res) => {
         if (!res.error) {
@@ -143,7 +143,7 @@ export function CWidgetEditForm({
         navigate("/measurements/significant-energy-user");
         break;
       case "GRAPH_DATA_VIEW_VALUE":
-        navigate(`/measurements/data-view/values/${widget.config.dataViewId}`);
+        navigate(`/analyses/data-view/values/${widget.config.dataViewId}`);
         break;
       case "GRAPH_ADVANCED_REGRESSION_RESULT":
         navigate("/analysis/advanced-regression");

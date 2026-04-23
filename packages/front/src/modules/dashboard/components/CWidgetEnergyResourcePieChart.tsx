@@ -56,7 +56,7 @@ export function CWidgetEnergyResourcePieChart() {
   const pieData = useLoaderMiddleware(data, middleware);
 
   return (
-    <CAsyncLoader data={pieData}>
+    <CAsyncLoader data={pieData} className="min-h-72 h-full">
       {(payload) => (
         <CPieChart data={payload} unit={unit} disableInteractiveLegend />
       )}

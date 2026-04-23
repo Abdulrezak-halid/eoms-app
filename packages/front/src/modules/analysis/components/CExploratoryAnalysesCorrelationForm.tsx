@@ -1,14 +1,18 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Play } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import { Api } from "@m/base/api/Api";
 import { useApiToast } from "@m/base/hooks/useApiToast";
 import { CButton } from "@m/core/components/CButton";
 import { CForm } from "@m/core/components/CForm";
 import { CFormFooter, CFormLine } from "@m/core/components/CFormPanel";
-import { CInputDatetime } from "@m/core/components/CInputDatetime";
+import {
+  CQuickRangeSelect,
+  ICQuickRangeValue,
+} from "@m/core/components/CQuickRangeSelect";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 import { useTranslation } from "@m/core/hooks/useTranslation";
+import { quickRangeToDatetimeRange } from "@m/core/utils/UtilQuickRange";
 import { CMultiSelectMetric } from "@m/measurement/components/CMultiSelectMetric";
 
 import { IDtoCorrelationResultItem } from "../interfaces/IDtoExploratoryAnalyses";
@@ -23,8 +27,8 @@ export function CExploratoryAnalysesCorrelationForm({
   const { t } = useTranslation();
   const apiToast = useApiToast();
   const inputMetricIds = useInput<string[]>([]);
-  const inputdatetimeStart = useInput<string>();
-  const inputdatetimeEnd = useInput<string>();
+  const inputDatetimeRange = useInput<ICQuickRangeValue | undefined>();
+  const datetimeRange = quickRangeToDatetimeRange(inputDatetimeRange.value);
 
   const lastLoadedRerunId = useRef<string | null>(null);
 
@@ -41,21 +45,20 @@ export function CExploratoryAnalysesCorrelationForm({
     lastLoadedRerunId.current = rerunData.id;
 
     inputMetricIds.setValue(rerunData.metrics.map((d) => d.id));
-    inputdatetimeStart.setValue(rerunData.datetimeStart);
-    inputdatetimeEnd.setValue(rerunData.datetimeEnd);
-  }, [inputMetricIds, inputdatetimeStart, inputdatetimeEnd, rerunData]);
+    inputDatetimeRange.setValue({
+      customMin: rerunData.datetimeStart,
+      customMax: rerunData.datetimeEnd,
+    });
+  }, [inputMetricIds, inputDatetimeRange, rerunData]);
 
   const invalidDriverCount = useMemo(
     // If length is zero, do not register this invalid message.
     () => inputMetricIds.value && inputMetricIds.value.length === 1,
     [inputMetricIds.value],
   );
-  const invalidForm = useInputInvalid(
-    inputMetricIds,
-    inputdatetimeStart,
-    inputdatetimeEnd,
-  );
-  const invalid = invalidForm || invalidDriverCount;
+  const invalidForm = useInputInvalid(inputMetricIds);
+  const invalidRange = Boolean(datetimeRange.invalidMsg);
+  const invalid = invalidForm || invalidDriverCount || invalidRange;
 
   const handleSubmit = useCallback(async () => {
     if (invalid) {
@@ -65,8 +68,8 @@ export function CExploratoryAnalysesCorrelationForm({
     const res = await Api.POST("/u/analysis/correlation/commit", {
       body: {
         metricIds: inputMetricIds.value,
-        datetimeStart: inputdatetimeStart.value ?? "",
-        datetimeEnd: inputdatetimeEnd.value ?? "",
+        datetimeStart: datetimeRange?.datetimeMin ?? "",
+        datetimeEnd: datetimeRange?.datetimeMax ?? "",
       },
     });
 
@@ -75,15 +78,7 @@ export function CExploratoryAnalysesCorrelationForm({
     if (!res.error) {
       await onSubmitSuccess();
     }
-  }, [
-    invalid,
-    inputMetricIds,
-    inputdatetimeStart,
-    inputdatetimeEnd,
-    apiToast,
-    onSubmitSuccess,
-    t,
-  ]);
+  }, [invalid, datetimeRange, inputMetricIds, apiToast, onSubmitSuccess, t]);
 
   const invalidMsg =
     inputMetricIds.invalidMsg ||
@@ -100,26 +95,11 @@ export function CExploratoryAnalysesCorrelationForm({
           />
         </CFormLine>
 
-        <CFormLine
-          label={t("datetimeStart")}
-          invalidMsg={inputdatetimeStart.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputdatetimeStart}
-            max={inputdatetimeEnd.value}
-            placeholder={t("datetimeStart")}
-            required
-          />
-        </CFormLine>
-
-        <CFormLine
-          label={t("datetimeEnd")}
-          invalidMsg={inputdatetimeEnd.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputdatetimeEnd}
-            min={inputdatetimeStart.value}
-            placeholder={t("datetimeEnd")}
+        <CFormLine label={t("dateRange")} invalidMsg={datetimeRange.invalidMsg}>
+          <CQuickRangeSelect
+            value={inputDatetimeRange.value}
+            onChange={inputDatetimeRange.onChange}
+            invalid={invalidRange}
             required
           />
         </CFormLine>

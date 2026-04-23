@@ -1,3 +1,10 @@
+/**
+ * @file: TbUserPermission.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 05.03.2025
+ * Last Modified Date: 05.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { pgTable, text, uniqueIndex, uuid } from "drizzle-orm/pg-core";
 
 import { DataPermissions } from "../interfaces/IPermission";

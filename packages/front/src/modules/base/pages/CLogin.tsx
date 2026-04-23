@@ -1,3 +1,10 @@
+/**
+ * @file: CLogin.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 01.11.2024
+ * Last Modified Date: 06.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import {
   EApiFailCode,
@@ -125,7 +132,7 @@ export function CLogin() {
 
   return (
     <div className="h-full flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-900 px-3">
-      <CForm onSubmit={handleSubmit} className="w-84">
+      <CForm onSubmit={handleSubmit} className="w-[21rem]">
         <CCard className="p-4 space-y-4">
           {publicOrganizationInfo && bannerUrl ? (
             <div className="text-center space-y-1">
@@ -183,7 +190,7 @@ export function CLogin() {
       </CForm>
 
       {import.meta.env.VITE_DEV_PAGES && (
-        <CCard className="mt-4 w-84">
+        <CCard className="mt-4 w-[21rem]">
           <CExternalLink
             label="API Doc"
             href={`${import.meta.env.VITE_API_URL}/ui`}

@@ -1,0 +1,5 @@
+- This tab is used to plan and monitor training needs.
+- Inputs come from competency checks of individuals who have significant impacts on planning activities and energy performance.
+- People are listed in the first column and training activities in the third row (heading).
+- Dates indicate training dates. Green indicates completed, blue indicates planned training.
+- Continuously update this tab with new training to help improve energy performance.

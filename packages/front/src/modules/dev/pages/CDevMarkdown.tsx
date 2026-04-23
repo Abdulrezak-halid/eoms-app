@@ -1,3 +1,10 @@
+/**
+ * @file: CDevMarkdown.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 31.03.2025
+ * Last Modified Date: 31.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useMemo } from "react";
 
 import { CBody } from "@m/base/components/CBody";
@@ -6,7 +13,7 @@ import { CMarkdown } from "@m/core/components/CMarkdown";
 export function CDevMarkdown() {
   const markdown = useMemo(
     () => `
-# eoms Project Setup Guide
+# Reneryo Project Setup Guide
 
 Follow these steps to set up and run the project.
 
@@ -62,7 +69,7 @@ docker run --name postgres \\
 Run the following command to create the required database inside the PostgreSQL container:
 
 \`\`\`bash
-docker exec -it postgres psql -U postgres -c "CREATE DATABASE eoms;"
+docker exec -it postgres psql -U postgres -c "CREATE DATABASE reneryo;"
 \`\`\`
 
 ## 5. Generate Required Files

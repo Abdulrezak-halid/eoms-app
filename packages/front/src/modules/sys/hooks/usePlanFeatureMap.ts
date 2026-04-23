@@ -19,7 +19,7 @@ export function usePlanFeatureMap() {
       SUPPLY_CHAIN: { label: t("supplyChain") },
       REPORT: { label: t("report") },
       QDMS: { label: t("qdmsShort") },
-      eoms_AGENT: { label: t("eomsAgent") },
+      RENERYO_AGENT: { label: t("reneryoAgent") },
       ACCESS_TOKEN: { label: t("accessToken") },
       ORGANIZATION_PARTNER: { label: t("organizationPartner") },
     }),

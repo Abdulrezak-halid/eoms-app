@@ -8,11 +8,15 @@ import {
   CFormLine,
   CFormPanel,
 } from "@m/core/components/CFormPanel";
-import { CInputDatetime } from "@m/core/components/CInputDatetime";
+import {
+  CQuickRangeSelect,
+  ICQuickRangeValue,
+} from "@m/core/components/CQuickRangeSelect";
 import { CRadioGroup } from "@m/core/components/CRadioGroup";
 import { ISelectListItem } from "@m/core/components/CSelectList";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 import { useTranslation } from "@m/core/hooks/useTranslation";
+import { quickRangeToDatetimeRange } from "@m/core/utils/UtilQuickRange";
 import { CComboboxSeu } from "@m/measurement/components/CComboboxSeu";
 
 import { IDtoAdvancedRegressionSuggestFormData } from "../interfaces/IDtoRegressionAnalyses";
@@ -28,8 +32,7 @@ export function CRegressionSuggestForm({
 
   const inputSeuMode = useInput<ISeuSelectionMode>("ALL");
   const inputSeuId = useInput<string>();
-  const inputDatetimeStart = useInput<string>();
-  const inputDatetimeEnd = useInput<string>();
+  const inputDatetimeRange = useInput<ICQuickRangeValue | undefined>();
 
   const seuModeOptions = useMemo<ISelectListItem<ISeuSelectionMode>[]>(
     () => [
@@ -40,16 +43,22 @@ export function CRegressionSuggestForm({
   );
 
   const isSpecific = inputSeuMode.value === "SPECIFIC";
+  const datetimeRange = useMemo(
+    () => quickRangeToDatetimeRange(inputDatetimeRange.value),
+    [inputDatetimeRange.value],
+  );
 
-  const invalidBase = useInputInvalid(inputDatetimeStart, inputDatetimeEnd);
+  const invalidBase = useInputInvalid();
   const invalidSpecific = useInputInvalid(inputSeuId);
-  const invalid = invalidBase || (isSpecific && invalidSpecific);
+  const invalidRange = Boolean(datetimeRange.invalidMsg);
+  const invalid =
+    invalidBase || invalidRange || (isSpecific && invalidSpecific);
 
   const handleSubmit = useCallback(async () => {
     if (
       invalid ||
-      !inputDatetimeStart.value ||
-      !inputDatetimeEnd.value ||
+      !datetimeRange.datetimeMin ||
+      !datetimeRange.datetimeMax ||
       (isSpecific && !inputSeuId.value)
     ) {
       return;
@@ -57,21 +66,14 @@ export function CRegressionSuggestForm({
 
     await onSubmit({
       query: {
-        datetimeMin: inputDatetimeStart.value,
-        datetimeMax: inputDatetimeEnd.value,
+        datetimeMin: datetimeRange.datetimeMin,
+        datetimeMax: datetimeRange.datetimeMax,
       },
       body: {
         seuId: isSpecific ? inputSeuId.value : undefined,
       },
     });
-  }, [
-    invalid,
-    inputDatetimeStart.value,
-    inputDatetimeEnd.value,
-    isSpecific,
-    inputSeuId.value,
-    onSubmit,
-  ]);
+  }, [invalid, datetimeRange, isSpecific, inputSeuId.value, onSubmit]);
 
   return (
     <CForm onSubmit={handleSubmit}>
@@ -92,26 +94,11 @@ export function CRegressionSuggestForm({
           </div>
         </CFormLine>
 
-        <CFormLine
-          label={t("datetimeStart")}
-          invalidMsg={inputDatetimeStart.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputDatetimeStart}
-            max={inputDatetimeEnd.value}
-            placeholder={t("datetimeStart")}
-            required
-          />
-        </CFormLine>
-
-        <CFormLine
-          label={t("datetimeEnd")}
-          invalidMsg={inputDatetimeEnd.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputDatetimeEnd}
-            min={inputDatetimeStart.value}
-            placeholder={t("datetimeEnd")}
+        <CFormLine label={t("dateRange")} invalidMsg={datetimeRange.invalidMsg}>
+          <CQuickRangeSelect
+            value={inputDatetimeRange.value}
+            onChange={inputDatetimeRange.onChange}
+            invalid={invalidRange}
             required
           />
         </CFormLine>

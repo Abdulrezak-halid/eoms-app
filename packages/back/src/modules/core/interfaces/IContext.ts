@@ -1,7 +1,15 @@
+/**
+ * @file: IContext.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 06.11.2024
+ * Last Modified Date: 06.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { Logger } from "pino";
 
 import { ISession } from "@m/base/interfaces/ISession";
+import { ISessionAccessToken } from "@m/base/interfaces/ISessionAccessToken";
 
 import { ServiceWebSocket } from "../services/ServiceWebSocket";
 import type { IEnv } from "./IEnv";
@@ -35,4 +43,12 @@ export interface IHonoContextCore {
 
 export interface IHonoContextUser {
   Variables: IContextUser;
+}
+
+export interface IContextAccessToken extends IContextOrg {
+  session: ISessionAccessToken;
+}
+
+export interface IHonoContextAccessToken {
+  Variables: IContextAccessToken;
 }

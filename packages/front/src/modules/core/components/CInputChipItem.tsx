@@ -1,3 +1,10 @@
+/**
+ * @file: CInputChipItem.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 01.11.2024
+ * Last Modified Date: 30.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { X } from "lucide-react";
 import { MouseEvent, ReactNode, useCallback } from "react";
 

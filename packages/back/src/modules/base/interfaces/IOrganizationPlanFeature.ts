@@ -1,3 +1,11 @@
+/**
+ * @file: IOrganizationPlanFeature.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 26.03.2025
+ * Last Modified Date: 26.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
 export const DataOrganizationPlanFeature = [
   // Modules
   "MEASUREMENT",
@@ -9,7 +17,7 @@ export const DataOrganizationPlanFeature = [
 
   // Integrations
   "QDMS",
-  "eoms_AGENT",
+  "RENERYO_AGENT",
   "ACCESS_TOKEN",
 
   // Base

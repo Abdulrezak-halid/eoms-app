@@ -1,3 +1,10 @@
+/**
+ * @file: CMultiSelectList.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 30.03.2025
+ * Last Modified Date: 30.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { Search } from "lucide-react";
 import { useCallback, useMemo, useRef, useState } from "react";
 

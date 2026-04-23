@@ -20,7 +20,7 @@ export function CWidgetGraphMetricValue({
   const displayUnitAbbr = useUnitAbbreviation(displayUnit);
 
   return (
-    <CAsyncLoader data={chartData}>
+    <CAsyncLoader data={chartData} className="min-h-72 h-full">
       {(payload) => (
         <CChart
           series={payload}

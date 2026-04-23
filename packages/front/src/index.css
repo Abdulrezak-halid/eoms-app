@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -20,7 +20,7 @@
   --container-3xl: 112rem;
 
   /* Teal */
-  /* --color-accent-50: oklch(0.984 0.014 180.72);
+  --color-accent-50: oklch(0.984 0.014 180.72);
   --color-accent-100: oklch(0.953 0.051 180.801);
   --color-accent-200: oklch(0.91 0.096 180.426);
   --color-accent-300: oklch(0.855 0.138 181.071);
@@ -30,10 +30,10 @@
   --color-accent-700: oklch(0.511 0.096 186.391);
   --color-accent-800: oklch(0.437 0.078 188.216);
   --color-accent-900: oklch(0.386 0.063 188.416);
-  --color-accent-950: oklch(0.277 0.046 192.524); */
+  --color-accent-950: oklch(0.277 0.046 192.524);
 
   /* Emerald */
-  --color-accent-50: oklch(0.979 0.021 166.113);
+  /*--color-accent-50: oklch(0.979 0.021 166.113);
   --color-accent-100: oklch(0.95 0.052 163.051);
   --color-accent-200: oklch(0.905 0.093 164.15);
   --color-accent-300: oklch(0.845 0.143 164.978);
@@ -43,10 +43,10 @@
   --color-accent-700: oklch(0.508 0.118 165.612);
   --color-accent-800: oklch(0.432 0.095 166.913);
   --color-accent-900: oklch(0.378 0.077 168.94);
-  --color-accent-950: oklch(0.262 0.051 172.552);
+  --color-accent-950: oklch(0.262 0.051 172.552);*/
 
   /* Slate */
-  /* --color-gray-50: oklch(0.984 0.003 247.858);
+  --color-gray-50: oklch(0.984 0.003 247.858);
   --color-gray-100: oklch(0.968 0.007 247.896);
   --color-gray-200: oklch(0.929 0.013 255.508);
   --color-gray-300: oklch(0.869 0.022 252.894);
@@ -55,11 +55,11 @@
   --color-gray-600: oklch(0.446 0.043 257.281);
   --color-gray-700: oklch(0.372 0.044 257.287);
   --color-gray-800: oklch(0.279 0.041 260.031);
-  --color-gray-900: oklch(0.208 0.042 265.755); */
+  --color-gray-900: oklch(0.208 0.042 265.755);
   --color-gray-950: oklch(0.129 0.042 264.695);
 
   /* Zinc */
-  --color-gray-50: oklch(0.985 0 0);
+  /*--color-gray-50: oklch(0.985 0 0);
   --color-gray-100: oklch(0.967 0.001 286.375);
   --color-gray-200: oklch(0.92 0.004 286.32);
   --color-gray-300: oklch(0.871 0.006 286.286);
@@ -69,7 +69,7 @@
   --color-gray-700: oklch(0.37 0.013 285.805);
   --color-gray-800: oklch(0.274 0.006 286.033);
   --color-gray-900: oklch(0.21 0.006 285.885);
-  --color-gray-950: oklch(0.141 0.005 285.823);
+  --color-gray-950: oklch(0.141 0.005 285.823);*/
 }
 
 @utility x-outline {
@@ -85,24 +85,25 @@
   -webkit-text-fill-color: var(--color-gray-800);
 
   .dark & {
-    box-shadow: 0 0 0px 50px --alpha(var(--color-yellow-500) / 20%) inset;
+    box-shadow: 0 0 0px 50px --alpha(var(--color-yellow-500)/20%) inset;
     -webkit-text-fill-color: var(--color-white);
   }
 }
 
 .dark {
+
   /**
    * Using dark: variant on placeholder gives warning on build
    * (maybe tailwind warning)
    */
   /* Real placeholders do not consume dark config on dark mode */
   & .placeholder\:x-placeholder::placeholder {
-    color: --alpha(var(--color-gray-100) / 50%);
+    color: --alpha(var(--color-gray-100)/50%);
   }
 
   /* For synthetic inputs */
   & .x-placeholder {
-    color: --alpha(var(--color-gray-100) / 50%);
+    color: --alpha(var(--color-gray-100)/50%);
   }
 
   & .x-autofill {
@@ -139,8 +140,7 @@
     font-family: "Roboto Mono";
     font-style: normal;
     font-weight: 400;
-    src: url(./assets/fonts/roboto-mono/RobotoMono-Regular.ttf)
-      format("truetype");
+    src: url(./assets/fonts/roboto-mono/RobotoMono-Regular.ttf) format("truetype");
   }
 
   @font-face {
@@ -159,7 +159,7 @@
     @apply h-full text-gray-700;
     @apply dark:text-gray-100 @container;
 
-    scrollbar-color: --alpha(var(--color-gray-500) / 50%) transparent;
+    scrollbar-color: --alpha(var(--color-gray-500)/50%) transparent;
 
     &.dark {
       scrollbar-color: var(--color-gray-500) transparent;
@@ -176,10 +176,6 @@
 }
 
 @keyframes x-ani-width {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }

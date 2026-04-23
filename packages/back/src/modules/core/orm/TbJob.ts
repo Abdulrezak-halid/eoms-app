@@ -1,3 +1,10 @@
+/**
+ * @file: TbJob.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 22.02.2025
+ * Last Modified Date: 22.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import {
   index,
   integer,

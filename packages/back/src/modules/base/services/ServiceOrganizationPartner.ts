@@ -1,5 +1,5 @@
 import { EApiFailCode } from "common";
-import { and, eq, ne, or } from "drizzle-orm";
+import { and, count, eq, inArray, ne, or } from "drizzle-orm";
 
 import { TbOrganization } from "@m/base/orm/TbOrganization";
 import { ApiException } from "@m/core/exceptions/ApiException";
@@ -12,6 +12,31 @@ import { TbOrganizationPartnerToken } from "../orm/TbOrganizationPartnerToken";
 import { VwOrganizationPartner } from "../orm/VwOrganizationPartner";
 
 export namespace ServiceOrganizationPartner {
+  export async function checkOrgPartnerShip(c: IContextOrg, ids: string[]) {
+    if (ids.length === 0) {
+      return;
+    }
+
+    const uniqueIds = [...new Set(ids)];
+
+    const [row] = await c.db
+      .select({ count: count() })
+      .from(VwOrganizationPartner)
+      .where(
+        and(
+          eq(VwOrganizationPartner.orgId, c.orgId),
+          inArray(VwOrganizationPartner.partnerId, uniqueIds),
+        ),
+      );
+
+    if (Number(row.count) !== uniqueIds.length) {
+      throw new ApiException(
+        EApiFailCode.BAD_REQUEST,
+        "This organization(s) is not your partner.",
+      );
+    }
+  }
+
   export async function create(c: IContextOrg, token: string) {
     const [recOwner] = await c.db
       .select({

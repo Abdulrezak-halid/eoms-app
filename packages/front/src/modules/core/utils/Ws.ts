@@ -1,3 +1,10 @@
+/**
+ * @file: Ws.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 14.04.2024
+ * Last Modified Date: 14.04.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 /* eslint-disable no-console */
 import {
   WS_CLOSE_CODE_REJECT,

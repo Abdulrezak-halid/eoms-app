@@ -1,3 +1,9 @@
+/** @file: RouterUser.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 07.11.2024
+ * Last Modified Date: 16.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { createRoute, z } from "@hono/zod-openapi";
 import { EApiFailCode } from "common";
 

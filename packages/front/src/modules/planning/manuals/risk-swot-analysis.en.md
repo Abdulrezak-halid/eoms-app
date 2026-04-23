@@ -1,0 +1,5 @@
+- This technique involves examining the current situation under the following 4 headings: Strengths, Weaknesses, Opportunities, and Threats (SWOT).
+- Consider your own situation under each of these headings. Delete our examples and replace them with your own situation.
+- Evaluate your situation both within and outside your organization.
+- Search online for more information on this topic.
+- Pay special attention to any item that has a weakness related to a threat. Such a situation can amplify the impact and disadvantage of these factors.

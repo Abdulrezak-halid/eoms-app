@@ -1,3 +1,10 @@
+/**
+ * @file: ContextToast.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 01.11.2024
+ * Last Modified Date: 01.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { createContext } from "react";
 
 import { IconType } from "../components/CIcon";

@@ -1,3 +1,10 @@
+/**
+ * @file: ContextAreYouSure.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 09.11.2024
+ * Last Modified Date: 09.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { createContext } from "react";
 
 export interface IAreYouSureRecord {

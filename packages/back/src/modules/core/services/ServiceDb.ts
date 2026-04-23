@@ -1,3 +1,10 @@
+/**
+ * @file: ServiceDb.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 27.12.2024
+ * Last Modified Date: 27.12.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { type NodePgDatabase, drizzle } from "drizzle-orm/node-postgres";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
 import pg from "pg";

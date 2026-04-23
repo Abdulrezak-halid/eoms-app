@@ -1,3 +1,10 @@
+/**
+ * @file: CNavButton.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 30.11.2024
+ * Last Modified Date: 30.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { IconType } from "@m/core/components/CIcon";
 
 import { CNavButtonContainer } from "./CNavButtonContainer";

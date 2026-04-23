@@ -1,3 +1,10 @@
+/**
+ * @file: C404.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 20.11.2024
+ * Last Modified Date: 20.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useMemo } from "react";
 import { Frown } from "lucide-react";
 

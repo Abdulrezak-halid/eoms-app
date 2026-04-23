@@ -13,7 +13,7 @@ export default defineConfig({
       files: [
         { entryMatch: /Roboto-[a-zA-Z-]*\.ttf$/ },
         { entryMatch: /Roboto-[a-zA-Z-]*\.ttf$/ },
-        { entryMatch: /eoms-logo.*$/ },
+        { entryMatch: /reneryo-logo.*$/ },
         // { outputMatch: /lazy.[a-z-0-9]*.(css|js)$/ },
       ],
     }),

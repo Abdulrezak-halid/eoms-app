@@ -1,3 +1,10 @@
+/**
+ * @file: CRadioGroup.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 22.10.2024
+ * Last Modified Date: 22.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { classNames } from "../utils/classNames";
 import { CCheckbox } from "./CCheckbox";
 import { ISelectListItem } from "./CSelectList";

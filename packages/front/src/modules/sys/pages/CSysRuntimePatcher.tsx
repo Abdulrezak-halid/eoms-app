@@ -1,3 +1,10 @@
+/**
+ * @file: CSysRuntimePatcher.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 19.11.2024
+ * Last Modified Date: 27.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 

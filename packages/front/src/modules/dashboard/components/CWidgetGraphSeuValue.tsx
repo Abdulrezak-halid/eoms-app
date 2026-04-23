@@ -23,7 +23,7 @@ export function CWidgetGraphSeuValue({
   const displayUnitAbbr = useUnitAbbreviation(displayUnit);
 
   return (
-    <CAsyncLoader data={data}>
+    <CAsyncLoader data={data} className="min-h-72 h-full">
       {(series) => (
         <CChart
           series={series}

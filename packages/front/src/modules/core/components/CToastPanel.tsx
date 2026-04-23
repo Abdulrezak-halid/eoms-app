@@ -1,3 +1,10 @@
+/**
+ * @file: CToast.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 31.10.2024
+ * Last Modified Date: 01.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { useContext, useMemo } from "react";
 import {
   Check,

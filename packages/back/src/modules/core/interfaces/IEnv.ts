@@ -1,3 +1,11 @@
+/**
+ * @file: IEnv.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 08.01.2025
+ * Last Modified Date: 08.01.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
 // Note: Don't forget to update ServiceEnv when you change here
 export interface IEnv {
   MODE_EXPORT_API_SCHEMA?: string;
@@ -59,4 +67,10 @@ export interface IEnv {
   LOG_LOKI_ENDPOINT?: string;
   WEATHER_API_TOKEN?: string;
   OPEN_WEATHER_API_TOKEN?: string;
+
+  SMTP_HOST?: string;
+  SMTP_PORT?: number;
+  SMTP_USERNAME?: string;
+  SMTP_PASSWORD?: string;
+  SMTP_FROM?: string;
 }

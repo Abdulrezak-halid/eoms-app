@@ -1,3 +1,10 @@
+/**
+ * @file: RouterRoot.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 06.11.2024
+ * Last Modified Date: 10.11.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { otel } from "@hono/otel";
 import { createRoute, z } from "@hono/zod-openapi";
 import { cors } from "hono/cors";

@@ -39,6 +39,11 @@ export function usePermissionMap() {
         description: t("basePermissionDescriptionMsg"),
         // No orgPlanFeature
       },
+      ["/BASE/ACCESS_TOKEN"]: {
+        title: t("accessTokens"),
+        description: t("basePermissionDescriptionMsg"),
+        orgPlanFeature: "ACCESS_TOKEN",
+      },
       ["/BASE/USER_TOKEN"]: {
         title: t("userTokens"),
         description: t("basePermissionDescriptionMsg"),
@@ -103,7 +108,7 @@ export function usePermissionMap() {
       ["/AGENT"]: {
         title: t("agentManagement"),
         description: t("basePermissionDescriptionMsg"),
-        orgPlanFeature: "eoms_AGENT",
+        orgPlanFeature: "RENERYO_AGENT",
       },
 
       // Report -------------------------------------------------

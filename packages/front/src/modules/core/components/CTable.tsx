@@ -1,3 +1,10 @@
+/**
+ * @file: CTable.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 08.12.2024
+ * Last Modified Date: 08.12.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { ReactElement } from "react";
 
 import { classNames } from "../utils/classNames";

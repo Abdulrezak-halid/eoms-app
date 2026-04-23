@@ -1,3 +1,10 @@
+/**
+ * @file: CBodyHeader.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 10.09.2025
+ * Last Modified Date: 10.09.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { BookOpen, Menu, MousePointer2 } from "lucide-react";
 import { useContext, useEffect, useMemo } from "react";
 
@@ -11,6 +18,7 @@ import { ContextSideMenu } from "../contexts/ContextSideMenu";
 import { CBodyNotificationLink } from "./CBodyNotificationLink";
 import { CBodyUserDropdown } from "./CBodyUserDropdown";
 import { CBreadCrumbs, IBreadCrumb } from "./CBreadCrumbs";
+import { CHeaderReportQueue } from "./CHeaderReportQueue";
 import { CLanguageSelector } from "./CLanguageSelector";
 import { CWsIndicator } from "./CWsIndicator";
 
@@ -77,6 +85,8 @@ export function CBodyHeader({
             primary={isMarkdownPanelVisible}
           />
         )}
+
+        <CHeaderReportQueue />
 
         <CBodyNotificationLink />
 

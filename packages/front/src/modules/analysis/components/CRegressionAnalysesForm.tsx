@@ -8,10 +8,17 @@ import {
   CFormLine,
   CFormPanel,
 } from "@m/core/components/CFormPanel";
-import { CInputDatetime } from "@m/core/components/CInputDatetime";
+import {
+  CQuickRangeSelect,
+  ICQuickRangeValue,
+} from "@m/core/components/CQuickRangeSelect";
 import { CRadioGroup } from "@m/core/components/CRadioGroup";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 import { useTranslation } from "@m/core/hooks/useTranslation";
+import {
+  datetimeRangeToQuickRange,
+  quickRangeToDatetimeRange,
+} from "@m/core/utils/UtilQuickRange";
 import { CComboboxSeu } from "@m/measurement/components/CComboboxSeu";
 import { CMultiSelectMeterSlice } from "@m/measurement/components/CMultiSelectMeterSlice";
 import { CMultiSelectMetric } from "@m/measurement/components/CMultiSelectMetric";
@@ -83,23 +90,37 @@ export function CRegressionAnalysesForm({
     normalizedInitial.meterSliceIds || [],
   );
   const inputDriverIds = useInput<string[]>(normalizedInitial.driverIds || []);
-  const inputDateTrainStart = useInput(normalizedInitial.dateTrainStart);
-  const inputDateTrainEnd = useInput(normalizedInitial.dateTrainEnd);
-  const inputDatePredictStart = useInput(normalizedInitial.datePredictStart);
-  const inputDatePredictEnd = useInput(normalizedInitial.datePredictEnd);
-
-  const invalidBase = useInputInvalid(
-    inputDriverIds,
-    inputDateTrainStart,
-    inputDateTrainEnd,
-    inputDatePredictStart,
-    inputDatePredictEnd,
+  const inputDateTrainRange = useInput<ICQuickRangeValue | undefined>(
+    datetimeRangeToQuickRange(
+      normalizedInitial.dateTrainStart,
+      normalizedInitial.dateTrainEnd,
+    ),
   );
+  const inputDatePredictRange = useInput<ICQuickRangeValue | undefined>(
+    datetimeRangeToQuickRange(
+      normalizedInitial.datePredictStart,
+      normalizedInitial.datePredictEnd,
+    ),
+  );
+
+  const trainRangeValue = useMemo(
+    () => quickRangeToDatetimeRange(inputDateTrainRange.value),
+    [inputDateTrainRange.value],
+  );
+  const predictRangeValue = useMemo(
+    () => quickRangeToDatetimeRange(inputDatePredictRange.value),
+    [inputDatePredictRange.value],
+  );
+
+  const invalidBase = useInputInvalid(inputDriverIds);
   const invalidTarget =
     sourceType === "SEU"
       ? !inputSeuId.value
       : inputMeterSliceIds.value.length === 0;
-  const invalid = invalidBase || invalidTarget;
+  const invalidRange = Boolean(
+    trainRangeValue.invalidMsg || predictRangeValue.invalidMsg,
+  );
+  const invalid = invalidBase || invalidTarget || invalidRange;
 
   const handleSourceTypeChange = useCallback(
     (value: "SEU" | "METER_SLICES") => {
@@ -112,10 +133,10 @@ export function CRegressionAnalysesForm({
     if (
       invalid ||
       !inputDriverIds.value?.length ||
-      !inputDateTrainStart.value ||
-      !inputDateTrainEnd.value ||
-      !inputDatePredictStart.value ||
-      !inputDatePredictEnd.value
+      !trainRangeValue.datetimeMin ||
+      !trainRangeValue.datetimeMax ||
+      !predictRangeValue.datetimeMin ||
+      !predictRangeValue.datetimeMax
     ) {
       return;
     }
@@ -130,10 +151,10 @@ export function CRegressionAnalysesForm({
 
     await onSubmit({
       driverIds: inputDriverIds.value,
-      dateTrainStart: inputDateTrainStart.value,
-      dateTrainEnd: inputDateTrainEnd.value,
-      datePredictStart: inputDatePredictStart.value,
-      datePredictEnd: inputDatePredictEnd.value,
+      dateTrainStart: trainRangeValue.datetimeMin,
+      dateTrainEnd: trainRangeValue.datetimeMax,
+      datePredictStart: predictRangeValue.datetimeMin,
+      datePredictEnd: predictRangeValue.datetimeMax,
       ...(sourceType === "SEU"
         ? { seuId: inputSeuId.value }
         : { meterSliceIds: inputMeterSliceIds.value }),
@@ -144,10 +165,8 @@ export function CRegressionAnalysesForm({
     inputSeuId.value,
     inputMeterSliceIds.value,
     inputDriverIds.value,
-    inputDateTrainStart.value,
-    inputDateTrainEnd.value,
-    inputDatePredictStart.value,
-    inputDatePredictEnd.value,
+    trainRangeValue,
+    predictRangeValue,
     onSubmit,
   ]);
 
@@ -194,49 +213,25 @@ export function CRegressionAnalysesForm({
         </CFormLine>
 
         <CFormLine
-          label={t("dateTrainStart")}
-          invalidMsg={inputDateTrainStart.invalidMsg}
+          label={t("dateTrainRange")}
+          invalidMsg={trainRangeValue.invalidMsg}
         >
-          <CInputDatetime
-            {...inputDateTrainStart}
-            max={inputDateTrainEnd.value || undefined}
-            placeholder={t("dateTrainStart")}
+          <CQuickRangeSelect
+            value={inputDateTrainRange.value}
+            onChange={inputDateTrainRange.onChange}
+            invalid={Boolean(trainRangeValue.invalidMsg)}
             required
           />
         </CFormLine>
 
         <CFormLine
-          label={t("dateTrainEnd")}
-          invalidMsg={inputDateTrainEnd.invalidMsg}
+          label={t("datePredictRange")}
+          invalidMsg={predictRangeValue.invalidMsg}
         >
-          <CInputDatetime
-            {...inputDateTrainEnd}
-            min={inputDateTrainStart.value || undefined}
-            placeholder={t("dateTrainEnd")}
-            required
-          />
-        </CFormLine>
-
-        <CFormLine
-          label={t("datePredictStart")}
-          invalidMsg={inputDatePredictStart.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputDatePredictStart}
-            max={inputDatePredictEnd.value || undefined}
-            placeholder={t("datePredictStart")}
-            required
-          />
-        </CFormLine>
-
-        <CFormLine
-          label={t("datePredictEnd")}
-          invalidMsg={inputDatePredictEnd.invalidMsg}
-        >
-          <CInputDatetime
-            {...inputDatePredictEnd}
-            min={inputDatePredictStart.value || undefined}
-            placeholder={t("datePredictEnd")}
+          <CQuickRangeSelect
+            value={inputDatePredictRange.value || {}}
+            onChange={inputDatePredictRange.onChange}
+            invalid={Boolean(predictRangeValue.invalidMsg)}
             required
           />
         </CFormLine>

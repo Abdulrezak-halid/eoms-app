@@ -1,3 +1,10 @@
+/**
+ * @file: CIssueReportRequest.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 11.12.2024
+ * Last Modified Date: 11.12.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { MAX_ISSUE_DESC, MIN_ISSUE_DESC } from "common";
 import { IDtoEIssueType } from "common/build-api-schema";
 import { useCallback, useMemo, useState } from "react";

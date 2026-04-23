@@ -1,7 +1,7 @@
 {
-  "name": "eoms",
+  "name": "Reneryo",
   "icons": [
-    { "src": "/eoms-icon-192.webp", "type": "image/webp", "sizes": "192x192" },
-    { "src": "/eoms-icon-512.webp", "type": "image/webp", "sizes": "512x512" }
+    { "src": "/reneryo-icon-192.webp", "type": "image/webp", "sizes": "192x192" },
+    { "src": "/reneryo-icon-512.webp", "type": "image/webp", "sizes": "512x512" }
   ]
 }

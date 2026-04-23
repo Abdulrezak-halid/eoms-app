@@ -71,7 +71,7 @@ describe("E2E - Dashboard Widget", () => {
       { value: 1, datetime: "2025-12-01T00:00:00.000Z" },
     ]);
 
-    const createRes = await client.POST("/u/measurement/data-view/profile", {
+    const createRes = await client.POST("/u/analysis/data-view/profile", {
       body: {
         name: "test",
         description: "test",

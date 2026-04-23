@@ -1,0 +1,8 @@
+- Energy policy is the policy document that sets out the framework, objectives and critical elements of the Energy Management System in the enterprise with the commitments of the highest level management of the enterprise..
+- Energy Policy in accordance with ISO50001:2018 and within the scope of ENYS;
+- Consider energy efficiency as a factor in purchasing decision-making,
+- Consider energy efficiency as an element during design activities,
+- Set energy performance improvement targets and allocate all necessary resources to achieve them,
+- That it aims to increase energy performance and energy management system performance as two separate elements that support each other with the principle of continuous improvement,
+- Continuously and regularly follow the legal and other requirements related to energy and fulfill their requirements
+- Commit and have the senior manager of the organization sign the energy policy document as a letter of commitment and announce it in a way that all staff can see it.

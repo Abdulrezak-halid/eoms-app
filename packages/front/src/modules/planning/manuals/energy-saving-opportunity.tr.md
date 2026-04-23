@@ -1,0 +1,9 @@
+- Bu liste, enerji performansınızın sürekli iyileştirilmesinde merkezi bir noktadır.
+- ETF'nin kaynağı ne olursa olsun, hepsi burada listelenmelidir.
+- Her ETF için bu tabloda bir satır olması gerekir.
+- Yeni ETF'ler tanımlandığı zaman, yeni satırlar eklemeniz gerekir.
+- Fikirler, başlangıçta, 'fikir üretimi' sütunları doldurularak listeye eklenir. Bunlar, değerlendirmenin başlaması için temel bilgi verir. Okuyucunun neyin önerildiğini anlamasına imkan vermek için tanım mümkün olduğunca özgül olmalıdır.
+- 'Teknik ve finansal değerlendirme' sütunları yetkin bir kişi tarafından doldurulmalıdır. Bu bilgi ETF'nin uygulanıp uygulanmamaya karar vermesini kolaylaştıracaktır.
+- 'Uygulama yönetimi' sütunları, ETF'nin uygulama aşamasındaki ilerlemeyi belirlemek ve izlemek için kullanılır.
+- 'Sonuçları doğrulama' sütunları, gerçek ölçülen ve doğrulanmış tasarrufları kaydetmek için kullanılır.
+- Her hücrenin amacını ve içeriğini anlamanıza yardımcı olmak için sütun başlıklarının her birinde yorumlar bulunmaktadır.

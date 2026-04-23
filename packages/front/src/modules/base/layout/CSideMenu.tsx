@@ -1,11 +1,11 @@
-import {
-  Bug,
-  CircleUser,
-  History,
-  LayoutGrid,
-  LogOut,
-  Search,
-} from "lucide-react";
+/**
+ * @file: CSideMenu.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 17.04.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+import { Bug, CircleUser, History, LayoutGrid, LogOut } from "lucide-react";
 import { useContext, useMemo, useState } from "react";
 import { Link } from "wouter";
 
@@ -18,7 +18,7 @@ import { ContextSideMenu } from "@m/base/contexts/ContextSideMenu";
 import { useLogout } from "@m/base/hooks/useLogout";
 import { useNavData } from "@m/base/hooks/useNavData";
 import { CExternalLink } from "@m/core/components/CExternalLink";
-import { CInputString } from "@m/core/components/CInputString";
+import { CInputSearch } from "@m/core/components/CInputSearch";
 import { CLine } from "@m/core/components/CLine";
 import { CNoRecord } from "@m/core/components/CNoRecord";
 import { useBuffer } from "@m/core/hooks/useBuffer";
@@ -128,12 +128,12 @@ export function CSideMenu() {
           </Link>
         </div>
 
-        <CInputString
+        <CInputSearch
           value={searchQuery}
           onChange={setSearchQuery}
-          icon={Search}
-          placeholder={t("search")}
           className="m-2 mb-0 flex-none"
+          placeholder={t("searchOrGoTo")}
+          showShortcutHint
         />
 
         <div

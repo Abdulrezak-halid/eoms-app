@@ -1,3 +1,10 @@
+/**
+ * @file: CSelectDate.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 30.03.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { CPopupPanel } from "./CPopupPanel";
 import { CSelectDateBody } from "./CSelectDateBody";
 

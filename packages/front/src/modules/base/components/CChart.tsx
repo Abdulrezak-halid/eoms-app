@@ -1,3 +1,10 @@
+/**
+ * @file: CChart.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 20.02.2025
+ * Last Modified Date: 20.02.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { Chart, Tick, TimeUnit, registerables } from "chart.js";
 import "chartjs-adapter-date-fns";
 import { useContext, useEffect, useMemo, useRef } from "react";

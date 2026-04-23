@@ -7,13 +7,14 @@ import { TbAgent } from "@m/agent/orm/TbAgent";
 import { ServiceAgent } from "@m/agent/services/ServiceAgent";
 import { MqConsumerDriverSuggestions } from "@m/analysis/mq-consumers/MqConsumerDriverSuggestions";
 import { ServiceAdvancedRegression } from "@m/analysis/services/ServiceAdvancedRegression";
+import { ServiceDataViewProfile } from "@m/analysis/services/ServiceDataViewProfile";
 import { ServiceEnpi } from "@m/analysis/services/ServiceEnpi";
 import { TbUser } from "@m/base/orm/TbUser";
+import { ServiceAccessToken } from "@m/base/services/ServiceAccessToken";
 import { ServiceDepartment } from "@m/base/services/ServiceDepartment";
 import { ServiceOrganizationBanner } from "@m/base/services/ServiceOrganizationBanner";
 import { ServiceOrganizationPartner } from "@m/base/services/ServiceOrganizationPartner";
 import { ServiceOrganizationPartnerToken } from "@m/base/services/ServiceOrganizationPartnerToken";
-import { ServiceUserToken } from "@m/base/services/ServiceUserToken";
 import { ServiceUser } from "@m/base/services/ServiceUser";
 import { ServiceComplianceObligation } from "@m/commitment/services/ServiceComplianceObligation";
 import { ServiceComplianceObligationArticle } from "@m/commitment/services/ServiceComplianceObligationArticle";
@@ -34,7 +35,6 @@ import { IMetricResourceLabel } from "@m/measurement/interfaces/IMetricResourceL
 import { MqConsumerAgentStat } from "@m/measurement/mq-consumers/MqConsumerAgentStat";
 import { TbMetric } from "@m/measurement/orm/TbMetric";
 import { TbSeu } from "@m/measurement/orm/TbSeu";
-import { ServiceDataViewProfile } from "@m/measurement/services/ServiceDataViewProfile";
 import { ServiceInboundIntegration } from "@m/measurement/services/ServiceInboundIntegration";
 import { ServiceMeter } from "@m/measurement/services/ServiceMeter";
 import { ServiceMeterSlice } from "@m/measurement/services/ServiceMeterSlice";
@@ -69,7 +69,7 @@ import { AssetOrganizationBanner } from "../assets/AssetOrganizationBanner";
 import { AssetPdf } from "../assets/AssetPdf";
 import { ServiceMockSource } from "../services/ServiceMockSource";
 
-const metricDataSeedRange = 30 * 24 * 60 * 60 * 1000; // 30 days
+const metricDataSeedRange = 365 * 24 * 60 * 60 * 1000; // 1 year
 
 export const PatchDemoSeedStage1 = ServiceRuntimePatcher.create(
   "DEMO_SEED_STAGE_1",
@@ -216,6 +216,20 @@ export const PatchDemoSeedStage1 = ServiceRuntimePatcher.create(
         type: "Carbon Neutrality Commitment",
         target:
           "Achieve net-zero Scope 1 and Scope 2 emissions by 2030 with a verified reduction of 40% by 2027.",
+      });
+      await ServiceEnergyPolicy.create(c, {
+        content:
+          "Ensuring energy efficiency is a primary criterion in all new equipment procurement and facility designs.",
+        period: "YEARLY",
+        type: "Procurement & Design",
+        target: "100% of new major assets meet IE4 efficiency standards.",
+      });
+      await ServiceEnergyPolicy.create(c, {
+        content:
+          "Continuous training of personnel to foster an energy-saving culture and operational excellence.",
+        period: "YEARLY",
+        type: "Personnel Awareness",
+        target: "40 hours of training per employee per year.",
       });
 
       const complianceAbligationId = await ServiceComplianceObligation.create(
@@ -433,20 +447,18 @@ Transmits aggregated 15-minute interval data to the energy management server via
           }))
           .filter(() => Math.random() < 0.9);
 
-        return await ServiceMetric.addValues(
-          c,
-          c.session.orgId,
-          metricId,
-          unit,
-          data,
-          options?.labels || [
-            {
-              type: "INTERNAL",
-              key: "SOURCE",
-              value: "DEV_SEED",
-            },
-          ],
-        );
+        for (let i = 0; i < data.length; i += 5000) {
+          await ServiceMetric.addValues(
+            c,
+            c.session.orgId,
+            metricId,
+            unit,
+            data.slice(i, i + 5000),
+            options?.labels || [
+              { type: "INTERNAL", key: "SOURCE", value: "DEV_SEED" },
+            ],
+          );
+        }
       }
 
       // Stamping Hall main feeder – daily production cycle with shift variation
@@ -462,13 +474,10 @@ Transmits aggregated 15-minute interval data to the energy management server via
         metricId1,
         "ENERGY_KWH",
         [
-          { vMul: 120, hMul: 24 }, // Daily production cycle
+          { vMul: 280, hMul: 24 }, // Daily production cycle
           { vMul: 40, hMul: 8 }, // Shift-level variation
         ],
-        {
-          valueOffset: 80,
-          cumulative: true,
-        },
+        { valueOffset: 180, cumulative: true },
       );
 
       // Boiler No.1 return line temperature
@@ -504,11 +513,8 @@ Transmits aggregated 15-minute interval data to the energy management server via
       await seedMetricResourceValue(
         metricId3,
         "VOLUME_METRE_CUBE",
-        [{ vMul: 55, hMul: 12 }],
-        {
-          valueOffset: 30,
-          cumulative: true,
-        },
+        [{ vMul: 250, hMul: 12 }],
+        { valueOffset: 170, cumulative: true },
       );
 
       // Compressor Room energy (also used as meter slice source)
@@ -523,11 +529,8 @@ Transmits aggregated 15-minute interval data to the energy management server via
       await seedMetricResourceValue(
         metricId4,
         "ENERGY_KWH",
-        [{ vMul: 45, hMul: 8 }],
-        {
-          valueOffset: 25,
-          cumulative: true,
-        },
+        [{ vMul: 60, hMul: 8 }],
+        { valueOffset: 40, cumulative: true },
       );
 
       // High-frequency press line power monitor (1-minute interval)
@@ -586,14 +589,10 @@ Transmits aggregated 15-minute interval data to the energy management server via
       await seedMetricResourceValue(
         metricId7,
         "ENERGY_KWH",
-        [{ vMul: 280, hMul: 24 }],
-        {
-          valueOffset: 150,
-          cumulative: true,
-        },
+        [{ vMul: 400, hMul: 24 }],
+        { valueOffset: 250, cumulative: true },
       );
 
-      // Facility main gas meter
       const metricId8 = await ServiceMetric.create(c, {
         name: "Facility Main Gas Meter",
         description:
@@ -605,11 +604,8 @@ Transmits aggregated 15-minute interval data to the energy management server via
       await seedMetricResourceValue(
         metricId8,
         "ENERGY_KWH",
-        [{ vMul: 180, hMul: 24 }],
-        {
-          valueOffset: 90,
-          cumulative: true,
-        },
+        [{ vMul: 300, hMul: 24 }],
+        { valueOffset: 200, cumulative: true },
       );
 
       // Facility main water meter
@@ -742,7 +738,7 @@ Transmits aggregated 15-minute interval data to the energy management server via
         energyResource: "GAS",
         metricId: metricId8,
         departmentId: mainDepartmentId,
-        energyConversionRate: 1,
+        energyConversionRate: 10.55, // kWh per Nm³ (natural gas HHV)
         isMain: true,
       });
 
@@ -755,25 +751,20 @@ Transmits aggregated 15-minute interval data to the energy management server via
         isMain: true,
       });
 
-      const { createdIds: createdSliceIds } = await ServiceMeterSlice.save(
-        c,
-        meterId,
-        [
-          { rate: 0.55, departmentId: mainDepartmentId, isMain: true },
-          { rate: 0.25, departmentId: departmentId, isMain: false },
-          { rate: 0.2, departmentId: departmentId3, isMain: false },
-        ],
-      );
-      const meterSliceId1 = createdSliceIds[0];
-      const meterSliceId2 = createdSliceIds[1];
-      const meterSliceId3 = createdSliceIds[2];
+      const {
+        createdIds: [stampingSliceId],
+      } = await ServiceMeterSlice.save(c, meterId, [
+        { rate: 1, departmentId: departmentId, isMain: false },
+      ]);
 
-      await ServiceMeterSlice.save(c, meterId2, [
+      const {
+        createdIds: [boilerSliceId],
+      } = await ServiceMeterSlice.save(c, meterId2, [
         { rate: 1, departmentId: departmentId2, isMain: false },
       ]);
 
       const {
-        createdIds: [meter3SliceId1],
+        createdIds: [compressorSliceId],
       } = await ServiceMeterSlice.save(c, compressorMeter.id, [
         { rate: 1, departmentId: departmentId3, isMain: false },
       ]);
@@ -792,30 +783,30 @@ Transmits aggregated 15-minute interval data to the energy management server via
 
       const seuId = await ServiceSeu.create(c, {
         name: "Stamping Hall - Variable Speed Drives",
-        departmentIds: [departmentId],
+        departmentIds: [],
         energyResource: "ELECTRIC",
-        meterSliceIds: [],
+        meterSliceIds: [stampingSliceId],
       });
 
       const seuId2 = await ServiceSeu.create(c, {
         name: "Industrial Boiler System",
-        departmentIds: [departmentId2],
+        departmentIds: [],
         energyResource: "GAS",
-        meterSliceIds: [],
+        meterSliceIds: [boilerSliceId],
       });
 
       const seuId3 = await ServiceSeu.create(c, {
         name: "Compressed Air System",
         departmentIds: [],
         energyResource: "ELECTRIC",
-        meterSliceIds: [meterSliceId3],
+        meterSliceIds: [compressorSliceId],
       });
 
       await ServiceSeu.create(c, {
         name: "Assembly Hall Lighting & Climate Control",
         departmentIds: [],
         energyResource: "ELECTRIC",
-        meterSliceIds: [meter3SliceId1],
+        meterSliceIds: [],
       });
 
       // Metric > Integration
@@ -825,7 +816,12 @@ Transmits aggregated 15-minute interval data to the energy management server via
         {
           period: "HOURLY",
           type: "MOCK_SOURCE",
-          param: { waves: [{ vMul: 120, hMul: 24 }] },
+          param: {
+            waves: [
+              { vMul: 280, hMul: 24 },
+              { vMul: 40, hMul: 8 },
+            ],
+          },
         },
         [
           {
@@ -842,7 +838,12 @@ Transmits aggregated 15-minute interval data to the energy management server via
         {
           period: "MINUTELY",
           type: "MOCK_SOURCE",
-          param: { waves: [{ vMul: 12, hMul: 12 }] },
+          param: {
+            waves: [
+              { vMul: 12, hMul: 12 },
+              { vMul: 4, hMul: 3 },
+            ],
+          },
         },
         [
           {
@@ -859,12 +860,12 @@ Transmits aggregated 15-minute interval data to the energy management server via
         {
           period: "DAILY",
           type: "MOCK_SOURCE",
-          param: { waves: [{ vMul: 280, hMul: 24 }] },
+          param: { waves: [{ vMul: 400, hMul: 24 }] },
         },
         [
           {
             outputKey: "default",
-            metricId: metricId5,
+            metricId: metricId7,
             unit: "ENERGY_KWH",
           },
         ],
@@ -911,7 +912,7 @@ Transmits aggregated 15-minute interval data to the energy management server via
         name: "Main Infrastructure Meters",
         options: {
           type: "METER_SLICE",
-          meterSliceIds: [meterSliceId1, meterSliceId2],
+          meterSliceIds: [compressorSliceId, boilerSliceId, stampingSliceId],
         },
       });
 
@@ -1009,8 +1010,14 @@ Transmits aggregated 15-minute interval data to the energy management server via
       );
 
       // Access Token
-      await ServiceUserToken.create(c, {
+      await ServiceAccessToken.create(c, {
         name: "SCADA System Integration Token",
+        permissions: {
+          canListMeters: true,
+          canListMetrics: true,
+          canListSeus: true,
+          metricResourceValueMetricIds: [metricId1, metricId7],
+        },
       });
 
       // Module Internal Audit ----------------------------------------------------------

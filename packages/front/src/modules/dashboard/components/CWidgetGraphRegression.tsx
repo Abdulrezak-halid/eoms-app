@@ -12,7 +12,7 @@ export function CWidgetGraphRegression({
   const [data] = useFetchRegressionResult(config.regressionResultId);
 
   return (
-    <CAsyncLoader data={data}>
+    <CAsyncLoader data={data} className="min-h-72 h-full">
       {(payload) => (
         <CChart series={payload.mainSeries} unitStr={payload.unitAbbr} />
       )}

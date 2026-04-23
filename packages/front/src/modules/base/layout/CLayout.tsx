@@ -1,3 +1,10 @@
+/**
+ * @file: CLayout.tsx
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 17.10.2024
+ * Last Modified Date: 17.10.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { PropsWithChildren, useCallback, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
@@ -6,6 +13,7 @@ import { CSomethingWentWrong } from "@m/core/components/CSomethingWentWrong";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import { CBody } from "../components/CBody";
+import { CQuickSearchPanel } from "../components/CQuickSearchPanel";
 import { CSideMenu } from "./CSideMenu";
 
 export function CLayout({ children }: PropsWithChildren) {
@@ -29,6 +37,8 @@ export function CLayout({ children }: PropsWithChildren) {
 
   return (
     <ContextSideMenu.Provider value={contextSideMenuValue}>
+      <CQuickSearchPanel />
+
       <div className="h-full flex flex-col bg-gray-50 dark:bg-gray-800">
         {import.meta.env.VITE_DEMO && (
           <div className="bg-accent-600 dark:bg-accent-700 text-white text-center py-2 px-4 text-sm flex-none">

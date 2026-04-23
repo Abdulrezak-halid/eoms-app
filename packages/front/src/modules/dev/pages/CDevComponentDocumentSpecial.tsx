@@ -20,8 +20,10 @@ import { useMemo, useState } from "react";
 import { CBadgeAgent } from "@m/agent-management/components/CBadgeAgent";
 import { CBadgeAgentStatus } from "@m/agent-management/components/CBadgeAgentStatus";
 import { CComboboxAssignedAgent } from "@m/agent-management/components/CComboboxAssignedAgent";
+import { CComboboxDataView } from "@m/analysis/components/CComboboxDataView";
 import { CComboboxEnPi } from "@m/analysis/components/CComboboxEnPi";
 import { CComboboxRegressionResult } from "@m/analysis/components/CComboboxRegressionResult";
+import { IDtoEDataViewType } from "@m/analysis/interfaces/IDtoDataViewProfile";
 import { CBadgeApprovementStatus } from "@m/base/components/CBadgeApprovementStatus";
 import { CBadgeCity } from "@m/base/components/CBadgeCity";
 import { CBadgeDepartment } from "@m/base/components/CBadgeDepertment";
@@ -67,8 +69,7 @@ import { CBadgeMetricResourceLabelSet } from "@m/measurement/components/CBadgeMe
 import { CBadgeMetricResourceValuePeriod } from "@m/measurement/components/CBadgeMetricResourceValuePeriod";
 import { CBadgeMetricType } from "@m/measurement/components/CBadgeMetricType";
 import { CBadgeOutboundIntegrationType } from "@m/measurement/components/CBadgeOutboundIntegrationType";
-import { CComboboxDataView } from "@m/measurement/components/CComboboxDataView";
-import { CComboboxDataViewType } from "@m/measurement/components/CComboboxDataViewType";
+import { CComboboxDataViewType } from "@m/analysis/components/CComboboxDataViewType";
 import { CComboboxInboundIntegrationType } from "@m/measurement/components/CComboboxInboundIntegrationType";
 import { CComboboxMeter } from "@m/measurement/components/CComboboxMeter";
 import { CComboboxMeterSlice } from "@m/measurement/components/CComboboxMeterSlice";
@@ -84,11 +85,11 @@ import { CComboboxOutboundIntegrationType } from "@m/measurement/components/CCom
 import { CComboboxSeu } from "@m/measurement/components/CComboboxSeu";
 import { CComboboxWeatherApiOutputType } from "@m/measurement/components/CComboboxWeatherApiOutboundType";
 import { CMetricResourceSelector } from "@m/measurement/components/CMetricResourceSelector";
+import { CMultiLabelSelector } from "@m/measurement/components/CMultiLabelSelector";
 import { CMultiSelectMeter } from "@m/measurement/components/CMultiSelectMeter";
 import { CMultiSelectMeterSlice } from "@m/measurement/components/CMultiSelectMeterSlice";
 import { CMultiSelectMetric } from "@m/measurement/components/CMultiSelectMetric";
 import { CMultiSelectMetricResource } from "@m/measurement/components/CMultiSelectMetricResource";
-import { IDtoEDataViewType } from "@m/measurement/interfaces/IDtoDataViewProfile";
 import { IWeatherApiOutputType } from "@m/measurement/interfaces/IWeatherApiOutputType";
 import { CBadgeMessageQueueTaskStatus } from "@m/report/components/CBadgeMessageQueueTaskStatus";
 import { CComboboxReportSectionType } from "@m/report/components/CComboboxReportSectionType";
@@ -193,6 +194,9 @@ export function CDevComponentDocumentSpecial() {
 
   const [selectedMetricResourcesSelector, setSelectedMetricResourcesSelector] =
     useState<string[]>();
+  const [selectedLabels, setSelectedLabels] = useState<
+    IDtoMetricResourceLabel[]
+  >([]);
 
   const [
     selectedQdmsIntenrationBindingPage,
@@ -593,6 +597,15 @@ export function CDevComponentDocumentSpecial() {
             required
             value={selectedMetricResourcesSelector}
             onChange={setSelectedMetricResourcesSelector}
+          />
+        </CDevComponentLine>
+
+        {/* -------------------------------------------------------------- */}
+
+        <CDevComponentLine label="CMultiLabelSelector">
+          <CMultiLabelSelector
+            value={selectedLabels}
+            onChange={setSelectedLabels}
           />
         </CDevComponentLine>
 

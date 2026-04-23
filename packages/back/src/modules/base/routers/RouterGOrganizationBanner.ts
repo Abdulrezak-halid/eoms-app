@@ -1,3 +1,10 @@
+/**
+ * @file: RouterGOrganizationBanner.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 07.08.2025
+ * Last Modified Date: 07.08.2025
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
 import { createRoute, z } from "@hono/zod-openapi";
 import { EApiFailCode } from "common";
 

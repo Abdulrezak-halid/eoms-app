@@ -1,3 +1,11 @@
+/**
+ * @file: HashUtils.ts
+ * @author: H.Alper Tuna <halpertuna@gmail.com>
+ * Date: 10.05.2024
+ * Last Modified Date: 10.05.2024
+ * Last Modified By: H.Alper Tuna <halpertuna@gmail.com>
+ */
+
 export namespace UtilHash {
   export async function sha256(strData: string) {
     // See: https://developers.cloudflare.com/workers/runtime-apis/web-crypto/
