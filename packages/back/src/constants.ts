@@ -1,6 +1,6 @@
 // import { IMetricResourceValuePeriod } from "@m/measurement/interfaces/IMetricResourceValuePeriod";
 
-export const APP_NAME = "Reneryo";
+export const APP_NAME = "Eoms";
 export const VERSION = "0.1";
 
 export const ROOT_ORG_ID = "88888888-8888-8888-8888-888888888888";

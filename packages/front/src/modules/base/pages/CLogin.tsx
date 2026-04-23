@@ -183,17 +183,17 @@ export function CLogin() {
       </CForm>
 
       {import.meta.env.VITE_DEV_PAGES && (
-        <CCard className="mt-4 w-[21rem]">
+        <CCard className="justify-center items-center mt-4 p-2">
           <CExternalLink
             label="API Doc"
             href={`${import.meta.env.VITE_API_URL}/ui`}
             tertiary
           />
-          <CExternalLink
+          {/* <CExternalLink
             label="Dev Report"
             href={`${import.meta.env.VITE_API_URL}/g/dev/report/render`}
             tertiary
-          />
+          /> */}
         </CCard>
       )}
 

@@ -6,7 +6,7 @@ import { CMarkdown } from "@m/core/components/CMarkdown";
 export function CDevMarkdown() {
   const markdown = useMemo(
     () => `
-# Reneryo Project Setup Guide
+# Eoms Project Setup Guide
 
 Follow these steps to set up and run the project.
 
@@ -62,7 +62,7 @@ docker run --name postgres \\
 Run the following command to create the required database inside the PostgreSQL container:
 
 \`\`\`bash
-docker exec -it postgres psql -U postgres -c "CREATE DATABASE reneryo;"
+docker exec -it postgres psql -U postgres -c "CREATE DATABASE eoms;"
 \`\`\`
 
 ## 5. Generate Required Files

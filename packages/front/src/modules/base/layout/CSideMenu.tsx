@@ -135,7 +135,7 @@ export function CSideMenu() {
             bufferedSearchPending && "opacity-50",
           )}
         >
-          {import.meta.env.VITE_DEV_PAGES && (
+          {/* {import.meta.env.VITE_DEV_PAGES && (
             <div className="mb-2 flex flex-row">
               <CExternalLink
                 label="API Doc"
@@ -148,7 +148,7 @@ export function CSideMenu() {
                 tertiary
               />
             </div>
-          )}
+          )} */}
 
           <CNavLink
             icon={LayoutGrid}

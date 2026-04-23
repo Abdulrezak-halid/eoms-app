@@ -13,7 +13,6 @@ import { CBodyUserDropdown } from "./CBodyUserDropdown";
 import { CBreadCrumbs, IBreadCrumb } from "./CBreadCrumbs";
 import { CHeaderReportQueue } from "./CHeaderReportQueue";
 import { CLanguageSelector } from "./CLanguageSelector";
-import { CWsIndicator } from "./CWsIndicator";
 
 export function CBodyHeader({
   breadcrumbs,
@@ -68,8 +67,6 @@ export function CBodyHeader({
       </CLine>
 
       <div className="ml-auto flex items-center">
-        {import.meta.env.VITE_DEV_PAGES && <CWsIndicator />}
-
         {hasMarkdownPanelContent && (
           <CButton
             className="2xl:hidden"

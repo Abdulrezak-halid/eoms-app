@@ -316,31 +316,31 @@ export function useNavData() {
         ],
       },
 
-      {
-        icon: Package,
-        label: t("productManagement"),
-        list: [
-          {
-            label: t("product"),
-            path: "/product-base/product",
-            permission: "/PRODUCT",
-            orgPlanFeature: "PRODUCT",
-          },
-        ],
-      },
+      // {
+      //   icon: Package,
+      //   label: t("productManagement"),
+      //   list: [
+      //     {
+      //       label: t("product"),
+      //       path: "/product-base/product",
+      //       permission: "/PRODUCT",
+      //       orgPlanFeature: "PRODUCT",
+      //     },
+      //   ],
+      // },
 
-      {
-        icon: MemoryStick,
-        label: t("agentManagement"),
-        list: [
-          {
-            label: t("agents"),
-            path: "/agent-management/agents",
-            permission: "/AGENT",
-            orgPlanFeature: "RENERYO_AGENT",
-          },
-        ],
-      },
+      // {
+      //   icon: MemoryStick,
+      //   label: t("agentManagement"),
+      //   list: [
+      //     {
+      //       label: t("agents"),
+      //       path: "/agent-management/agents",
+      //       permission: "/AGENT",
+      //       orgPlanFeature: "RENERYO_AGENT",
+      //     },
+      //   ],
+      // },
 
       {
         icon: Network,
