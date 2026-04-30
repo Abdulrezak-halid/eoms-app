@@ -11,9 +11,7 @@ import {
   Gauge,
   Handshake,
   ListChecks,
-  MemoryStick,
   Network,
-  Package,
   Settings,
   ShieldCheck,
   Terminal,
@@ -453,6 +451,10 @@ export function useNavData() {
                 {
                   label: "Special Components",
                   path: "/dev/component-doc-special",
+                },
+                {
+                  label: "Guide",
+                  path: "/crud-guide",
                 },
                 {
                   label: "Form Submit Example",

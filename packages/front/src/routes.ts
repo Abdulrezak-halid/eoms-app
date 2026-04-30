@@ -31,6 +31,7 @@ import { CDepartmentAddForm } from "@m/base/pages/CDepartmentAddForm";
 import { CDepartmentEditForm } from "@m/base/pages/CDepartmentEditForm";
 import { CDepartmentList } from "@m/base/pages/CDepartmentList";
 import { CIssueReportRequest } from "@m/base/pages/CIssueReportRequest";
+import { CCrudGuidePage } from "@m/base/pages/CCrudGuidePage";
 import { CMyOrganization } from "@m/base/pages/CMyOrganization";
 import { CMyProfile } from "@m/base/pages/CMyProfile";
 import CNotificationPage from "@m/base/pages/CNotificationPage";
@@ -280,6 +281,10 @@ export const routes = [
   {
     path: "/quick-navigation",
     component: CQuickNavigationPage,
+  },
+  {
+    path: "/crud-guide",
+    component: CCrudGuidePage,
   },
   {
     path: "/notifications",
