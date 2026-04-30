@@ -55,9 +55,9 @@ import manualNeedAndExpectationTr from "@m/commitment/manuals/need-and-expectati
 import manualScopeAndLimitEn from "@m/commitment/manuals/scope-and-limits.en.md";
 import manualScopeAndLimitTr from "@m/commitment/manuals/scope-and-limits.tr.md";
 import { CComplianceObligationAddForm } from "@m/commitment/pages/CComplianceObligationAddForm";
-import { CComplianceObligationArticleAddForm } from "@m/commitment/pages/CComplianceObligationArticleAddForm";
-import { CComplianceObligationArticleEditForm } from "@m/commitment/pages/CComplianceObligationArticleEditForm";
-import { CComplianceObligationArticleList } from "@m/commitment/pages/CComplianceObligationArticleList";
+import { CComplianceObligationeomscleAddForm } from "@m/commitment/pages/CComplianceObligationeomscleAddForm";
+import { CComplianceObligationeomscleEditForm } from "@m/commitment/pages/CComplianceObligationeomscleEditForm";
+import { CComplianceObligationeomscleList } from "@m/commitment/pages/CComplianceObligationeomscleList";
 import { CComplianceObligationEditForm } from "@m/commitment/pages/CComplianceObligationEditForm";
 import { CComplianceObligationList } from "@m/commitment/pages/CComplianceObligationList";
 import { CEnergyPolicyAddForm } from "@m/commitment/pages/CEnergyPolicyAddForm";
@@ -544,8 +544,8 @@ export const routes = [
     },
   },
   {
-    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/article/item-add`,
-    component: CComplianceObligationArticleAddForm,
+    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/eomscle/item-add`,
+    component: CComplianceObligationeomscleAddForm,
     permission: "/COMMITMENT",
     orgPlanFeature: "ISO50001",
     manuals: {
@@ -554,8 +554,8 @@ export const routes = [
     },
   },
   {
-    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/article/item/${":id" as string}`,
-    component: CComplianceObligationArticleEditForm,
+    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/eomscle/item/${":id" as string}`,
+    component: CComplianceObligationeomscleEditForm,
     permission: "/COMMITMENT",
     orgPlanFeature: "ISO50001",
     manuals: {
@@ -564,8 +564,8 @@ export const routes = [
     },
   },
   {
-    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/article`,
-    component: CComplianceObligationArticleList,
+    path: `/commitment/compliance-obligation/item/${":subjectId" as string}/eomscle`,
+    component: CComplianceObligationeomscleList,
     permission: "/COMMITMENT",
     orgPlanFeature: "ISO50001",
     manuals: {
@@ -1448,7 +1448,7 @@ export const routes = [
     path: "/agent-management/agents",
     component: CAgentsList,
     permission: "/AGENT",
-    orgPlanFeature: "RENERYO_AGENT",
+    orgPlanFeature: "eoms_AGENT",
   },
 
   // Supply Chain ------------------------------------------------------------------

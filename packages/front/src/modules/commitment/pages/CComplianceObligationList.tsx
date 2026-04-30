@@ -67,8 +67,8 @@ export function CComplianceObligationList() {
     (d) => [
       {
         icon: Newspaper,
-        label: t("articles"),
-        path: `/commitment/compliance-obligation/item/${d.id}/article`,
+        label: t("eomscles"),
+        path: `/commitment/compliance-obligation/item/${d.id}/eomscle`,
       },
       {
         icon: Pencil,
@@ -100,7 +100,7 @@ export function CComplianceObligationList() {
         right: true,
       },
       { label: t("isLegalActive"), hideSm: true },
-      { label: t("articleCount"), hideSm: true },
+      { label: t("eomscleCount"), hideSm: true },
       { label: "" },
     ],
     [t],
@@ -129,7 +129,7 @@ export function CComplianceObligationList() {
                 </div>,
 
                 <CBadgeYesNo key="isLegalActive" value={d.isLegalActive} />,
-                d.articleCount,
+                d.eomscleCount,
 
                 <div key="actions" className="flex justify-end">
                   <CDropdown

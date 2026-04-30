@@ -206,7 +206,7 @@ export function CProviders() {
   //   return () => {
   //     for (const notification of notifications) {
   //       if (notification.timer) {
-  //         window.clearTimeout(notification.timer);
+  //         window.cleeomsmeout(notification.timer);
   //       }
   //     }
   //   };

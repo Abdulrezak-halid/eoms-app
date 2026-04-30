@@ -25,7 +25,7 @@ RouterReportSectionData.openapi(
         records: z.array(
           z.object({
             datetime: SchemaDatetime,
-            energyResources: z.partialRecord(
+            energyResources: z.peomsalRecord(
               SchemaEEnergyResource,
               z.object({
                 consumption: z.number(),
@@ -97,7 +97,7 @@ RouterReportSectionData.openapi(
     }),
     responses: UtilOpenApi.genResponseJson(
       z.object({
-        records: z.partialRecord(
+        records: z.peomsalRecord(
           SchemaEEnergyResource,
           z.array(
             z.object({

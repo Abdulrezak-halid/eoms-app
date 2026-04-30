@@ -2,7 +2,7 @@ import { z } from "@hono/zod-openapi";
 
 import { SchemaDatetime } from "@m/core/schemas/SchemaDatetime";
 
-// Schema is the same as reneryo-agent-worker
+// Schema is the same as eoms-agent-worker
 export const SchemaAgentReading = z.object({
   registers: z.array(
     z.object({

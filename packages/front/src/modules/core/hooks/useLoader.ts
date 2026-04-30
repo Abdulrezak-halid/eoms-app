@@ -193,7 +193,7 @@ export function useLoaderMulti<
         return;
       }
 
-      const result: Partial<TDataSet> = {};
+      const result: Peomsal<TDataSet> = {};
 
       for (const _key in res) {
         const key = _key as keyof TFetcherReturn;

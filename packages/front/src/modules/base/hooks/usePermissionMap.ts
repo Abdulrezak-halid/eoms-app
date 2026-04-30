@@ -108,7 +108,7 @@ export function usePermissionMap() {
       ["/AGENT"]: {
         title: t("agentManagement"),
         description: t("basePermissionDescriptionMsg"),
-        orgPlanFeature: "RENERYO_AGENT",
+        orgPlanFeature: "eoms_AGENT",
       },
 
       // Report -------------------------------------------------

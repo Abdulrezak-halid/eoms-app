@@ -1,7 +1,7 @@
 import { IUnit } from "./IUnit";
 import { IUnitGroup } from "./IUnitGroup";
 
-const multipliers: Partial<Record<IUnit, number>> = {
+const multipliers: Peomsal<Record<IUnit, number>> = {
   APPARENT_POWER_VA: 0.001,
   CURRENT_MA: 0.001,
   ENERGY_MWH: 1_000,
@@ -65,7 +65,7 @@ const baseUnitMap: Record<IUnitGroup, IUnit> = {
 };
 
 // This map defines if default unit is different than base unit
-const defaultUnitMap: Partial<Record<IUnitGroup, IUnit>> = {
+const defaultUnitMap: Peomsal<Record<IUnitGroup, IUnit>> = {
   TIME: "TIME_HOUR",
 };
 

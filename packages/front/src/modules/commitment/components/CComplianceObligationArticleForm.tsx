@@ -11,16 +11,16 @@ import { CInputTextarea } from "@m/core/components/CInputTextarea";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
 
 import {
-  IDtoComplianceObligationArticleRequest,
-  IDtoComplianceObligationArticleResponse,
+  IDtoComplianceObligationeomscleRequest,
+  IDtoComplianceObligationeomscleResponse,
 } from "../interfaces/IDtoComplianceObligation";
 
-export function CComplianceObligationArticleForm({
+export function CComplianceObligationeomscleForm({
   initialData,
   onSubmit,
 }: {
-  initialData?: IDtoComplianceObligationArticleResponse;
-  onSubmit: (data: IDtoComplianceObligationArticleRequest) => Promise<void>;
+  initialData?: IDtoComplianceObligationeomscleResponse;
+  onSubmit: (data: IDtoComplianceObligationeomscleRequest) => Promise<void>;
 }) {
   const { t } = useTranslation();
 
@@ -32,7 +32,7 @@ export function CComplianceObligationArticleForm({
   const inputLastConformityAssessment = useInput(
     initialData?.lastConformityAssessment,
   );
-  const inputRelatedArticleNo = useInput(initialData?.relatedArticleNo);
+  const inputRelatedeomscleNo = useInput(initialData?.relatedeomscleNo);
   const inputDescription = useInput(initialData?.description || "");
 
   const invalid = useInputInvalid(
@@ -40,7 +40,7 @@ export function CComplianceObligationArticleForm({
     inputConformityAssessmentPeriod,
     inputCurrentApplication,
     inputLastConformityAssessment,
-    inputRelatedArticleNo,
+    inputRelatedeomscleNo,
     inputDescription,
   );
 
@@ -51,7 +51,7 @@ export function CComplianceObligationArticleForm({
       !inputConformityAssessmentPeriod.value ||
       !inputCurrentApplication.value ||
       !inputLastConformityAssessment.value ||
-      !inputRelatedArticleNo.value ||
+      !inputRelatedeomscleNo.value ||
       !inputDescription.value
     ) {
       return;
@@ -62,7 +62,7 @@ export function CComplianceObligationArticleForm({
       conformityAssessmentPeriod: inputConformityAssessmentPeriod.value,
       currentApplication: inputCurrentApplication.value,
       lastConformityAssessment: inputLastConformityAssessment.value,
-      relatedArticleNo: inputRelatedArticleNo.value,
+      relatedeomscleNo: inputRelatedeomscleNo.value,
       description: inputDescription.value || null,
     };
 
@@ -73,7 +73,7 @@ export function CComplianceObligationArticleForm({
     inputConformityAssessmentPeriod.value,
     inputCurrentApplication.value,
     inputLastConformityAssessment.value,
-    inputRelatedArticleNo.value,
+    inputRelatedeomscleNo.value,
     inputDescription.value,
     onSubmit,
   ]);
@@ -122,12 +122,12 @@ export function CComplianceObligationArticleForm({
         </CFormLine>
 
         <CFormLine
-          label={t("relatedArticleNo")}
-          invalidMsg={inputRelatedArticleNo.invalidMsg}
+          label={t("relatedeomscleNo")}
+          invalidMsg={inputRelatedeomscleNo.invalidMsg}
         >
           <CInputString
-            {...inputRelatedArticleNo}
-            placeholder={t("relatedArticleNo")}
+            {...inputRelatedeomscleNo}
+            placeholder={t("relatedeomscleNo")}
             required
           />
         </CFormLine>

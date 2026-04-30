@@ -2,7 +2,7 @@ import { Bug, CircleUser, History, LayoutGrid, LogOut } from "lucide-react";
 import { useContext, useMemo, useState } from "react";
 import { Link } from "wouter";
 
-import logo from "@/assets/images/reneryo-logo.horizontal.shadow.768x227.webp";
+import logo from "@/assets/images/eoms-logo.horizontal.shadow.768x227.webp";
 
 import { CDarkThemeSwitch } from "@m/base/components/CDarkThemeSwitch";
 import { VERSION } from "@m/base/constants/Version";

@@ -9,22 +9,22 @@ import { UtilHono } from "@m/core/utils/UtilHono";
 import { UtilOpenApi } from "@m/core/utils/UtilOpenApi";
 
 import { ServiceComplianceObligation } from "../services/ServiceComplianceObligation";
-import { ServiceComplianceObligationArticle } from "../services/ServiceComplianceObligationArticle";
+import { ServiceComplianceObligationeomscle } from "../services/ServiceComplianceObligationeomscle";
 
-export const RouterComplianceObligationArticle =
+export const RouterComplianceObligationeomscle =
   UtilOpenApi.createRouter<IHonoContextUser>();
 
-RouterComplianceObligationArticle.openapi(
+RouterComplianceObligationeomscle.openapi(
   createRoute({
     method: "get",
-    path: "/item/{subjectId}/article",
+    path: "/item/{subjectId}/eomscle",
     request: UtilOpenApi.genRequestParam({ subjectId: SchemaUuid }),
     responses: UtilOpenApi.genResponseJson(
       z.object({
         records: z.array(
           z.object({
             id: SchemaUuid,
-            relatedArticleNo: SchemaString,
+            relatedeomscleNo: SchemaString,
             currentApplication: SchemaString,
             conformityAssessment: SchemaString,
             conformityAssessmentPeriod: SchemaEPeriod,
@@ -36,7 +36,7 @@ RouterComplianceObligationArticle.openapi(
     ),
   }),
   async (c) => {
-    const records = await ServiceComplianceObligationArticle.getAll(
+    const records = await ServiceComplianceObligationeomscle.getAll(
       c.var,
       c.req.param("subjectId"),
     );
@@ -44,10 +44,10 @@ RouterComplianceObligationArticle.openapi(
   },
 );
 
-RouterComplianceObligationArticle.openapi(
+RouterComplianceObligationeomscle.openapi(
   createRoute({
     method: "get",
-    path: "/item/{subjectId}/article/{id}",
+    path: "/item/{subjectId}/eomscle/{id}",
     request: UtilOpenApi.genRequestParam({
       id: SchemaUuid,
       subjectId: SchemaUuid,
@@ -55,7 +55,7 @@ RouterComplianceObligationArticle.openapi(
     responses: UtilOpenApi.genResponseJson(
       z.object({
         id: SchemaUuid,
-        relatedArticleNo: SchemaString,
+        relatedeomscleNo: SchemaString,
         currentApplication: SchemaString,
         conformityAssessment: SchemaString,
         conformityAssessmentPeriod: SchemaEPeriod,
@@ -65,7 +65,7 @@ RouterComplianceObligationArticle.openapi(
     ),
   }),
   async (c) => {
-    const commitmentCompliance = await ServiceComplianceObligationArticle.get(
+    const commitmentCompliance = await ServiceComplianceObligationeomscle.get(
       c.var,
       c.req.param("subjectId"),
       c.req.param("id"),
@@ -74,17 +74,17 @@ RouterComplianceObligationArticle.openapi(
   },
 );
 
-RouterComplianceObligationArticle.openapi(
+RouterComplianceObligationeomscle.openapi(
   createRoute({
     method: "post",
-    path: "/item/{subjectId}/article",
+    path: "/item/{subjectId}/eomscle",
     request: {
       params: UtilOpenApi.genRequestParamSub({
         subjectId: SchemaUuid,
       }),
       body: UtilOpenApi.genRequestJsonSub(
         z.object({
-          relatedArticleNo: SchemaString,
+          relatedeomscleNo: SchemaString,
           currentApplication: SchemaString,
           conformityAssessment: SchemaString,
           conformityAssessmentPeriod: SchemaEPeriod,
@@ -105,7 +105,7 @@ RouterComplianceObligationArticle.openapi(
     await ServiceComplianceObligation.checkOrgOwnership(c.var, [
       param.subjectId,
     ]);
-    const createdId = await ServiceComplianceObligationArticle.create(
+    const createdId = await ServiceComplianceObligationeomscle.create(
       c.var,
       param.subjectId,
       json,
@@ -113,10 +113,10 @@ RouterComplianceObligationArticle.openapi(
     return c.json({ id: createdId });
   },
 );
-RouterComplianceObligationArticle.openapi(
+RouterComplianceObligationeomscle.openapi(
   createRoute({
     method: "put",
-    path: "/item/{subjectId}/article/{id}",
+    path: "/item/{subjectId}/eomscle/{id}",
     request: {
       params: UtilOpenApi.genRequestParamSub({
         subjectId: SchemaUuid,
@@ -124,7 +124,7 @@ RouterComplianceObligationArticle.openapi(
       }),
       body: UtilOpenApi.genRequestJsonSub(
         z.object({
-          relatedArticleNo: SchemaString,
+          relatedeomscleNo: SchemaString,
           currentApplication: SchemaString,
           conformityAssessment: SchemaString,
           conformityAssessmentPeriod: SchemaEPeriod,
@@ -141,7 +141,7 @@ RouterComplianceObligationArticle.openapi(
     await ServiceComplianceObligation.checkOrgOwnership(c.var, [
       param.subjectId,
     ]);
-    await ServiceComplianceObligationArticle.update(
+    await ServiceComplianceObligationeomscle.update(
       c.var,
       param.subjectId,
       param.id,
@@ -151,10 +151,10 @@ RouterComplianceObligationArticle.openapi(
   },
 );
 
-RouterComplianceObligationArticle.openapi(
+RouterComplianceObligationeomscle.openapi(
   createRoute({
     method: "delete",
-    path: "/item/{subjectId}/article/{id}",
+    path: "/item/{subjectId}/eomscle/{id}",
     request: UtilOpenApi.genRequestParam({
       subjectId: SchemaUuid,
       id: SchemaUuid,
@@ -163,7 +163,7 @@ RouterComplianceObligationArticle.openapi(
   }),
   async (c) => {
     const param = c.req.valid("param");
-    await ServiceComplianceObligationArticle.remove(
+    await ServiceComplianceObligationeomscle.remove(
       c.var,
       param.subjectId,
       param.id,

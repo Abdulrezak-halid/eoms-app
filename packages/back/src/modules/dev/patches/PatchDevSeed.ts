@@ -17,7 +17,7 @@ import { ServiceOrganizationPartnerToken } from "@m/base/services/ServiceOrganiz
 import { ServiceUser } from "@m/base/services/ServiceUser";
 import { ServiceUserToken } from "@m/base/services/ServiceUserToken";
 import { ServiceComplianceObligation } from "@m/commitment/services/ServiceComplianceObligation";
-import { ServiceComplianceObligationArticle } from "@m/commitment/services/ServiceComplianceObligationArticle";
+import { ServiceComplianceObligationeomscle } from "@m/commitment/services/ServiceComplianceObligationeomscle";
 import { ServiceEnergyPolicy } from "@m/commitment/services/ServiceEnergyPolicy";
 import { ServiceInternalExternalConsideration } from "@m/commitment/services/ServiceInternalExternalConsideration";
 import { ServiceNeedAndExpectation } from "@m/commitment/services/ServiceNeedAndExpectation";
@@ -246,11 +246,11 @@ export const PatchDevSeedStage1 = ServiceRuntimePatcher.create(
           isLegalActive: false,
         },
       );
-      await ServiceComplianceObligationArticle.create(
+      await ServiceComplianceObligationeomscle.create(
         c,
         complianceAbligationId,
         {
-          relatedArticleNo: "RA-001",
+          relatedeomscleNo: "RA-001",
           description: "Description of RA-001",
           currentApplication: "Active",
           conformityAssessment: "Passed",
@@ -258,13 +258,13 @@ export const PatchDevSeedStage1 = ServiceRuntimePatcher.create(
           lastConformityAssessment: "2024-01-01",
         },
       );
-      await ServiceComplianceObligationArticle.create(
+      await ServiceComplianceObligationeomscle.create(
         c,
         complianceAbligationId2,
         {
-          relatedArticleNo: "RA-999",
+          relatedeomscleNo: "RA-999",
           description:
-            "Long article description Lorem Ipsum is simply dummy text of the printing",
+            "Long eomscle description Lorem Ipsum is simply dummy text of the printing",
           currentApplication: "Inactive",
           conformityAssessment: "Failed",
           conformityAssessmentPeriod: "MONTHLY",
@@ -1551,22 +1551,22 @@ and transmits data to the centralized analytics system for optimization purposes
       await ServiceQdmsIntegration.create(c, {
         name: "Communication and Awareness Plans",
         bindingPage: "COMMUNICATION_AND_AWARENESS_PLANS",
-        endpointUrl: "http://services.int.arti.ac:8010/esan/communication.pdf",
+        endpointUrl: "http://services.int.eoms.ac:8010/esan/communication.pdf",
       });
       await ServiceQdmsIntegration.create(c, {
         name: "Designs",
         bindingPage: "DESIGNS",
-        endpointUrl: "http://services.int.arti.ac:8010/esan/design.pdf",
+        endpointUrl: "http://services.int.eoms.ac:8010/esan/design.pdf",
       });
       await ServiceQdmsIntegration.create(c, {
         name: "Energy Policies",
         bindingPage: "ENERGY_POLICIES",
-        endpointUrl: "http://services.int.arti.ac:8010/esan/policy.pdf",
+        endpointUrl: "http://services.int.eoms.ac:8010/esan/policy.pdf",
       });
       await ServiceQdmsIntegration.create(c, {
         name: "Trainings",
         bindingPage: "TRAININGS",
-        endpointUrl: "http://services.int.arti.ac:8010/esan/training.pdf",
+        endpointUrl: "http://services.int.eoms.ac:8010/esan/training.pdf",
       });
 
       // Module Dashboard -----------------------------------------------------

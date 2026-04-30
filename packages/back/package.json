@@ -5,7 +5,7 @@
     "build:api-json": "NODE_ENV=development MODE_EXPORT_API_SCHEMA=true tsx --tsconfig tsconfig.app.json src/index.ts",
     "build:preview": "DB_MIG_DIR=migrations.preview npm run _mig:gen && npm run _build && cp -r migrations.preview dist",
     "build:prod": "npm run _build && cp -r migrations.prod dist",
-    "analyze:prod": "ESBUILD_METAFILE=/tmp/reneryo-build-meta.json npm run _build-core && esbuild-visualizer --metadata /tmp/reneryo-build-meta.json --filename /tmp/reneryo-analyze-stats.html && xdg-open /tmp/reneryo-analyze-stats.html",
+    "analyze:prod": "ESBUILD_METAFILE=/tmp/eoms-build-meta.json npm run _build-core && esbuild-visualizer --metadata /tmp/eoms-build-meta.json --filename /tmp/eoms-analyze-stats.html && xdg-open /tmp/eoms-analyze-stats.html",
     "_build-core": "rm -rf dist && NODE_ENV=production node build.mjs",
     "_build": "npm run _build-core && mkdir -p dist/node_modules && cp -r ../../node_modules/@img dist/node_modules/ && cp -r misc/vega-canvas/ dist/node_modules/",
     "check:lint": "eslint --max-warnings 0",

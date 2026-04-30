@@ -10,7 +10,7 @@ export const DataOrganizationPlanFeature = [
 
   // Integrations
   "QDMS",
-  "RENERYO_AGENT",
+  "eoms_AGENT",
   "ACCESS_TOKEN",
 
   // Base

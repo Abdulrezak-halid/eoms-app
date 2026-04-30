@@ -1,6 +1,6 @@
 
 - Create a list of all legal requirements applicable to the organization's energy use.
-- Inclusion of non-legal requirements (corporate reporting requirements, voluntary agreements, requirements of customers, etc.) of related parties with which the entity has a relationship as expected requirements.
+- Inclusion of non-legal requirements (corporate reporting requirements, voluntary agreements, requirements of customers, etc.) of related peomses with which the entity has a relationship as expected requirements.
 - Checking and documenting which of these requirements apply to the organization.
 - Assigning responsibility for each requirement to the relevant people in the organization.
 - Regularly check compliance to ensure that requirements are met.

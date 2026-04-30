@@ -8,7 +8,7 @@ describe("E2E - RouterRoot", () => {
   it("GET /", async () => {
     const res = await client.GET("/");
     expect(res.data).toMatchObject({
-      name: "Reneryo",
+      name: "eoms",
     });
   });
 });

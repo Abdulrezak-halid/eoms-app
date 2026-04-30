@@ -1,6 +1,6 @@
 import { z } from "@hono/zod-openapi";
 
-// Schema is the same as reneryo-agent-worker
+// Schema is the same as eoms-agent-worker
 export const SchemaAgentStat = z.object({
   arch: z.string(),
   memoryTotal: z.number(),

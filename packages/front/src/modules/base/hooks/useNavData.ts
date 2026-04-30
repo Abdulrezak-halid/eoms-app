@@ -335,7 +335,7 @@ export function useNavData() {
       //       label: t("agents"),
       //       path: "/agent-management/agents",
       //       permission: "/AGENT",
-      //       orgPlanFeature: "RENERYO_AGENT",
+      //       orgPlanFeature: "eoms_AGENT",
       //     },
       //   ],
       // },

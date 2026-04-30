@@ -4,8 +4,8 @@ import { useMemo } from "react";
 import { IDtoReportSectionType } from "../interfaces/IDtoReport";
 
 // IDtoReportSectionType does not include custom dev types,
-//   that's why final return type is partial
-export function useReportSectionDefaultTitleMap(): Partial<
+//   that's why final return type is peomsal
+export function useReportSectionDefaultTitleMap(): Peomsal<
   Record<IDtoReportSectionType, IDtoPlainOrTranslatableText>
 > {
   return useMemo(

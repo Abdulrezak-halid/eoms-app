@@ -7,7 +7,7 @@ import {
 import { CircleUser } from "lucide-react";
 import { useCallback, useContext, useMemo, useRef, useState } from "react";
 
-import logo from "@/assets/images/reneryo-logo.horizontal.shadow.768x227.webp";
+import logo from "@/assets/images/eoms-logo.horizontal.shadow.768x227.webp";
 
 import { Api, generateRequestGetPath } from "@m/base/api/Api";
 import { CDarkThemeSwitch } from "@m/base/components/CDarkThemeSwitch";

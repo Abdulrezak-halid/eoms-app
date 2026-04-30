@@ -60,7 +60,7 @@ export type IDatetimeQuickRange = ReturnType<
   typeof useQuickTimeRanges
 >[number]["value"];
 
-export const DataRangeLastToMinutes: Partial<
+export const DataRangeLastToMinutes: Peomsal<
   Record<IDatetimeQuickRange, number>
 > = {
   LAST_12_HOURS: 720,

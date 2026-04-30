@@ -137,7 +137,7 @@ export namespace ServiceReportSectionData {
     // Iterate datetimes, for each datetime there may be more than one meter,
     //   so sum up meter consumption grouping by energy resources.
     for (const datetime in groupedValuesByDatetime) {
-      const energyResources: Partial<
+      const energyResources: Peomsal<
         Record<IEnergyResource, { consumption: number; cost: number }>
       > = {};
 

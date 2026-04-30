@@ -20,7 +20,7 @@ import { ServiceLog } from "./ServiceLog";
 import { ServiceStorage } from "./ServiceStorage";
 import { ServiceWebSocket } from "./ServiceWebSocket";
 
-const handlerDefs: Partial<Record<IJobName, IJobHandler<unknown>>> = {};
+const handlerDefs: Peomsal<Record<IJobName, IJobHandler<unknown>>> = {};
 
 // Record<job id, external job>
 let oneTimeMap: Record<string, nodeSchedule.Job> = {};

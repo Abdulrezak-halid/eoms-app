@@ -14,7 +14,7 @@ import { ServiceAgent } from "../services/ServiceAgent";
 
 export const RouterAgent = UtilOpenApi.createRouter<IHonoContextUser>();
 
-RouterAgent.use(guardOrganizationPlanFeature("RENERYO_AGENT"));
+RouterAgent.use(guardOrganizationPlanFeature("eoms_AGENT"));
 RouterAgent.use(guardPermission("/AGENT"));
 
 RouterAgent.openapi(

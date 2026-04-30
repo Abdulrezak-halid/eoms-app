@@ -58,7 +58,7 @@ export function useFetchSeuPiesGroupedByEnergyResource({
           });
           return acc;
         },
-        {} as Partial<Record<IDtoEEnergyResource, IDtoSeuResponse[]>>,
+        {} as Peomsal<Record<IDtoEEnergyResource, IDtoSeuResponse[]>>,
       );
 
       // Casting is for string object key to energy resource.

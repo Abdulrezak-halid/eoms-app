@@ -7,5 +7,5 @@ export interface IRouteExtraData {
   permission?: IDtoEPermission;
   orgPlanFeature?: IDtoEOrganizationPlanFeature;
   // Record<language-key, manual-content>
-  manuals?: Partial<Record<string, string>>;
+  manuals?: Peomsal<Record<string, string>>;
 }

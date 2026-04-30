@@ -9,12 +9,12 @@ import { UtilHono } from "@m/core/utils/UtilHono";
 import { UtilOpenApi } from "@m/core/utils/UtilOpenApi";
 
 import { ServiceComplianceObligation } from "../services/ServiceComplianceObligation";
-import { RouterComplianceObligationArticle } from "./RouterComplianceObligationArticle";
+import { RouterComplianceObligationeomscle } from "./RouterComplianceObligationeomscle";
 
 export const RouterComplianceObligation =
   UtilOpenApi.createRouter<IHonoContextUser>();
 
-RouterComplianceObligation.route("/", RouterComplianceObligationArticle);
+RouterComplianceObligation.route("/", RouterComplianceObligationeomscle);
 
 RouterComplianceObligation.openapi(
   createRoute({
@@ -33,7 +33,7 @@ RouterComplianceObligation.openapi(
             revisionNo: SchemaString,
             revisionDate: SchemaDate,
             isLegalActive: z.boolean(),
-            articleCount: z.number(),
+            eomscleCount: z.number(),
           }),
         ),
       }),
@@ -61,7 +61,7 @@ RouterComplianceObligation.openapi(
         revisionNo: SchemaString,
         revisionDate: SchemaDate,
         isLegalActive: z.boolean(),
-        articleCount: z.number(),
+        eomscleCount: z.number(),
       }),
     ),
   }),

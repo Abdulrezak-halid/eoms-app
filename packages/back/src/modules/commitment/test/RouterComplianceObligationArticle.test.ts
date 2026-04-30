@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 
 import { UtilTest } from "@/test/utils/UtilTest";
 
-describe("E2E - ComplianceObligationArticle", () => {
-  it("Create compliance obligation article", async () => {
+describe("E2E - ComplianceObligationeomscle", () => {
+  it("Create compliance obligation eomscle", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const compliance = await client.POST(
       "/u/commitment/compliance-obligation/item",
@@ -22,7 +22,7 @@ describe("E2E - ComplianceObligationArticle", () => {
       },
     );
     const res = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -30,8 +30,8 @@ describe("E2E - ComplianceObligationArticle", () => {
           },
         },
         body: {
-          relatedArticleNo: "001",
-          description: "Article description 1",
+          relatedeomscleNo: "001",
+          description: "eomscle description 1",
           currentApplication: "Application 1",
           conformityAssessment: "Assessment 1",
           conformityAssessmentPeriod: "YEARLY",
@@ -43,7 +43,7 @@ describe("E2E - ComplianceObligationArticle", () => {
     expect(res).toBeApiOk();
   });
 
-  it("Get all compliance obligation articles", async () => {
+  it("Get all compliance obligation eomscles", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const compliance = await client.POST(
       "/u/commitment/compliance-obligation/item",
@@ -62,15 +62,15 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const payload = {
-      relatedArticleNo: "001",
-      description: "Article description 1",
+      relatedeomscleNo: "001",
+      description: "eomscle description 1",
       currentApplication: "Application 1",
       conformityAssessment: "Assessment 1",
       conformityAssessmentPeriod: "YEARLY" as const,
       lastConformityAssessment: UtilDate.getNowUtcIsoDate(),
     };
-    const article = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+    const eomscle = await client.POST(
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -82,7 +82,7 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const res = await client.GET(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -96,13 +96,13 @@ describe("E2E - ComplianceObligationArticle", () => {
       records: [
         {
           ...payload,
-          id: article.data!.id,
+          id: eomscle.data!.id,
         },
       ],
     });
   });
 
-  it("Get compliance obligation article", async () => {
+  it("Get compliance obligation eomscle", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const compliance = await client.POST(
       "/u/commitment/compliance-obligation/item",
@@ -121,15 +121,15 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const payload = {
-      relatedArticleNo: "001",
-      description: "Article description 1",
+      relatedeomscleNo: "001",
+      description: "eomscle description 1",
       currentApplication: "Application 1",
       conformityAssessment: "Assessment 1",
       conformityAssessmentPeriod: "YEARLY" as const,
       lastConformityAssessment: UtilDate.getNowUtcIsoDate(),
     };
-    const article = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+    const eomscle = await client.POST(
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -141,11 +141,11 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const res = await client.GET(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: {
           path: {
-            id: article.data!.id,
+            id: eomscle.data!.id,
             subjectId: compliance.data!.id,
           },
         },
@@ -154,11 +154,11 @@ describe("E2E - ComplianceObligationArticle", () => {
 
     expect(res.data).toStrictEqual({
       ...payload,
-      id: article.data!.id,
+      id: eomscle.data!.id,
     });
   });
 
-  it("Update compliance obligation article", async () => {
+  it("Update compliance obligation eomscle", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const compliance = await client.POST(
       "/u/commitment/compliance-obligation/item",
@@ -177,16 +177,16 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const payload = {
-      relatedArticleNo: "001",
-      description: "Article description 1",
+      relatedeomscleNo: "001",
+      description: "eomscle description 1",
       currentApplication: "Application 1",
       conformityAssessment: "Assessment 1",
       conformityAssessmentPeriod: "YEARLY" as const,
       lastConformityAssessment: UtilDate.getNowUtcIsoDate(),
     };
 
-    const article = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+    const eomscle = await client.POST(
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -198,19 +198,19 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     const updatePayload = {
-      relatedArticleNo: "002",
-      description: "Article description 2",
+      relatedeomscleNo: "002",
+      description: "eomscle description 2",
       currentApplication: "Application 2",
       conformityAssessment: "Assessment 2",
       lastConformityAssessment: UtilDate.getNowUtcIsoDate(),
     };
 
     await client.PUT(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: {
           path: {
-            id: article.data!.id,
+            id: eomscle.data!.id,
             subjectId: compliance.data!.id,
           },
         },
@@ -221,11 +221,11 @@ describe("E2E - ComplianceObligationArticle", () => {
       },
     );
     const res = await client.GET(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: {
           path: {
-            id: article.data!.id,
+            id: eomscle.data!.id,
             subjectId: compliance.data!.id,
           },
         },
@@ -234,11 +234,11 @@ describe("E2E - ComplianceObligationArticle", () => {
     expect(res.data).toStrictEqual({
       ...updatePayload,
       conformityAssessmentPeriod: "MONTHLY",
-      id: article.data!.id,
+      id: eomscle.data!.id,
     });
   });
 
-  it("Delete compliance obligation article", async () => {
+  it("Delete compliance obligation eomscle", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const compliance = await client.POST(
       "/u/commitment/compliance-obligation/item",
@@ -256,8 +256,8 @@ describe("E2E - ComplianceObligationArticle", () => {
       },
     );
 
-    const article = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article",
+    const eomscle = await client.POST(
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
       {
         params: {
           path: {
@@ -266,8 +266,8 @@ describe("E2E - ComplianceObligationArticle", () => {
         },
         body: {
           conformityAssessmentPeriod: "YEARLY",
-          relatedArticleNo: "001",
-          description: "Article description 1",
+          relatedeomscleNo: "001",
+          description: "eomscle description 1",
           currentApplication: "Application 1",
           conformityAssessment: "Assessment 1",
           lastConformityAssessment: UtilDate.getNowUtcIsoDate(),
@@ -276,22 +276,22 @@ describe("E2E - ComplianceObligationArticle", () => {
     );
 
     await client.DELETE(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: {
           path: {
-            id: article.data!.id,
+            id: eomscle.data!.id,
             subjectId: compliance.data!.id,
           },
         },
       },
     );
     const res = await client.GET(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: {
           path: {
-            id: article.data!.id,
+            id: eomscle.data!.id,
             subjectId: compliance.data!.id,
           },
         },
@@ -304,7 +304,7 @@ describe("E2E - ComplianceObligationArticle", () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const invalidId = "00000000-0000-0000-0000-000000000000";
     const errorRes = await client.GET(
-      "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
       {
         params: { path: { id: invalidId, subjectId: invalidId } },
       },

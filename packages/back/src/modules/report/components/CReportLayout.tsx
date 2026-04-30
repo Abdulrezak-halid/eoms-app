@@ -78,7 +78,7 @@ const CHeader = async ({
           <td>
             <div class="report-header">
               <div>{title}</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>

@@ -8,7 +8,7 @@ import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import logoAveva from "../../measurement/assets/logo-aveva.webp";
 import logoOpenWeather from "../../measurement/assets/logo-openweather.webp";
-import logoReneryoAgent from "../../measurement/assets/logo-reneryoagent.webp";
+import logoeomsAgent from "../../measurement/assets/logo-eomsagent.webp";
 import logoWeatherApi from "../../measurement/assets/logo-weatherapi.webp";
 
 export function CDisplayIntegrationGrid() {
@@ -24,7 +24,7 @@ export function CDisplayIntegrationGrid() {
       },
       { value: "AVEVA_PI", imageSrc: logoAveva, label: "AVEVA PI" },
       { value: "WEBHOOK", icon: Webhook, label: t("webhook") },
-      { value: "AGENT", imageSrc: logoReneryoAgent, label: t("agent") },
+      { value: "AGENT", imageSrc: logoeomsAgent, label: t("agent") },
       { value: "QDMS", icon: FileDown, label: t("qdmsShort") },
       { value: "MOCK_SOURCE", icon: Drama, label: t("mockSource") },
     ],

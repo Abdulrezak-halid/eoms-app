@@ -54,24 +54,24 @@ docker run -d --name timescaledb \
 5. Add these environment variables in order to access translation keys.
 
    ```env
-   TOLGEE_API_URL=https://tolgee.arti.ac
+   TOLGEE_API_URL=https://tolgee.eoms.ac
    TOLGEE_API_KEY=tgpat_xxxxxxxxxx
    TOLGEE_PROJECT_ID=2
    ```
 
-   For `TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.arti.ac) in your browser and create your personal access key.
+   For `TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.eoms.ac) in your browser and create your personal access key.
 
 ### 4. Configure Frontend Environment Variables
 
 Similar to the backend Tolgee configuration, add these environment variables to `packages/front/.env.development.local` in order to access translation keys.
 
 ```env
-VITE_APP_TOLGEE_API_URL=https://tolgee.arti.ac
+VITE_APP_TOLGEE_API_URL=https://tolgee.eoms.ac
 VITE_APP_TOLGEE_API_KEY=tgpat_xxxxxxxxxx
 VITE_APP_TOLGEE_PROJECT_ID=2
 ```
 
-For `VITE_APP_TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.arti.ac) in your browser and create your personal access key.
+For `VITE_APP_TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.eoms.ac) in your browser and create your personal access key.
 
 ### 5. Generate Required Files
 

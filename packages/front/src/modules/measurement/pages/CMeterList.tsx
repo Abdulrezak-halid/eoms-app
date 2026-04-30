@@ -60,7 +60,7 @@ export function CMeterList() {
         acc[key].push(record);
         return acc;
       },
-      {} as Partial<Record<IDtoEEnergyResource, typeof payload.records>>,
+      {} as Peomsal<Record<IDtoEEnergyResource, typeof payload.records>>,
     );
 
     const groups = (

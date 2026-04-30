@@ -10,10 +10,10 @@ import { CAsyncLoader } from "@m/core/components/CAsyncLoader";
 import { useLoader } from "@m/core/hooks/useLoader";
 import { useNavigate } from "@m/core/hooks/useNavigate";
 
-import { CComplianceObligationArticleForm } from "../components/CComplianceObligationArticleForm";
-import { IDtoComplianceObligationArticleRequest } from "../interfaces/IDtoComplianceObligation";
+import { CComplianceObligationeomscleForm } from "../components/CComplianceObligationeomscleForm";
+import { IDtoComplianceObligationeomscleRequest } from "../interfaces/IDtoComplianceObligation";
 
-export function CComplianceObligationArticleEditForm() {
+export function CComplianceObligationeomscleEditForm() {
   const { t } = useTranslation();
   const { subjectId = "", id: ideaId = "" } = useParams();
   const apiToast = useApiToast();
@@ -31,7 +31,7 @@ export function CComplianceObligationArticleEditForm() {
   const fetchIdea = useCallback(
     () =>
       Api.GET(
-        "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+        "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
         {
           params: { path: { subjectId, id: ideaId } },
         },
@@ -41,9 +41,9 @@ export function CComplianceObligationArticleEditForm() {
   const [ideaData] = useLoader(fetchIdea);
 
   const handleSubmit = useCallback(
-    async (body: IDtoComplianceObligationArticleRequest) => {
+    async (body: IDtoComplianceObligationeomscleRequest) => {
       const res = await Api.PUT(
-        "/u/commitment/compliance-obligation/item/{subjectId}/article/{id}",
+        "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
         {
           params: { path: { subjectId, id: ideaId } },
           body,
@@ -51,7 +51,7 @@ export function CComplianceObligationArticleEditForm() {
       );
       apiToast(res);
       if (!res.error) {
-        navigate(`/commitment/compliance-obligation/item/${subjectId}/article`);
+        navigate(`/commitment/compliance-obligation/item/${subjectId}/eomscle`);
       }
     },
     [apiToast, navigate, subjectId, ideaId],
@@ -68,8 +68,8 @@ export function CComplianceObligationArticleEditForm() {
         dynamic: true,
       },
       {
-        label: t("articles"),
-        path: `/commitment/compliance-obligation/item/${subjectId}/article`,
+        label: t("eomscles"),
+        path: `/commitment/compliance-obligation/item/${subjectId}/eomscle`,
       },
       {
         label: complianceObligationData?.payload?.complianceObligation || "",
@@ -84,7 +84,7 @@ export function CComplianceObligationArticleEditForm() {
     <CBody breadcrumbs={breadcrumbs}>
       <CAsyncLoader data={ideaData}>
         {(payload) => (
-          <CComplianceObligationArticleForm
+          <CComplianceObligationeomscleForm
             initialData={payload}
             onSubmit={handleSubmit}
           />

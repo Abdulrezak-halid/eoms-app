@@ -9,10 +9,10 @@ import { useApiToast } from "@m/base/hooks/useApiToast";
 import { useLoader } from "@m/core/hooks/useLoader";
 import { useNavigate } from "@m/core/hooks/useNavigate";
 
-import { CComplianceObligationArticleForm } from "../components/CComplianceObligationArticleForm";
-import { IDtoComplianceObligationArticleRequest } from "../interfaces/IDtoComplianceObligation";
+import { CComplianceObligationeomscleForm } from "../components/CComplianceObligationeomscleForm";
+import { IDtoComplianceObligationeomscleRequest } from "../interfaces/IDtoComplianceObligation";
 
-export function CComplianceObligationArticleAddForm() {
+export function CComplianceObligationeomscleAddForm() {
   const { t } = useTranslation();
   const { subjectId = "" } = useParams();
   const apiToast = useApiToast();
@@ -28,9 +28,9 @@ export function CComplianceObligationArticleAddForm() {
   const [complianceObligationData] = useLoader(fetchcomplianceObligation);
 
   const handleSubmit = useCallback(
-    async (data: IDtoComplianceObligationArticleRequest) => {
+    async (data: IDtoComplianceObligationeomscleRequest) => {
       const res = await Api.POST(
-        "/u/commitment/compliance-obligation/item/{subjectId}/article",
+        "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
         {
           body: data,
           params: { path: { subjectId } },
@@ -38,7 +38,7 @@ export function CComplianceObligationArticleAddForm() {
       );
       apiToast(res);
       if (!res.error) {
-        navigate(`/commitment/compliance-obligation/item/${subjectId}/article`);
+        navigate(`/commitment/compliance-obligation/item/${subjectId}/eomscle`);
       }
     },
     [apiToast, navigate, subjectId],
@@ -55,8 +55,8 @@ export function CComplianceObligationArticleAddForm() {
         dynamic: true,
       },
       {
-        label: t("articles"),
-        path: `/commitment/compliance-obligation/item/${subjectId}/article`,
+        label: t("eomscles"),
+        path: `/commitment/compliance-obligation/item/${subjectId}/eomscle`,
       },
       { label: t("add") },
     ],
@@ -65,7 +65,7 @@ export function CComplianceObligationArticleAddForm() {
 
   return (
     <CBody breadcrumbs={breadcrumbs}>
-      <CComplianceObligationArticleForm onSubmit={handleSubmit} />
+      <CComplianceObligationeomscleForm onSubmit={handleSubmit} />
     </CBody>
   );
 }

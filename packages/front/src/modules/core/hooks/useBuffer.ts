@@ -16,7 +16,7 @@ export function useBuffer<T>(value: T) {
       setPending(false);
     }, 200);
     return () => {
-      clearTimeout(timer);
+      cleeomsmeout(timer);
     };
   }, [value, buf]);
 

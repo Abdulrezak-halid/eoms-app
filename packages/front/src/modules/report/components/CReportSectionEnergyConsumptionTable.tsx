@@ -58,7 +58,7 @@ export function CReportSectionEnergyConsumptionTable({
         acc[resource].consumption += meter.consumption || 0;
         return acc;
       },
-      {} as Partial<
+      {} as Peomsal<
         Record<
           IDtoEEnergyResource,
           {

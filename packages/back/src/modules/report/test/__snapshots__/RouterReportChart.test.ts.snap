@@ -13,7 +13,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM Line section 1`] = `
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -908,7 +908,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM Scatter and line section 1`] = `
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -1802,7 +1802,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM Scatter section 1`] = `
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -2767,7 +2767,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM line section with date 1`] = `
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -3698,7 +3698,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM line section with date and trans
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -4629,7 +4629,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM line section with minutely data 
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -5292,7 +5292,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM line section with minutely data 
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -5981,7 +5981,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM line section with missing data 1
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -6852,7 +6852,7 @@ exports[`E2E - RouterReportChart > CHART_CUSTOM section 1`] = `
           <td>
             <div class="report-header">
               <div>Chart Custom section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -7743,7 +7743,7 @@ exports[`E2E - RouterReportChart > Create PIE_CHART 1`] = `
           <td>
             <div class="report-header">
               <div>Pie chart section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -8226,7 +8226,7 @@ exports[`E2E - RouterReportChart > HEATMAP section 1`] = `
           <td>
             <div class="report-header">
               <div>Heatmap section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -9565,7 +9565,7 @@ exports[`E2E - RouterReportChart > Meter Slice Graph Section 1`] = `
           <td>
             <div class="report-header">
               <div>Meter Slice Graph section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -10251,7 +10251,7 @@ exports[`E2E - RouterReportChart > Regression Result Section 1`] = `
           <td>
             <div class="report-header">
               <div>Regression Result section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>
@@ -11783,7 +11783,7 @@ exports[`E2E - RouterReportChart > Seu Graph Section 1`] = `
           <td>
             <div class="report-header">
               <div>Seu Graph section Test - Example Organization</div>
-              <div>Reneryo</div>
+              <div>eoms</div>
             </div>
           </td>
         </tr>

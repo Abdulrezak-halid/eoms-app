@@ -36,7 +36,7 @@ export function CDataViewProfileValueGraph({ profileId, profileType }: IProps) {
   const range = useGlobalDatetimeRange();
 
   const [displayUnits, setDisplayUnits] = useState<
-    Partial<Record<IUnitGroup, IUnit>>
+    Peomsal<Record<IUnitGroup, IUnit>>
   >({});
 
   const fetcher = useCallback(() => {

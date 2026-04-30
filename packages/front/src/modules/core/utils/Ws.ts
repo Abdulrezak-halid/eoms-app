@@ -90,9 +90,9 @@ export class Ws<TInterface> {
       this.socket = undefined;
     }
     window.clearInterval(this.pingIntervalId);
-    window.clearTimeout(this.pongTimeoutId);
-    window.clearTimeout(this.reconnectionTimeoutId);
-    window.clearTimeout(this.softOpenDelayTimeoutId);
+    window.cleeomsmeout(this.pongTimeoutId);
+    window.cleeomsmeout(this.reconnectionTimeoutId);
+    window.cleeomsmeout(this.softOpenDelayTimeoutId);
     this.pingIntervalId = undefined;
     this.pongTimeoutId = undefined;
     this.reconnectionTimeoutId = undefined;
