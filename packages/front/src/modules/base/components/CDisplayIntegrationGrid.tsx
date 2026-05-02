@@ -8,7 +8,7 @@ import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import logoAveva from "../../measurement/assets/logo-aveva.webp";
 import logoOpenWeather from "../../measurement/assets/logo-openweather.webp";
-import logoeomsAgent from "../../measurement/assets/logo-eomsagent.webp";
+import logoeomsAgent from "../../measurement/assets/logo-reneryoagent.webp";
 import logoWeatherApi from "../../measurement/assets/logo-weatherapi.webp";
 
 export function CDisplayIntegrationGrid() {

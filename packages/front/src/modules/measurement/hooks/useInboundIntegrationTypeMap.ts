@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { IValueLabelMap } from "@m/base/interfaces/IValueLabelMap";
 import { TranslationFunc, useTranslation } from "@m/core/hooks/useTranslation";
 
-import logoeomsAgent from "../assets/logo-eomsagent.webp";
+import logoeomsAgent from "../assets/logo-reneryoagent.webp";
 
 export function renderInboundIntegrationTypeMap(t: TranslationFunc) {
   return {

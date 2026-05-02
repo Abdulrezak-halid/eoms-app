@@ -243,12 +243,12 @@ export namespace UtilMetricValueQuery {
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.resourceId} order by ${
+            }) over (partition by ${interpolated.resourceId} order by ${
               interpolated.bucket
             }) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.resourceId} order by ${
+            }) over (partition by ${interpolated.resourceId} order by ${
               interpolated.bucket
             }), 0)
             end`.as("value"),
@@ -334,12 +334,12 @@ export namespace UtilMetricValueQuery {
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${
+            }) over (partition by ${
               interpolated.resourceId
             } order by ${interpolated.bucket}) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.resourceId} order by ${
+            }) over (partition by ${interpolated.resourceId} order by ${
               interpolated.bucket
             }), 0)
             end`.as("value"),
@@ -424,12 +424,12 @@ export namespace UtilMetricValueQuery {
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${
+            }) over (partition by ${
               interpolated.resourceId
             } order by ${interpolated.bucket}) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.resourceId} order by ${
+            }) over (partition by ${interpolated.resourceId} order by ${
               interpolated.bucket
             }), 0)
             end`.as("value"),
@@ -544,18 +544,18 @@ export namespace UtilMetricValueQuery {
           meterSliceId: interpolated.meterSliceId,
           bucket: interpolated.bucket,
           valueCount: interpolated.valueCount,
-          // Peomstion by only resourceId is not enough.
+          // partition by only resourceId is not enough.
           //   There may be different meter slices that uses the same
-          //   resourceId, that's why slice id is also in the peomstion.
+          //   resourceId, that's why slice id is also in the partition.
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.meterSliceId}, ${
+            }) over (partition by ${interpolated.meterSliceId}, ${
               interpolated.resourceId
             } order by ${interpolated.bucket}) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${
+            }) over (partition by ${
               interpolated.meterSliceId
             }, ${interpolated.resourceId} order by ${interpolated.bucket}), 0)
             end`.as("value"),
@@ -681,18 +681,18 @@ export namespace UtilMetricValueQuery {
           meterId: interpolated.meterId,
           bucket: interpolated.bucket,
           valueCount: interpolated.valueCount,
-          // Peomstion by only resourceId is not enough.
+          // partition by only resourceId is not enough.
           //   There may be different meters that uses the same
-          //   resourceId, that's why meter id is also in the peomstion.
+          //   resourceId, that's why meter id is also in the partition.
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.meterId}, ${
+            }) over (partition by ${interpolated.meterId}, ${
               interpolated.resourceId
             } order by ${interpolated.bucket}) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${
+            }) over (partition by ${
               interpolated.meterId
             }, ${interpolated.resourceId} order by ${interpolated.bucket}), 0)
             end`.as("value"),
@@ -805,18 +805,18 @@ export namespace UtilMetricValueQuery {
           meterSliceId: interpolated.meterSliceId,
           bucket: interpolated.bucket,
           valueCount: interpolated.valueCount,
-          // Peomstion by only resourceId is not enough.
+          // partition by only resourceId is not enough.
           //   There may be different meter slices that uses the same
-          //   resourceId, that's why slice id is also in the peomstion.
+          //   resourceId, that's why slice id is also in the partition.
           value: sql<number | null>`case
             when ${interpolated.value} is null or lag(${
               interpolated.value
-            }) over (peomstion by ${interpolated.meterSliceId}, ${
+            }) over (partition by ${interpolated.meterSliceId}, ${
               interpolated.resourceId
             } order by ${interpolated.bucket}) is null then null
             else greatest(${interpolated.value} - lag(${
               interpolated.value
-            }) over (peomstion by ${
+            }) over (partition by ${
               interpolated.meterSliceId
             }, ${interpolated.resourceId} order by ${interpolated.bucket}), 0)
             end`.as("value"),

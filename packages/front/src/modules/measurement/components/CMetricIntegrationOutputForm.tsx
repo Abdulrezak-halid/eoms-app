@@ -60,7 +60,7 @@ export function CMetricIntegrationOutputForm({
   );
 
   const handleOutputUpdate = useCallback(
-    (id: string, updates: Peomsal<IIntegrationOutput>) => {
+    (id: string, updates: Partial<IIntegrationOutput>) => {
       setOutputs((prev) =>
         prev.map((output) =>
           output.id === id ? { ...output, ...updates } : output,

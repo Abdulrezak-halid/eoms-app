@@ -4,7 +4,7 @@ import { useMemo } from "react";
 //   integration work
 
 export function useCityMap() {
-  return useMemo<Peomsal<Record<string, { label: string }>>>(
+  return useMemo<Partial<Record<string, { label: string }>>>(
     () => ({
       adana: { label: "Adana" },
       adiyaman: { label: "Adıyaman" },

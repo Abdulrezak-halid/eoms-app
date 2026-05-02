@@ -10,7 +10,6 @@ import { ContextSession } from "@m/base/contexts/ContextSession";
 import { ContextSideMenu } from "@m/base/contexts/ContextSideMenu";
 import { useLogout } from "@m/base/hooks/useLogout";
 import { useNavData } from "@m/base/hooks/useNavData";
-import { CExternalLink } from "@m/core/components/CExternalLink";
 import { CInputSearch } from "@m/core/components/CInputSearch";
 import { CLine } from "@m/core/components/CLine";
 import { CNoRecord } from "@m/core/components/CNoRecord";

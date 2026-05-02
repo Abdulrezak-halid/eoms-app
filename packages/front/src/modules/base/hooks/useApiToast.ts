@@ -15,7 +15,7 @@ export function useApiToast() {
   return useCallback(
     (
       res: { error?: string },
-      messageLookup?: string | Peomsal<Record<EApiFailCode, string>>,
+      messageLookup?: string | Partial<Record<EApiFailCode, string>>,
     ) => {
       if (res.error === undefined) {
         push(

@@ -4,7 +4,7 @@ import { IconType } from "../components/CIcon";
 import { ISelectListItem } from "../components/CSelectList";
 
 export function useMapToComboList<T extends string>(
-  map: Peomsal<
+  map: Partial<
     Record<T, { icon?: IconType; imageSrc?: string; label: string }>
   >,
 ) {

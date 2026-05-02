@@ -54,7 +54,7 @@ export function isValidDateQuickRange(
   ).includes(value as string);
 }
 
-const DateQuickRangeDaysAgo: Peomsal<Record<IDateQuickRange, number>> = {
+const DateQuickRangeDaysAgo: Partial<Record<IDateQuickRange, number>> = {
   LAST_7_DAYS: 7,
   LAST_30_DAYS: 30,
   LAST_90_DAYS: 90,

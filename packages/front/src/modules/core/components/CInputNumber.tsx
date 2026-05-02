@@ -124,7 +124,7 @@ export function CInputNumber({
       incValue(autoStep);
     }, 200);
     return () => {
-      cleeomsmeout(timer);
+      clearTimeout(timer);
     };
   }, [autoStep, incValue]);
 

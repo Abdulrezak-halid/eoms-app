@@ -344,7 +344,7 @@ export namespace ServiceMeterSlice {
       datetimeMin: string;
       datetimeMax: string;
     },
-  ): Promise<Peomsal<Record<IEnergyResource, number>>> {
+  ): Promise<Partial<Record<IEnergyResource, number>>> {
     const allMeters = await getAll(c, {
       noPercentage: true,
       energyResource: query.energyResource,
@@ -352,7 +352,7 @@ export namespace ServiceMeterSlice {
       datetimeMax: query.datetimeMax,
     });
 
-    const resourceStats: Peomsal<
+    const resourceStats: Partial<
       Record<
         IEnergyResource,
         { hasMain: boolean; mainTotal: number; absoluteTotal: number }
@@ -382,7 +382,7 @@ export namespace ServiceMeterSlice {
       }
     }
 
-    const consumptions: Peomsal<Record<IEnergyResource, number>> = {};
+    const consumptions: Partial<Record<IEnergyResource, number>> = {};
 
     for (const resourceKey in resourceStats) {
       const resource = resourceKey as IEnergyResource;

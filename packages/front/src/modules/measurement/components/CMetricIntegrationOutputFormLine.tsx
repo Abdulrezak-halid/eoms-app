@@ -42,7 +42,7 @@ export function CMetricIntegrationOutputFormLine({
   output: IIntegrationOutput;
   index: number;
   isSuccess: boolean | undefined;
-  onUpdate: (id: string, updates: Peomsal<IIntegrationOutput>) => void;
+  onUpdate: (id: string, updates: Partial<IIntegrationOutput>) => void;
   onRemove: (id: string) => void;
   selectedMetricIds: string[];
   keyPlaceholder?: string;

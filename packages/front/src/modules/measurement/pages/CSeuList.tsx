@@ -95,7 +95,7 @@ export function CSeuList() {
           acc[key].push(record);
           return acc;
         },
-        {} as Peomsal<Record<IDtoEEnergyResource, typeof payload.seus.records>>,
+        {} as Partial<Record<IDtoEEnergyResource, typeof payload.seus.records>>,
       );
 
       const groups = (
