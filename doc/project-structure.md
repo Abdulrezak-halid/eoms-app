@@ -1,82 +1,77 @@
-Currently, the following modules exist in the project:
+# EOMS
 
-## dashboard
+Project Database Models and Modules
 
-## measurements 
-(leave them as is; they will need to be modified later)
+The following outline categorizes the final modules and their corresponding database models for the EOM system. This structure will serve as the reference for building the database schema.
 
-## analyses 
-(leave them as is; they will need to be modified later)
+## 1. Identity Access
 
-## commitment 
--> We need this for the EOM project; it should be left as is.
+- **User**: System users (moved/reused from configuration)
+- **Role**: User roles and access groupings (New)
+- **Permission**: Fine-grained access permissions
+- **Session**: User sessions tracking
 
-## planning 
--> We need this for the EOM project; it should be left as is.
+## 2. Organization (System Admin)
 
-## supportingOperations 
--> We need this for the EOM project; it should be left as is (we will modify some aspects later on certain pages).
+- **Department**: Organizational units
+- **Team**: Sub-groups within departments
+- **Hierarchy**: Reporting lines and structural hierarchy
 
-## internalAudit 
--> We need this for the EOM project; it should be left as is.
+## 3. Communication
 
-## report 
--> We need this for the EOM project; it should be left as is (we will modify some aspects later on certain pages).
+- **Notification**: System and user notifications
+- **Announcement**: Global or group-based broadcasts (New)
+- **Message**: General messaging between users/groups (New)
 
-## documentManagement 
--> We don't need this.
+## 4. Task Management
 
-## supplyChain 
--> We need this for the EOM project; it should be left as is (we will modify some aspects later on certain pages).
+- **Task**: Actionable items (New)
+- **Assignment**: Users assigned to specific tasks (New)
 
-## configuration 
--> We need this for the EOM project; it should be left as is. Keep it as is (we will make some adjustments later on some pages)
+## 5. Operations
 
----
-In addition to those modules and pages, we will add these modules:
-## Identity Access
-- users (already existing in configuration)
-- roles (must be created)
-- permissions (already existing within users)
-- sessions (existing)
+- **Request**: Operation requests (New)
+- **Workflow**: Configurable state workflows (reused/adapted from internalAudit)
+- **Approval**: Approval steps for requests/workflows (New)
+- **Escalation**: Escalation triggers and logs for unhandled tasks (New)
 
-## Operations
-- requests (must be created)
-- workflows (already existing within internalAudit)
-- approvals (must be created)
-- escalations (must be created)
+## 6. Resource Management (Under Reports)
 
-## Task Management (must be created)
-- tasks (must be created)
-- assignments (must be created)
+- **File**: Uploaded files and resources
+- **Attachment**: Link between files and other entities
+- **Storage**: Storage metadata and allocation limits
+- **FileVersion**: Version history for updated files
 
-## Resource Management (must be placed under the Reports module)
-- files
-- attachments
-- storage
-- fileVersions
+## 7. Monitoring
 
-## Communication (must be created)
-- notifications (already existing in CBodyHeader)
-- announcements (must be created)
-- messaging (must be created) Create it
+- **AuditLog**: Detailed tracking of data mutations (New)
+- **ActivityTracking**: User activity breadcrumbs (New)
+- **SystemEvent**: System-level events or technical logs (New)
 
-## Monitoring -> Must be created
-- auditLogs -> Must be created
-- activityTracking -> Must be created
-- systemEvents -> Must be created
+## 8. System Control (System Admin)
 
-## System Control -> Exists in sysadmin
-- backups
-- restorePoints
-- systemHealth
+- **Backup**: Data backup records
+- **RestorePoint**: Points in time for system restores
+- **SystemHealth**: Periodic health check metrics
 
-## Organization -> Exists in sysadmin
-- departments
-- teams
-- hierarchy
+## 9. Configuration
 
-## Configuration -> Exists; missing pages must be added
-- systemSettings -> Must be created
-- featureFlags -> Must be created
-- integrations -> Exists in the measurements module
+- **SystemSetting**: Global application settings (New)
+- **FeatureFlag**: Toggles for system features (New)
+- **Integration**: External API/service configurations (from measurements)
+
+## 10. Core Business Modules
+
+The following core modules are retained for EOM. DB models for these are mostly predefined but will be extended as required:
+
+- **Dashboard**: User and system analytics views
+- **Measurement**: KPI and metric definitions (to be modified)
+- **Analysis**: Analytical reports and processing (to be modified)
+- **Commitment**: Kept as-is
+- **Planning**: Kept as-is
+- **Supporting Operations**: Kept as-is (with UI modifications)
+- **Internal Audit**: Kept as-is
+- **Report**: Kept as-is (with UI modifications)
+- **Supply Chain**: Kept as-is (with UI modifications)
+
+> **Note**: The **Document Management** module is excluded and will not be migrated/integrated.

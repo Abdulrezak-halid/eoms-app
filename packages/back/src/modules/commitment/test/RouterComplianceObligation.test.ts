@@ -45,13 +45,13 @@ describe("E2E - ComplianceObligation", () => {
         {
           id: createdId,
           ...payload,
-          eomscleCount: 0,
+          articleCount: 0,
         },
       ],
     });
   });
 
-  it("GET / with eomscles should be ok", async () => {
+  it("GET / with articles should be ok", async () => {
     const { client } = await UtilTest.createClientLoggedIn();
     const payload = {
       complianceObligation: "test department 1",
@@ -72,8 +72,8 @@ describe("E2E - ComplianceObligation", () => {
     expect(createResponse).toBeApiOk();
     const createdId = createResponse.data!.id;
 
-    const reseomscle = await client.POST(
-      "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
+    const resArticle = await client.POST(
+      "/u/commitment/compliance-obligation/item/{subjectId}/articles",
       {
         params: {
           path: {
@@ -81,8 +81,8 @@ describe("E2E - ComplianceObligation", () => {
           },
         },
         body: {
-          relatedeomscleNo: "001",
-          description: "eomscle description 1",
+          relatedArticleNo: "001",
+          description: "article description 1",
           currentApplication: "Application 1",
           conformityAssessment: "Assessment 1",
           conformityAssessmentPeriod: "YEARLY",
@@ -90,7 +90,7 @@ describe("E2E - ComplianceObligation", () => {
         },
       },
     );
-    expect(reseomscle).toBeApiOk();
+    expect(resArticle).toBeApiOk();
 
     const res = await client.GET("/u/commitment/compliance-obligation/item");
     expect(res.data).toStrictEqual({
@@ -98,7 +98,7 @@ describe("E2E - ComplianceObligation", () => {
         {
           id: createdId,
           ...payload,
-          eomscleCount: 1,
+          articleCount: 1,
         },
       ],
     });
@@ -138,7 +138,7 @@ describe("E2E - ComplianceObligation", () => {
     expect(getRes.data).toStrictEqual({
       id: createdId,
       ...payload,
-      eomscleCount: 0,
+      articleCount: 0,
     });
   });
 
@@ -193,7 +193,7 @@ describe("E2E - ComplianceObligation", () => {
     expect(getRes.data).toStrictEqual({
       id: createdId,
       ...updateBody,
-      eomscleCount: 0,
+      articleCount: 0,
     });
   });
   it("DELETE /it should delete ", async () => {

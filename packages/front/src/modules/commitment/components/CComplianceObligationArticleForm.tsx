@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import { CComboboxPeriod } from "@m/base/components/CComboboxPeriod";
 import { CFormFooterSaveUpdate } from "@m/base/components/CFormFooterSaveUpdate";
@@ -9,18 +8,19 @@ import { CInputDate } from "@m/core/components/CInputDate";
 import { CInputString } from "@m/core/components/CInputString";
 import { CInputTextarea } from "@m/core/components/CInputTextarea";
 import { useInput, useInputInvalid } from "@m/core/hooks/useInput";
+import { useTranslation } from "@m/core/hooks/useTranslation";
 
 import {
-  IDtoComplianceObligationeomscleRequest,
-  IDtoComplianceObligationeomscleResponse,
+  IDtoComplianceObligationArticleRequest,
+  IDtoComplianceObligationArticleResponse,
 } from "../interfaces/IDtoComplianceObligation";
 
-export function CComplianceObligationeomscleForm({
+export function CComplianceObligationArticleForm({
   initialData,
   onSubmit,
 }: {
-  initialData?: IDtoComplianceObligationeomscleResponse;
-  onSubmit: (data: IDtoComplianceObligationeomscleRequest) => Promise<void>;
+  initialData?: IDtoComplianceObligationArticleResponse;
+  onSubmit: (data: IDtoComplianceObligationArticleRequest) => Promise<void>;
 }) {
   const { t } = useTranslation();
 
@@ -32,7 +32,7 @@ export function CComplianceObligationeomscleForm({
   const inputLastConformityAssessment = useInput(
     initialData?.lastConformityAssessment,
   );
-  const inputRelatedeomscleNo = useInput(initialData?.relatedeomscleNo);
+  const inputRelatedArticleNo = useInput(initialData?.relatedArticleNo);
   const inputDescription = useInput(initialData?.description || "");
 
   const invalid = useInputInvalid(
@@ -40,7 +40,7 @@ export function CComplianceObligationeomscleForm({
     inputConformityAssessmentPeriod,
     inputCurrentApplication,
     inputLastConformityAssessment,
-    inputRelatedeomscleNo,
+    inputRelatedArticleNo,
     inputDescription,
   );
 
@@ -51,7 +51,7 @@ export function CComplianceObligationeomscleForm({
       !inputConformityAssessmentPeriod.value ||
       !inputCurrentApplication.value ||
       !inputLastConformityAssessment.value ||
-      !inputRelatedeomscleNo.value ||
+      !inputRelatedArticleNo.value ||
       !inputDescription.value
     ) {
       return;
@@ -62,7 +62,7 @@ export function CComplianceObligationeomscleForm({
       conformityAssessmentPeriod: inputConformityAssessmentPeriod.value,
       currentApplication: inputCurrentApplication.value,
       lastConformityAssessment: inputLastConformityAssessment.value,
-      relatedeomscleNo: inputRelatedeomscleNo.value,
+      relatedArticleNo: inputRelatedArticleNo.value,
       description: inputDescription.value || null,
     };
 
@@ -73,7 +73,7 @@ export function CComplianceObligationeomscleForm({
     inputConformityAssessmentPeriod.value,
     inputCurrentApplication.value,
     inputLastConformityAssessment.value,
-    inputRelatedeomscleNo.value,
+    inputRelatedArticleNo.value,
     inputDescription.value,
     onSubmit,
   ]);
@@ -122,12 +122,12 @@ export function CComplianceObligationeomscleForm({
         </CFormLine>
 
         <CFormLine
-          label={t("relatedeomscleNo")}
-          invalidMsg={inputRelatedeomscleNo.invalidMsg}
+          label={t("relatedArticleNo")}
+          invalidMsg={inputRelatedArticleNo.invalidMsg}
         >
           <CInputString
-            {...inputRelatedeomscleNo}
-            placeholder={t("relatedeomscleNo")}
+            {...inputRelatedArticleNo}
+            placeholder={t("relatedArticleNo")}
             required
           />
         </CFormLine>

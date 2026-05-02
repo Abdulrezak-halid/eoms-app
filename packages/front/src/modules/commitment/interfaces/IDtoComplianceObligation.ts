@@ -10,12 +10,12 @@ export type IDtoComplianceObligationResponse = InferApiResponse<
   "get"
 >;
 
-export type IDtoComplianceObligationeomscleRequest = InferApiRequest<
-  "/u/commitment/compliance-obligation/item/{subjectId}/eomscle",
+export type IDtoComplianceObligationArticleRequest = InferApiRequest<
+  "/u/commitment/compliance-obligation/item/{subjectId}/articles",
   "post"
 >;
 
-export type IDtoComplianceObligationeomscleResponse = InferApiResponse<
-  "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
+export type IDtoComplianceObligationArticleResponse = InferApiResponse<
+  "/u/commitment/compliance-obligation/item/{subjectId}/articles/{id}",
   "get"
 >;

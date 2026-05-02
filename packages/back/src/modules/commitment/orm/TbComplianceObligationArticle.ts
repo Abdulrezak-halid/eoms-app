@@ -6,8 +6,8 @@ import { DataPeriod } from "@m/commitment/interfaces/IPeriod";
 
 import { TbComplianceObligation } from "./TbComplianceObligation";
 
-export const TbComplianceObligationeomscle = pgTable(
-  "tb_commitment_compliance_obligation_eomscles",
+export const TbComplianceObligationArticle = pgTable(
+  "tb_commitment_compliance_obligation_articles",
   {
     id: uuid().primaryKey().defaultRandom(),
     orgId: uuid()
@@ -20,7 +20,7 @@ export const TbComplianceObligationeomscle = pgTable(
     subjectId: uuid()
       .notNull()
       .references(() => TbComplianceObligation.id),
-    relatedeomscleNo: text().notNull(),
+    relatedArticleNo: text().notNull(),
     currentApplication: text().notNull(),
     conformityAssessment: text().notNull(),
     conformityAssessmentPeriod: text({ enum: DataPeriod }).notNull(),

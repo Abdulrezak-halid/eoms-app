@@ -1,4 +1,4 @@
-# eoms Project
+# Enterprise Operations Management System (EOMS) Project
 
 ## Setup Guide
 
@@ -50,28 +50,6 @@ docker run -d --name timescaledb \
    ```env
    DB_HOST=172.17.0.2
    ```
-
-5. Add these environment variables in order to access translation keys.
-
-   ```env
-   TOLGEE_API_URL=https://tolgee.eoms.ac
-   TOLGEE_API_KEY=tgpat_xxxxxxxxxx
-   TOLGEE_PROJECT_ID=2
-   ```
-
-   For `TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.eoms.ac) in your browser and create your personal access key.
-
-### 4. Configure Frontend Environment Variables
-
-Similar to the backend Tolgee configuration, add these environment variables to `packages/front/.env.development.local` in order to access translation keys.
-
-```env
-VITE_APP_TOLGEE_API_URL=https://tolgee.eoms.ac
-VITE_APP_TOLGEE_API_KEY=tgpat_xxxxxxxxxx
-VITE_APP_TOLGEE_PROJECT_ID=2
-```
-
-For `VITE_APP_TOLGEE_API_KEY` open [Tolgee Service](https://tolgee.eoms.ac) in your browser and create your personal access key.
 
 ### 5. Generate Required Files
 

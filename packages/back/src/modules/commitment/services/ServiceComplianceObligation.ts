@@ -7,7 +7,7 @@ import { ApiException } from "@m/core/exceptions/ApiException";
 import { IContextUser } from "@m/core/interfaces/IContext";
 
 import { TbComplianceObligation } from "../orm/TbComplianceObligation";
-import { TbComplianceObligationeomscle } from "../orm/TbComplianceObligationeomscle";
+import { TbComplianceObligationArticle } from "../orm/TbComplianceObligationArticle";
 
 export namespace ServiceComplianceObligation {
   export async function checkOrgOwnership(c: IContextUser, ids: string[]) {
@@ -26,15 +26,15 @@ export namespace ServiceComplianceObligation {
         revisionNo: TbComplianceObligation.revisionNo,
         revisionDate: TbComplianceObligation.revisionDate,
         isLegalActive: TbComplianceObligation.isLegalActive,
-        eomscleCount: count(TbComplianceObligationeomscle.id),
+        articleCount: count(TbComplianceObligationArticle.id),
       })
       .from(TbComplianceObligation)
       .leftJoin(
-        TbComplianceObligationeomscle,
+        TbComplianceObligationArticle,
         and(
-          eq(TbComplianceObligationeomscle.orgId, TbComplianceObligation.orgId),
+          eq(TbComplianceObligationArticle.orgId, TbComplianceObligation.orgId),
           eq(
-            TbComplianceObligationeomscle.subjectId,
+            TbComplianceObligationArticle.subjectId,
             TbComplianceObligation.id,
           ),
         ),
@@ -57,15 +57,15 @@ export namespace ServiceComplianceObligation {
         revisionNo: TbComplianceObligation.revisionNo,
         revisionDate: TbComplianceObligation.revisionDate,
         isLegalActive: TbComplianceObligation.isLegalActive,
-        eomscleCount: count(TbComplianceObligationeomscle.id),
+        articleCount: count(TbComplianceObligationArticle.id),
       })
       .from(TbComplianceObligation)
       .leftJoin(
-        TbComplianceObligationeomscle,
+        TbComplianceObligationArticle,
         and(
-          eq(TbComplianceObligationeomscle.orgId, TbComplianceObligation.orgId),
+          eq(TbComplianceObligationArticle.orgId, TbComplianceObligation.orgId),
           eq(
-            TbComplianceObligationeomscle.subjectId,
+            TbComplianceObligationArticle.subjectId,
             TbComplianceObligation.id,
           ),
         ),
@@ -155,11 +155,11 @@ export namespace ServiceComplianceObligation {
   export async function remove(c: IContextUser, id: string) {
     await c.db.transaction(async (tx) => {
       await tx
-        .delete(TbComplianceObligationeomscle)
+        .delete(TbComplianceObligationArticle)
         .where(
           and(
-            eq(TbComplianceObligationeomscle.orgId, c.session.orgId),
-            eq(TbComplianceObligationeomscle.subjectId, id),
+            eq(TbComplianceObligationArticle.orgId, c.session.orgId),
+            eq(TbComplianceObligationArticle.subjectId, id),
           ),
         );
       await tx

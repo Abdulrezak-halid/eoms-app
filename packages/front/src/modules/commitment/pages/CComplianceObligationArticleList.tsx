@@ -21,9 +21,9 @@ import { ContextAreYouSure } from "@m/core/contexts/ContextAreYouSure";
 import { useLoader } from "@m/core/hooks/useLoader";
 import { useTranslation } from "@m/core/hooks/useTranslation";
 
-import { IDtoComplianceObligationeomscleResponse } from "../interfaces/IDtoComplianceObligation";
+import { IDtoComplianceObligationArticleResponse } from "../interfaces/IDtoComplianceObligation";
 
-export function CComplianceObligationeomscleList() {
+export function CComplianceObligationArticleList() {
   const { t } = useTranslation();
   const { subjectId = "" } = useParams();
   const apiToast = useApiToast();
@@ -42,12 +42,12 @@ export function CComplianceObligationeomscleList() {
 
   const ideasFetcher = useCallback(
     () =>
-      Api.GET("/u/commitment/compliance-obligation/item/{subjectId}/eomscle", {
+      Api.GET("/u/commitment/compliance-obligation/item/{subjectId}/articles", {
         params: { path: { subjectId } },
       }),
     [subjectId],
   );
-  const [eomscleData, reloadIdeas] = useLoader(ideasFetcher);
+  const [articleData, reloadIdeas] = useLoader(ideasFetcher);
 
   const refreshAll = useCallback(async () => {
     await reloadDesign();
@@ -55,12 +55,12 @@ export function CComplianceObligationeomscleList() {
   }, [reloadDesign, reloadIdeas]);
 
   const handleDelete = useCallback(
-    async (record: IDtoComplianceObligationeomscleResponse) => {
+    async (record: IDtoComplianceObligationArticleResponse) => {
       await push(
         t("msgRecordWillBeDeleted", { subject: record.conformityAssessment }),
         async () => {
           const res = await Api.DELETE(
-            "/u/commitment/compliance-obligation/item/{subjectId}/eomscle/{id}",
+            "/u/commitment/compliance-obligation/item/{subjectId}/articles/{id}",
             { params: { path: { id: record.id, subjectId } } },
           );
           apiToast(res);
@@ -74,13 +74,13 @@ export function CComplianceObligationeomscleList() {
   );
 
   const actions = useCallback<
-    IDropdownListCallback<IDtoComplianceObligationeomscleResponse>
+    IDropdownListCallback<IDtoComplianceObligationArticleResponse>
   >(
     (d) => [
       {
         icon: Pencil,
         label: t("edit"),
-        path: `/commitment/compliance-obligation/item/${subjectId}/eomscle/item/${d.id}`,
+        path: `/commitment/compliance-obligation/item/${subjectId}/articles/item/${d.id}`,
       },
       {
         icon: Trash2,
@@ -144,8 +144,8 @@ export function CComplianceObligationeomscleList() {
               value: <CBadgeYesNo value={complianceObligation.isLegalActive} />,
             },
             {
-              label: t("eomscleCount"),
-              value: complianceObligation.eomscleCount,
+              label: t("articleCount"),
+              value: complianceObligation.articleCount,
             },
             {
               label: t("officialNewspaperNo"),
@@ -181,12 +181,12 @@ export function CComplianceObligationeomscleList() {
       <CHr className="my-4" />
       <CLine className="justify-end space-x-2 grow mb-4">
         <CLinkAdd
-          path={`/commitment/compliance-obligation/item/${subjectId}/eomscle/item-add`}
+          path={`/commitment/compliance-obligation/item/${subjectId}/articles/item-add`}
         />
         <CButtonRefresh onClick={refreshAll} />
       </CLine>
 
-      <CAsyncLoader data={eomscleData} arrayField="records">
+      <CAsyncLoader data={articleData} arrayField="records">
         {(payload) => (
           <CTable noOverflow header={header}>
             {payload.records.map((d) => [
@@ -200,7 +200,7 @@ export function CComplianceObligationeomscleList() {
                 key="lastConformityAssessment"
                 value={d.lastConformityAssessment}
               />,
-              d.relatedeomscleNo,
+              d.relatedArticleNo,
               <div key="actions" className="flex overflow-visible justify-end">
                 <CDropdown
                   list={actions}

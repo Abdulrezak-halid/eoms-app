@@ -5,52 +5,52 @@ import { ApiException } from "@m/core/exceptions/ApiException";
 import { IContextUser } from "@m/core/interfaces/IContext";
 
 import { IPeriod } from "../interfaces/IPeriod";
-import { TbComplianceObligationeomscle } from "../orm/TbComplianceObligationeomscle";
+import { TbComplianceObligationArticle } from "../orm/TbComplianceObligationArticle";
 
-export namespace ServiceComplianceObligationeomscle {
+export namespace ServiceComplianceObligationArticle {
   export async function getAll(c: IContextUser, subjectId: string) {
     return await c.db
       .select({
-        id: TbComplianceObligationeomscle.id,
-        relatedeomscleNo: TbComplianceObligationeomscle.relatedeomscleNo,
-        currentApplication: TbComplianceObligationeomscle.currentApplication,
+        id: TbComplianceObligationArticle.id,
+        relatedArticleNo: TbComplianceObligationArticle.relatedArticleNo,
+        currentApplication: TbComplianceObligationArticle.currentApplication,
         conformityAssessment:
-          TbComplianceObligationeomscle.conformityAssessment,
-        description: TbComplianceObligationeomscle.description,
+          TbComplianceObligationArticle.conformityAssessment,
+        description: TbComplianceObligationArticle.description,
         conformityAssessmentPeriod:
-          TbComplianceObligationeomscle.conformityAssessmentPeriod,
+          TbComplianceObligationArticle.conformityAssessmentPeriod,
         lastConformityAssessment:
-          TbComplianceObligationeomscle.lastConformityAssessment,
+          TbComplianceObligationArticle.lastConformityAssessment,
       })
-      .from(TbComplianceObligationeomscle)
+      .from(TbComplianceObligationArticle)
       .where(
         and(
-          eq(TbComplianceObligationeomscle.orgId, c.session.orgId),
-          eq(TbComplianceObligationeomscle.subjectId, subjectId),
+          eq(TbComplianceObligationArticle.orgId, c.session.orgId),
+          eq(TbComplianceObligationArticle.subjectId, subjectId),
         ),
       )
-      .orderBy(TbComplianceObligationeomscle.createdAt);
+      .orderBy(TbComplianceObligationArticle.createdAt);
   }
   export async function get(c: IContextUser, subjectId: string, id: string) {
     const [record] = await c.db
       .select({
-        id: TbComplianceObligationeomscle.id,
-        relatedeomscleNo: TbComplianceObligationeomscle.relatedeomscleNo,
-        currentApplication: TbComplianceObligationeomscle.currentApplication,
+        id: TbComplianceObligationArticle.id,
+        relatedArticleNo: TbComplianceObligationArticle.relatedArticleNo,
+        currentApplication: TbComplianceObligationArticle.currentApplication,
         conformityAssessment:
-          TbComplianceObligationeomscle.conformityAssessment,
+          TbComplianceObligationArticle.conformityAssessment,
         conformityAssessmentPeriod:
-          TbComplianceObligationeomscle.conformityAssessmentPeriod,
+          TbComplianceObligationArticle.conformityAssessmentPeriod,
         lastConformityAssessment:
-          TbComplianceObligationeomscle.lastConformityAssessment,
-        description: TbComplianceObligationeomscle.description,
+          TbComplianceObligationArticle.lastConformityAssessment,
+        description: TbComplianceObligationArticle.description,
       })
-      .from(TbComplianceObligationeomscle)
+      .from(TbComplianceObligationArticle)
       .where(
         and(
-          eq(TbComplianceObligationeomscle.orgId, c.session.orgId),
-          eq(TbComplianceObligationeomscle.subjectId, subjectId),
-          eq(TbComplianceObligationeomscle.id, id),
+          eq(TbComplianceObligationArticle.orgId, c.session.orgId),
+          eq(TbComplianceObligationArticle.subjectId, subjectId),
+          eq(TbComplianceObligationArticle.id, id),
         ),
       );
     if (!record) {
@@ -63,7 +63,7 @@ export namespace ServiceComplianceObligationeomscle {
     c: IContextUser,
     subjectId: string,
     data: {
-      relatedeomscleNo: string;
+      relatedArticleNo: string;
       currentApplication: string;
       conformityAssessment: string;
       conformityAssessmentPeriod: IPeriod;
@@ -72,13 +72,13 @@ export namespace ServiceComplianceObligationeomscle {
     },
   ) {
     const [record] = await c.db
-      .insert(TbComplianceObligationeomscle)
+      .insert(TbComplianceObligationArticle)
       .values({
         orgId: c.session.orgId,
         createdAt: c.nowDatetime,
         createdBy: c.session.userId,
         subjectId: subjectId,
-        relatedeomscleNo: data.relatedeomscleNo,
+        relatedArticleNo: data.relatedArticleNo,
         currentApplication: data.currentApplication,
         conformityAssessment: data.conformityAssessment,
         lastConformityAssessment: data.lastConformityAssessment,
@@ -86,7 +86,7 @@ export namespace ServiceComplianceObligationeomscle {
         conformityAssessmentPeriod: data.conformityAssessmentPeriod,
       })
       .returning({
-        id: TbComplianceObligationeomscle.id,
+        id: TbComplianceObligationArticle.id,
       });
 
     return record.id;
@@ -96,7 +96,7 @@ export namespace ServiceComplianceObligationeomscle {
     subjectId: string,
     id: string,
     data: {
-      relatedeomscleNo: string;
+      relatedArticleNo: string;
       currentApplication: string;
       conformityAssessment: string;
       description: string | null;
@@ -105,10 +105,10 @@ export namespace ServiceComplianceObligationeomscle {
     },
   ) {
     await c.db
-      .update(TbComplianceObligationeomscle)
+      .update(TbComplianceObligationArticle)
       .set({
         orgId: c.session.orgId,
-        relatedeomscleNo: data.relatedeomscleNo,
+        relatedArticleNo: data.relatedArticleNo,
         currentApplication: data.currentApplication,
         conformityAssessment: data.conformityAssessment,
         lastConformityAssessment: data.lastConformityAssessment,
@@ -117,20 +117,20 @@ export namespace ServiceComplianceObligationeomscle {
       })
       .where(
         and(
-          eq(TbComplianceObligationeomscle.orgId, c.session.orgId),
-          eq(TbComplianceObligationeomscle.subjectId, subjectId),
-          eq(TbComplianceObligationeomscle.id, id),
+          eq(TbComplianceObligationArticle.orgId, c.session.orgId),
+          eq(TbComplianceObligationArticle.subjectId, subjectId),
+          eq(TbComplianceObligationArticle.id, id),
         ),
       );
   }
   export async function remove(c: IContextUser, subjectId: string, id: string) {
     await c.db
-      .delete(TbComplianceObligationeomscle)
+      .delete(TbComplianceObligationArticle)
       .where(
         and(
-          eq(TbComplianceObligationeomscle.orgId, c.session.orgId),
-          eq(TbComplianceObligationeomscle.subjectId, subjectId),
-          eq(TbComplianceObligationeomscle.id, id),
+          eq(TbComplianceObligationArticle.orgId, c.session.orgId),
+          eq(TbComplianceObligationArticle.subjectId, subjectId),
+          eq(TbComplianceObligationArticle.id, id),
         ),
       );
   }

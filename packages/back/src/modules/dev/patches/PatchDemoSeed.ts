@@ -17,7 +17,7 @@ import { ServiceOrganizationPartner } from "@m/base/services/ServiceOrganization
 import { ServiceOrganizationPartnerToken } from "@m/base/services/ServiceOrganizationPartnerToken";
 import { ServiceUser } from "@m/base/services/ServiceUser";
 import { ServiceComplianceObligation } from "@m/commitment/services/ServiceComplianceObligation";
-import { ServiceComplianceObligationeomscle } from "@m/commitment/services/ServiceComplianceObligationeomscle";
+import { ServiceComplianceObligationArticle } from "@m/commitment/services/ServiceComplianceObligationArticle";
 import { ServiceEnergyPolicy } from "@m/commitment/services/ServiceEnergyPolicy";
 import { ServiceInternalExternalConsideration } from "@m/commitment/services/ServiceInternalExternalConsideration";
 import { ServiceNeedAndExpectation } from "@m/commitment/services/ServiceNeedAndExpectation";
@@ -260,11 +260,11 @@ export const PatchDemoSeedStage1 = ServiceRuntimePatcher.create(
           isLegalActive: true,
         },
       );
-      await ServiceComplianceObligationeomscle.create(
+      await ServiceComplianceObligationArticle.create(
         c,
         complianceAbligationId,
         {
-          relatedeomscleNo: "Clause 6.3",
+          relatedArticleNo: "Clause 6.3",
           description:
             "Energy review and identification of significant energy uses and energy performance indicators.",
           currentApplication:
@@ -274,11 +274,11 @@ export const PatchDemoSeedStage1 = ServiceRuntimePatcher.create(
           lastConformityAssessment: "2024-03-10",
         },
       );
-      await ServiceComplianceObligationeomscle.create(
+      await ServiceComplianceObligationArticle.create(
         c,
         complianceAbligationId2,
         {
-          relatedeomscleNo: "eomscle 12",
+          relatedArticleNo: "Article 12",
           description:
             "Annual submission of electricity consumption data to the national energy regulator including peak demand, consumption by tariff zone, and power factor values.",
           currentApplication:

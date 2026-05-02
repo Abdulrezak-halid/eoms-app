@@ -7,6 +7,7 @@ import { TbAgent } from "@m/agent/orm/TbAgent";
 import { ServiceAgent } from "@m/agent/services/ServiceAgent";
 import { MqConsumerDriverSuggestions } from "@m/analysis/mq-consumers/MqConsumerDriverSuggestions";
 import { ServiceAdvancedRegression } from "@m/analysis/services/ServiceAdvancedRegression";
+import { ServiceDataViewProfile } from "@m/analysis/services/ServiceDataViewProfile";
 import { ServiceEnpi } from "@m/analysis/services/ServiceEnpi";
 import { TbUser } from "@m/base/orm/TbUser";
 import { ServiceAccessToken } from "@m/base/services/ServiceAccessToken";
@@ -17,7 +18,7 @@ import { ServiceOrganizationPartnerToken } from "@m/base/services/ServiceOrganiz
 import { ServiceUser } from "@m/base/services/ServiceUser";
 import { ServiceUserToken } from "@m/base/services/ServiceUserToken";
 import { ServiceComplianceObligation } from "@m/commitment/services/ServiceComplianceObligation";
-import { ServiceComplianceObligationeomscle } from "@m/commitment/services/ServiceComplianceObligationeomscle";
+import { ServiceComplianceObligationArticle } from "@m/commitment/services/ServiceComplianceObligationArticle";
 import { ServiceEnergyPolicy } from "@m/commitment/services/ServiceEnergyPolicy";
 import { ServiceInternalExternalConsideration } from "@m/commitment/services/ServiceInternalExternalConsideration";
 import { ServiceNeedAndExpectation } from "@m/commitment/services/ServiceNeedAndExpectation";
@@ -35,7 +36,6 @@ import { IMetricResourceLabel } from "@m/measurement/interfaces/IMetricResourceL
 import { MqConsumerAgentStat } from "@m/measurement/mq-consumers/MqConsumerAgentStat";
 import { TbMetric } from "@m/measurement/orm/TbMetric";
 import { TbSeu } from "@m/measurement/orm/TbSeu";
-import { ServiceDataViewProfile } from "@m/analysis/services/ServiceDataViewProfile";
 import { ServiceInboundIntegration } from "@m/measurement/services/ServiceInboundIntegration";
 import { ServiceMeter } from "@m/measurement/services/ServiceMeter";
 import { ServiceMeterSlice } from "@m/measurement/services/ServiceMeterSlice";
@@ -246,11 +246,11 @@ export const PatchDevSeedStage1 = ServiceRuntimePatcher.create(
           isLegalActive: false,
         },
       );
-      await ServiceComplianceObligationeomscle.create(
+      await ServiceComplianceObligationArticle.create(
         c,
         complianceAbligationId,
         {
-          relatedeomscleNo: "RA-001",
+          relatedArticleNo: "RA-001",
           description: "Description of RA-001",
           currentApplication: "Active",
           conformityAssessment: "Passed",
@@ -258,13 +258,13 @@ export const PatchDevSeedStage1 = ServiceRuntimePatcher.create(
           lastConformityAssessment: "2024-01-01",
         },
       );
-      await ServiceComplianceObligationeomscle.create(
+      await ServiceComplianceObligationArticle.create(
         c,
         complianceAbligationId2,
         {
-          relatedeomscleNo: "RA-999",
+          relatedArticleNo: "RA-999",
           description:
-            "Long eomscle description Lorem Ipsum is simply dummy text of the printing",
+            "Long article description Lorem Ipsum is simply dummy text of the printing",
           currentApplication: "Inactive",
           conformityAssessment: "Failed",
           conformityAssessmentPeriod: "MONTHLY",
