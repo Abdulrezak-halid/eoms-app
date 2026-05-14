@@ -1,8 +1,11 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import { fileURLToPath } from "node:url";
 import { resolve } from "path";
 import UnpluginInjectPreload from "unplugin-inject-preload/vite";
 import { defineConfig } from "vite";
+
+const dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -23,8 +26,8 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@m": resolve(__dirname, "src/modules"),
-      "@": resolve(__dirname, "src"),
+      "@m": resolve(dirname, "src/modules"),
+      "@": resolve(dirname, "src"),
     },
   },
 
