@@ -5,6 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "knip": "knip",
+    "dev:back": "npm -w packages/back run dev",
+    "dev:front": "npm -w packages/front run dev",
     "build:api-schema": "npm -w packages/back run build:api-json && npm -w packages/common run build:api-schema:file",
     "clean-local-build": "npm run build:api-schema && npm -w packages/back run mig:regen:local"
   },
